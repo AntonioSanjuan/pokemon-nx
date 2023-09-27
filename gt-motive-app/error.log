@@ -1,0 +1,9 @@
+
+>  NX  Generating nx-cloud:init
+
+
+ >  NX   getaddrinfo ENOTFOUND cloud.nx.app
+
+   Pass --verbose to see the stacktrace.
+
+
