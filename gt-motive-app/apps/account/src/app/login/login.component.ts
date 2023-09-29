@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '@gt-motive-app/libs/services/auth';
 
 @Component({
   selector: 'gt-motive-app-login',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss'],
   standalone: true
 })
-export class LoginComponent {}
+export class LoginComponent {
+  public authService = inject(AuthService)
+
+}

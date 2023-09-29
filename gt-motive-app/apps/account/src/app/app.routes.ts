@@ -1,9 +1,10 @@
 import { Route } from '@angular/router';
+import { AuthService } from '@gt-motive-app/libs/services/auth';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    loadChildren: () =>
-      import('./remote-entry/entry.module').then((m) => m.RemoteEntryModule),
+    providers: [AuthService],
+    loadComponent: () => import('./login/login.component').then(m => m.LoginComponent)
   },
 ];

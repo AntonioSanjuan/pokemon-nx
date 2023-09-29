@@ -1,11 +1,12 @@
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { Route } from '@angular/router';
+import { loadRemoteModule } from '@nrwl/angular/mf'
 
 export const appRoutes: Route[] = [
   {
     path: 'account',
     loadChildren: () =>
-      import('account/Module').then((m) => m.RemoteEntryModule),
+      loadRemoteModule('account', './routes').then((m) => m.appRoutes),
   },
   {
     path: '',

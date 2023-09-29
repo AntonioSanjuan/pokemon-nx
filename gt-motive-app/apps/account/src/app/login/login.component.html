@@ -1,1 +1,3 @@
-<p>login works!</p>
+<p>status: {{ authService.isUserLoggedIn$ | async }}</p>
+<button (click)="authService.logIn('demo', 'demo')">log in</button>
+<button (click)="authService.logOut()">log out</button>
