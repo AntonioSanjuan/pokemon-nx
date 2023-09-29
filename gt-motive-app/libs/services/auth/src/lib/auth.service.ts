@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {LoginRequestDto} from '@gt-motive-app/libs/models'
-@Injectable({
-  providedIn: 'root'
-})
+import {LoginRequestDto, LoginResponseDto} from '@gt-motive-app/libs/models'
+@Injectable()
 export class AuthService {
   private isUserLoggedIn = new BehaviorSubject<boolean>(false)
   isUserLoggedIn$ = this.isUserLoggedIn.asObservable();
@@ -13,7 +11,7 @@ export class AuthService {
       userName,
       password
     };
-    console.log("eeeepa in")
+    console.log("login", request)
     if(userName === 'demo' && password === 'demo') {
       this.isUserLoggedIn.next(true)
     }
