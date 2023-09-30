@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:all": "nx serve shell --open --devRemotes=account --verbose"
+    "start:all": "nx serve shell --open --devRemotes=account --verbose",
+    "start:account": "nx serve account --open"
   },
   "private": true,
   "dependencies": {
