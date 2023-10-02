@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@gt-motive-app/libs/models": ["libs/models/src/index.ts"],
-      "@gt-motive-app/libs/services/auth": ["libs/services/auth/src/index.ts"]
+      "@gt-motive-app/libs/services/auth": ["libs/services/auth/src/index.ts"],
+      "@gt-motive-app/store": ["libs/store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
