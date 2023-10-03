@@ -1,3 +1,7 @@
-<p>status: {{ authService.isUserLoggedIn$ | async }}</p>
-<button (click)="authService.logIn('demo', 'demo')">log in</button>
-<button (click)="authService.logOut()">log out</button>
+
+
+<div *ngrxLet="authService.isUserLoggedIn$; let isUserLoggedIn">
+    <p>status: {{ isUserLoggedIn }}</p>
+    <button [disabled]="isUserLoggedIn" (click)="authService.logIn('demo', 'demo')">log in</button>
+    <button [disabled]="!isUserLoggedIn" (click)="authService.logOut()">log out</button>
+</div>
