@@ -1,8 +1,5 @@
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, on, Action, combineReducers } from '@ngrx/store';
+import { Action, combineReducers } from '@ngrx/store';
 
-import * as AccountActions from './account.actions';
-import { AccountEntity } from './account.models';
 import { LoginState, initialLoginState, loginReducer } from '../login/store/login.reducer';
 
 export const ACCOUNT_FEATURE_KEY = 'account';
