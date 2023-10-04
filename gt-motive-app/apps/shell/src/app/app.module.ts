@@ -11,6 +11,9 @@ import { reducers, rootInitialState } from './store/reducers';
 import { MenuTopComponent } from './menu/menu-top/menu-top.component';
 import { MenuBottomComponent } from './menu/menu-bottom/menu-bottom.component';
 import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
+import { AuthenticateGuard } from './core/auth-guard.service';
+import { UiEffects } from '@gt-motive-app/store';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { HomeComponent } from './home/home.component';
     HomeComponent,
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     StoreModule.forRoot(reducers, {
@@ -30,11 +34,15 @@ import { HomeComponent } from './home/home.component';
         strictStateImmutability: true,
       },
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([
+      UiEffects
+    ]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
   ],
-  providers: [],
+  providers: [
+    AuthenticateGuard
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

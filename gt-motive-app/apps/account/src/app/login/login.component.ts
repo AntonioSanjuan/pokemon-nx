@@ -5,6 +5,8 @@ import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { Store } from '@ngrx/store';
 import { LoginForm, loginForm } from './login.form';
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { loginRequest } from './store/login.actions';
+import { LoginData } from './model/loginRequest.model';
 
 @Component({
   selector: 'gt-motive-app-login',
@@ -27,7 +29,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    const loginData = {...this.loginForm?.getRawValue() }
-    console.log("🚀 ~ file: login.component.ts:31 ~ LoginComponent ~ login ~ loginData:", loginData)
+    const loginData = {...this.loginForm?.getRawValue() } as LoginData
+    if(loginData.userName && loginData.password){
+      this.store.dispatch(loginRequest({ loginData }))
+      // this.authService.logIn(loginData.userName, loginData.password)
+    }
   }
 }

@@ -1,10 +1,10 @@
 import { Route } from '@angular/router';
-import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { StoreModule } from '@ngrx/store';
 import * as fromAccount from './+state/account.reducer';
 import { importProvidersFrom } from '@angular/core';
-import { loginReducer } from './login/store/login.reducer';
 import { AppComponent } from './app.component';
+import { LoginEffects } from './login/store/login.effects';
+import { EffectsModule } from '@ngrx/effects'
 
 export const appRoutes: Route[] = [
   {
@@ -19,10 +19,8 @@ export const appRoutes: Route[] = [
       {
         path: 'login',
         providers: [
-          AuthService,
           importProvidersFrom(
-            // EffectsModule.forFeature([L])
-            // StoreModule.forFeature('login', loginReducer)
+            EffectsModule.forFeature([LoginEffects])
           )
         ],    
         loadComponent: () =>
