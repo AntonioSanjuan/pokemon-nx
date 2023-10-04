@@ -2,6 +2,14 @@
 
 <div *ngrxLet="authService.isUserLoggedIn$; let isUserLoggedIn">
     <p>status: {{ isUserLoggedIn }}</p>
-    <button [disabled]="isUserLoggedIn" (click)="authService.logIn('demo', 'demo')">log in</button>
+    <button [disabled]="isUserLoggedIn" (click)="login()">log in</button>
     <button [disabled]="!isUserLoggedIn" (click)="authService.logOut()">log out</button>
 </div>
+
+<form [formGroup]="loginForm">
+    <label for="userName">Name</label>
+    <input id="userName" name="userName" formControlName="userName"/>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" formControlName="password"/>
+</form>

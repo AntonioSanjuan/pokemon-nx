@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Shell_MainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .Shell_ContentContainer {
+        height: 100%;
+    }
+}
