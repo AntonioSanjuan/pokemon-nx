@@ -17,6 +17,10 @@
     "paths": {
       "@gt-motive-app/libs/models": ["libs/models/src/index.ts"],
       "@gt-motive-app/libs/services/auth": ["libs/services/auth/src/index.ts"],
+      "@gt-motive-app/libs/services/culture": [
+        "libs/services/culture/src/index.ts"
+      ],
+      "@gt-motive-app/services/culture": ["libs/services/culture/src/index.ts"],
       "@gt-motive-app/store": ["libs/store/src/index.ts"]
     }
   },

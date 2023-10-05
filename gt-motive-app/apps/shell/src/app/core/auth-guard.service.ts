@@ -10,6 +10,7 @@ export class AuthenticateGuard {
     public route = inject(ActivatedRoute)
 
     canActivate(): Observable<boolean> {
+        console.log("this.authService.loginResponse", this.authService.loginResponse)
         if(!this.authService.loginResponse) {
             this.router.navigate(['account/login'], {relativeTo: this.route})
             return of(false)

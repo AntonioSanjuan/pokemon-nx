@@ -14,16 +14,17 @@ import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
 import { AuthenticateGuard } from './core/auth-guard.service';
 import { UiEffects } from '@gt-motive-app/store';
+import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuTopComponent,
-    MenuBottomComponent,
-    HomeComponent,
   ],
   imports: [
     CoreModule,
+    MenuTopComponent,
+    MenuBottomComponent,
+    LibsServicesCultureModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     StoreModule.forRoot(reducers, {
