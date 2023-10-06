@@ -8,7 +8,7 @@ import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { loginRequest } from './store/login.actions';
 import { LoginData } from './model/loginRequest.model';
 import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
-import { getUser } from '@gt-motive-app/store';
+import { getIsUserLogged, getUser } from '@gt-motive-app/store';
 
 @Component({
   selector: 'gt-motive-app-login',
@@ -22,10 +22,10 @@ import { getUser } from '@gt-motive-app/store';
   standalone: true
 })
 export class LoginComponent implements OnInit {
-  public authService = inject(AuthService)
-  public store = inject(Store)
+  private store = inject(Store)
   public loginForm!: FormGroup<LoginForm>
-  public isLogged$ = this.store.select(getUser)
+  public isUserLogged$ = this.store.select(getIsUserLogged)
+
   ngOnInit(): void {
       this.loginForm = loginForm()
   }

@@ -13,7 +13,7 @@ import { MenuTopComponent } from './menu/menu-top/menu-top.component';
 import { MenuBottomComponent } from './menu/menu-bottom/menu-bottom.component';
 import { CoreModule } from './core/core.module';
 import { AuthenticateGuard } from './core/auth-guard.service';
-import { UiEffects, RequestEffects } from '@gt-motive-app/store';
+import { UiEffects, RequestEffects, UserEffects } from '@gt-motive-app/store';
 import { TranslateModule } from '@ngx-translate/core'
 import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
@@ -44,6 +44,7 @@ import { LibsServicesAuthModule } from '@gt-motive-app/libs/services/auth';
     }),
     EffectsModule.forRoot([
       UiEffects,
+      UserEffects,
       RequestEffects
     ]),
     StoreRouterConnectingModule.forRoot(),

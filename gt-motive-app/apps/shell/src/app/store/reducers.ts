@@ -1,8 +1,9 @@
 import { ActionReducerMap } from "@ngrx/store";
-import { UiState, uiReducer, uiInitialState, UserState, userReducer } from '@gt-motive-app/store';
+import { UiState, uiReducer, uiInitialState, UserState, userReducer, userInitialState } from '@gt-motive-app/store';
 
 export const rootInitialState = {
-    ui: uiInitialState
+    ui: uiInitialState,
+    user: userInitialState
 }
 
 export interface RootState {

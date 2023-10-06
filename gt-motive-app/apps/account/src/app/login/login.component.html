@@ -1,14 +1,16 @@
+<div
+    class="Login_MainContainer"
+    *ngrxLet="isUserLogged$; let isUserLogged">
 
-
-<div *ngrxLet="isLogged$; let isLogged">
-    <button [disabled]="isLogged" (click)="login()">log in</button>
-    <button [disabled]="!isLogged" (click)="authService.logOut()">log out</button>
+    <form [formGroup]="loginForm">
+        <label for="userName">Name</label>
+        <input id="userName" name="userName" formControlName="userName"/>
+    
+        <label for="password">Password</label>
+        <input id="password" name="password" formControlName="password"/>
+    
+        <div >
+            <button [disabled]="isUserLogged" (click)="login()">log in</button>
+        </div>
+    </form>
 </div>
-
-<form [formGroup]="loginForm">
-    <label for="userName">Name</label>
-    <input id="userName" name="userName" formControlName="userName"/>
-
-    <label for="password">Password</label>
-    <input id="password" name="password" formControlName="password"/>
-</form>

@@ -10,11 +10,13 @@ export const userReducer = createReducer(
     on(setUser, (state: UserState, { user }) => {
         return {
             ...state, 
-            user
+            user,
+            isLogged: true
         }
     }),
     on(clearUser, (state: UserState) => ({
         ...state,
-        user: undefined
+        user: undefined,
+        isLogged: false
     })),
 )

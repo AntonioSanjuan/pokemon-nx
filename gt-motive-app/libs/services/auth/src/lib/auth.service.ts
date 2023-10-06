@@ -18,14 +18,11 @@ export class AuthService {
 
     return of(resp).pipe(
       map((resp) => {
-        console.log("epa")
         this.store.dispatch(setUser({ user: resp}))
         return resp
       }),
       delay(2000),
-
     )
-
   }
 
   public logOut(): void {

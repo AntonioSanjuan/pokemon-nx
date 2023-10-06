@@ -1,0 +1,18 @@
+.Login_MainContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        input {
+            margin-bottom: 20px;
+        }
+    }
+}
