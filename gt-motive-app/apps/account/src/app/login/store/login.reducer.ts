@@ -1,14 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 import * as LoginActions from "./login.actions";
-import { LoginResponseDto } from '@gt-motive-app/libs/models';
 
 export interface LoginState {
-    loginResponse?: LoginResponseDto
     numberOfTries: number
 }
 
 export const initialLoginState: LoginState = {
-    loginResponse: undefined,
     numberOfTries: 0,
 }
 
@@ -18,9 +15,8 @@ export const loginReducer = createReducer(
     ...state,
     numberOfTries: state.numberOfTries + 1
   })),
-  on(LoginActions.loginRequestSuccess, (state: LoginState, { loginResponse }) => ({
+  on(LoginActions.loginRequestSuccess, (state: LoginState) => ({
     ...state,
     numberOfTries: 0,
-    loginResponse
   })),
 );

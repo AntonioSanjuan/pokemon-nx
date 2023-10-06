@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {LoginRequestDto, LoginResponseDto} from '@gt-motive-app/libs/models'
-import { Observable, delay, of } from 'rxjs';
+import { clearUser, setUser } from '@gt-motive-app/store';
+import { Store } from '@ngrx/store';
+import { Observable, delay, map, of } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
-  public loginResponse?: LoginResponseDto;
+  private store: Store = inject(Store)
   
   public logIn(userName: string, password: string): Observable<LoginResponseDto> {
     const request: LoginRequestDto = {
@@ -14,17 +14,21 @@ export class AuthService {
       password
     };
 
-    const response = { status: true} as LoginResponseDto;
-    
-    if(request.userName === 'demo' && request.password === 'demo') {
-      this.loginResponse = {...response}
-    }
+    const resp = { status: (request.userName === 'demo' && request.password === 'demo')} as LoginResponseDto;
 
-    return of(response).pipe(delay(2000))
+    return of(resp).pipe(
+      map((resp) => {
+        console.log("epa")
+        this.store.dispatch(setUser({ user: resp}))
+        return resp
+      }),
+      delay(2000),
+
+    )
 
   }
 
   public logOut(): void {
-    this.loginResponse = undefined;
+    this.store.dispatch(clearUser())
   }
 }

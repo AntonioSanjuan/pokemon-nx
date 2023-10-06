@@ -7,6 +7,8 @@ import { LoginForm, loginForm } from './login.form';
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { loginRequest } from './store/login.actions';
 import { LoginData } from './model/loginRequest.model';
+import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
+import { getUser } from '@gt-motive-app/store';
 
 @Component({
   selector: 'gt-motive-app-login',
@@ -23,7 +25,7 @@ export class LoginComponent implements OnInit {
   public authService = inject(AuthService)
   public store = inject(Store)
   public loginForm!: FormGroup<LoginForm>
-
+  public isLogged$ = this.store.select(getUser)
   ngOnInit(): void {
       this.loginForm = loginForm()
   }
@@ -32,7 +34,6 @@ export class LoginComponent implements OnInit {
     const loginData = {...this.loginForm?.getRawValue() } as LoginData
     if(loginData.userName && loginData.password){
       this.store.dispatch(loginRequest({ loginData }))
-      // this.authService.logIn(loginData.userName, loginData.password)
     }
   }
 }

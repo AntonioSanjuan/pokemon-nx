@@ -8,7 +8,7 @@ export const loginRequest = createAction(
 )
 
 export const loginRequestSuccess = createAction(
-  '[Account/Login/API] Login Request Success', props<{ loginResponse: LoginResponseDto}>()
+  '[Account/Login/API] Login Request Success'
 )
 
 export const loginRequestError = createAction(

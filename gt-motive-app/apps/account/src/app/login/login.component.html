@@ -1,9 +1,8 @@
 
 
-<div *ngrxLet="authService.loginResponse; let loginResponse">
-    <p>status: {{ loginResponse }}</p>
-    <button [disabled]="loginResponse" (click)="login()">log in</button>
-    <button [disabled]="!loginResponse" (click)="authService.logOut()">log out</button>
+<div *ngrxLet="isLogged$; let isLogged">
+    <button [disabled]="isLogged" (click)="login()">log in</button>
+    <button [disabled]="!isLogged" (click)="authService.logOut()">log out</button>
 </div>
 
 <form [formGroup]="loginForm">

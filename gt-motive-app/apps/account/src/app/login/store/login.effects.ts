@@ -14,7 +14,7 @@ export class LoginEffects {
         ofType(loginRequest),
         switchMap(({ loginData }) =>
             this.authService.logIn(loginData.userName, loginData.password).pipe(
-                map((loginResponse: LoginResponseDto) => loginRequestSuccess({ loginResponse})),
+                map((loginResponse: LoginResponseDto) => loginRequestSuccess()),
                 catchError(_ => of(loginRequestError()))
             )
         )

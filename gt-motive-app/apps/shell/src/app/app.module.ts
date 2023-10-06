@@ -17,6 +17,7 @@ import { UiEffects, RequestEffects } from '@gt-motive-app/store';
 import { TranslateModule } from '@ngx-translate/core'
 import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { LibsServicesAuthModule } from '@gt-motive-app/libs/services/auth';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     BrowserModule,
     BrowserAnimationsModule,
     LibsServicesCultureModule,
+    LibsServicesAuthModule,
     CoreModule,
     TranslateModule,
     MenuBottomComponent,
