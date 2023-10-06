@@ -1,5 +1,8 @@
 import { UiState } from "./uiState.model";
 
 export const uiInitialState: UiState =  {
-    isLoadedApp: false
+    actionOngoing: false,
+    block: true,
+    requestCounter: 0,
+    loadedApp: []
 }

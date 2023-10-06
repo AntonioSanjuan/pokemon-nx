@@ -1,5 +1,6 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
@@ -10,22 +11,26 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, rootInitialState } from './store/reducers';
 import { MenuTopComponent } from './menu/menu-top/menu-top.component';
 import { MenuBottomComponent } from './menu/menu-bottom/menu-bottom.component';
-import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
 import { AuthenticateGuard } from './core/auth-guard.service';
 import { UiEffects } from '@gt-motive-app/store';
+import { TranslateModule } from '@ngx-translate/core'
 import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    CoreModule,
-    MenuTopComponent,
-    MenuBottomComponent,
-    LibsServicesCultureModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    LibsServicesCultureModule,
+    CoreModule,
+    TranslateModule,
+    MenuBottomComponent,
+    MenuTopComponent,
+    LoadingSpinnerComponent,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     StoreModule.forRoot(reducers, {
       initialState: rootInitialState,
@@ -42,7 +47,12 @@ import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture'
     StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
   ],
   providers: [
-    AuthenticateGuard
+    AuthenticateGuard,
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptorService,
+    //   multi: true
+    // }
   ],
   bootstrap: [AppComponent],
 })

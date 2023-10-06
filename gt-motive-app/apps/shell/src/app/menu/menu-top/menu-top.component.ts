@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core'
 @Component({
   selector: 'gt-motive-app-menu-top',
@@ -6,7 +7,8 @@ import { TranslateModule } from '@ngx-translate/core'
   styleUrls: ['./menu-top.component.scss', './../menu.scss'],
   standalone: true,
   imports: [
-    TranslateModule
+    TranslateModule,
+    RouterModule
   ]
 })
 export class MenuTopComponent {}

@@ -1,3 +1,8 @@
+import { AppInit } from "./app-init-enum";
+
 export interface UiState {
-    isLoadedApp: boolean
+    actionOngoing: boolean;
+    block: boolean;
+    requestCounter: number;
+    loadedApp: AppInit[];
 }
