@@ -1,8 +1,8 @@
 import { createFeatureSelector } from '@ngrx/store';
 import {
   ACCOUNT_FEATURE_KEY,
-  AccountState,
 } from './account.reducer';
+import { AccountState } from './models/accountState.model';
 
 // Lookup the 'Account' feature state managed by NgRx
 export const selectAccountState =

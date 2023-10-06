@@ -1,5 +1,4 @@
 export enum AppInit {
-    Labels,
-    User,
-    Landing
+    UI,
+    ACCOUNT,
 }

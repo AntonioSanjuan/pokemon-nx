@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start:all": "nx serve shell --open --devRemotes=account --verbose",
+    "start:shell": "nx serve shell --open",
     "start:account": "nx serve account --open"
   },
   "private": true,

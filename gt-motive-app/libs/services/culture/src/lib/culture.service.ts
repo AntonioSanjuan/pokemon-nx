@@ -14,11 +14,6 @@ export class CultureService {
         'ES-ES', 'ES-CO', 'ES-MX', 'FI-FI', 'FR-FR', 'FR-CH', 'FR-TN', 'IT-IT', 'KO-KR', 'NL-NL',
         'NL-BE', 'NN-NO', 'PT-PT', 'RO-RO', 'SK-SK', 'SV-SE', 'TR-TR', 'PL-PL', 'HU-HU'
       ];
-      private readonly shortCodes: string[] = [
-        'ca', 'cs', 'de', 'da', 'el', 'en-gb', 'en-ie', 'en-in', 'en', 'es', 'fi', 'fr',
-        'hu', 'it', 'nl', 'nn', 'pl', 'pt', 'ro', 'sk', 'sv', 'tr', 'ko'
-      ];
-
       
     public setLanguage(): void {
         this.translateService.setDefaultLang(this.defaultLangCode);
@@ -34,7 +29,6 @@ export class CultureService {
 
     private setCulture(cultureName: string) {
         this.translateService.use(this.getLangCode(cultureName)).pipe(first())
-        .subscribe(() => this.store.dispatch(loadedApp({ initialized: AppInit.Labels })));
-        // this.dateAdapter.setLocale(this.getShortCode(cultureName));
+        .subscribe(() => this.store.dispatch(loadedApp({ initialized: AppInit.UI })));
     }
 }
