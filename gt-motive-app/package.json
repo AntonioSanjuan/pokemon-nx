@@ -5,7 +5,8 @@
   "scripts": {
     "start:all": "nx serve shell --open --devRemotes=account --verbose",
     "start:shell": "nx serve shell --open",
-    "start:account": "nx serve account --open"
+    "start:account": "nx serve account --open",
+    "test:all": "nx test"
   },
   "private": true,
   "dependencies": {

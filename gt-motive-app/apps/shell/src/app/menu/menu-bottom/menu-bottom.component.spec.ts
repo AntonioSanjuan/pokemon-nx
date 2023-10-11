@@ -7,7 +7,7 @@ describe('MenuBottomComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MenuBottomComponent],
+      imports: [MenuBottomComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MenuBottomComponent);

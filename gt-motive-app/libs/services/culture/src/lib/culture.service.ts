@@ -1,9 +1,10 @@
-import { inject } from "@angular/core";
+import { Injectable, inject } from "@angular/core";
 import { TranslateService } from '@ngx-translate/core'
 import { AppInit, loadedApp } from '@gt-motive-app/store'
 import { Store } from '@ngrx/store'
 import { first } from "rxjs";
 
+@Injectable()
 export class CultureService {
     private readonly defaultLangCode: string = "ES-ES"
     private translateService: TranslateService = inject(TranslateService)
