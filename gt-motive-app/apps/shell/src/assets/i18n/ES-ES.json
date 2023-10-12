@@ -1,5 +1,8 @@
 {
     "menuTop": {
         "login": "login ES!"
+    },
+    "loadingSpinner": {
+        "title": "Cargando..."
     }
 }

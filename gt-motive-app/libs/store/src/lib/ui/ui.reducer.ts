@@ -13,7 +13,6 @@ export const uiReducer = createReducer(
             loadedApps: !state.loadedApps.includes(initialized) ?
                 state.loadedApps.concat([initialized]):
                 state.loadedApps,
-            blockByRequest: false
         }
     }),
     on(startRequest, (state) => ({
