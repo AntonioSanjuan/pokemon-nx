@@ -1,39 +1,55 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { Action } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
-import { hot } from 'jasmine-marbles';
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom, of, throwError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http'
+import { initialAccountState } from '../../+state/models/accountState.initialState';
+import { AuthService } from '@gt-motive-app/libs/services/auth';
+import { LoginEffects } from './login.effects';
+import { loginRequest, loginRequestError } from './login.actions';
 
-import * as AsdasdActions from './asdasd.actions';
-import { AsdasdEffects } from './asdasd.effects';
-
-describe('AsdasdEffects', () => {
+describe('LoginEffects', () => {
   let actions: Observable<Action>;
-  let effects: AsdasdEffects;
+  let effects: LoginEffects;
+  let authService: AuthService;
+  let store: Store;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [],
       providers: [
-        AsdasdEffects,
+        LoginEffects,
+        AuthService,
         provideMockActions(() => actions),
-        provideMockStore(),
+        provideMockStore({
+          initialState: initialAccountState
+        }),
       ],
     });
 
-    effects = TestBed.inject(AsdasdEffects);
+    effects = TestBed.inject(LoginEffects);
+    store = TestBed.inject(Store),
+    authService = TestBed.inject(AuthService)
   });
 
-  describe('init$', () => {
-    it('should work', () => {
-      actions = hot('-a-|', { a: AsdasdActions.initAsdasd() });
+  describe('loginRequest$', () => {
+    describe('when loginRequest is dispatched', () => {
+      describe('when authService.logIn throws error', () => {
+        const errorloginResp = throwError(() => new HttpErrorResponse( { error: '', status: 500} ))
+        beforeEach(() => { 
+          jest.spyOn(authService, 'logIn').mockReturnValue(errorloginResp)
+          actions = of(loginRequest({ loginData: {
+            userName: '',
+            password: ''
+          }}))
+        })
 
-      const expected = hot('-a-|', {
-        a: AsdasdActions.loadAsdasdSuccess({ asdasd: [] }),
-      });
-
-      expect(effects.init$).toBeObservable(expected);
-    });
+        it('should call loginRequestError', async () => {
+          const result = await firstValueFrom(effects.loginRequest$)
+          expect(result).toEqual(loginRequestError())
+        })
+      })
+    })
   });
 });

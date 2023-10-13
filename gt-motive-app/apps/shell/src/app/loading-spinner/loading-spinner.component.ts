@@ -17,19 +17,9 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './loading-spinner.component.html',
   styleUrls: ['./loading-spinner.component.scss'],
 })
-export class LoadingSpinnerComponent implements OnInit {
+export class LoadingSpinnerComponent {
   private store: Store = inject(Store);
 
   public isBlockByRequest$ = this.store.select(getIsBlockByRequest)
   public isUILoadedApp$ = this.store.select(getIsUILoadedApp)
-
-  ngOnInit(): void {
-      this.isBlockByRequest$.subscribe((isBlockByRequest) => {
-        console.log("isBlockByRequest", isBlockByRequest)
-      })
-
-      this.isUILoadedApp$.subscribe((isUILoadedApp) => {
-        console.log("isUILoadedApp", isUILoadedApp)
-      })
-  }
 }
