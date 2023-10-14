@@ -1,16 +1,18 @@
-<div class="menu">
+<div class="menu" *ngrxLet="isUserLogged$; let isUserLogged">
     <div class="MenuTop_ContentContainer">
-        <button>
-            <a routerLink="/">Home</a>
-        </button>
-        <button>
-            <a routerLink="/pokemon/list">Pokemons</a>
-        </button>
-        <button>
-            <a routerLink="account/login">
-                {{'menuTop.login' | translate}}
-                <!-- ey -->
-            </a>
-        </button>
+        <div class="MenuTop_SideContainer"></div>
+        <div class="MenuTop_CenterContainer">
+            <button *ngIf="isUserLogged">
+                <a routerLink="/">Home</a>
+            </button>
+            <button *ngIf="isUserLogged">
+                <a routerLink="/pokemon/list">Pokemons</a>
+            </button>
+        </div>
+        <div class="MenuTop_SideContainer">
+            <button *ngIf="isUserLogged" (click)="logOut()">
+                {{'shell.menuTop.logout' | translate}}
+            </button>
+        </div>
     </div>
 </div>

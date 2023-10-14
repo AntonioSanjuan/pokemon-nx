@@ -7,24 +7,24 @@ describe('Login Reducer', () => {
     const action = LoginActions.loginRequestError();
     const state = loginReducer(initialState, action);
     
-    expect(state.numberOfTries).toBe(1);
+    expect(state.numberOfFailures).toBe(1);
   });
 
   it('should reset the number of tries to 0 on loginRequestSuccess', () => {
     const initialState: LoginState = { 
       ...initialLoginState,
-      numberOfTries: 3 
+      numberOfFailures: 3 
     };
     const action = LoginActions.loginRequestSuccess();
     const state = loginReducer(initialState, action);
     
-    expect(state.numberOfTries).toBe(0);
+    expect(state.numberOfFailures).toBe(0);
   });
 
   it('should return the initial state on an unknown action', () => {
     const initialState: LoginState = { 
       ...initialLoginState,
-      numberOfTries: 5 
+      numberOfFailures: 5 
     };
     const action = { type: 'UnknownAction' };
     const state = loginReducer(initialState, action);

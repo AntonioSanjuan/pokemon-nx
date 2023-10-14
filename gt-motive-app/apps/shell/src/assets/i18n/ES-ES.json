@@ -1,8 +1,14 @@
 {
-    "menuTop": {
-        "login": "login ES!"
+    "shell": {
+        "menuTop": {
+            "login": "login ES!",
+            "logout": "Cerrar sesión"
+        },
+        "loadingSpinner": {
+            "title": "Cargando..."
+        }
     },
-    "loadingSpinner": {
-        "title": "Cargando..."
+    "libs": {
+        
     }
 }
