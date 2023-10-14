@@ -6,6 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromPokemon from './+state/pokemon.reducer';
 import { PokemonListEffects } from './pokemonList/store/pokemonList.effects';
 import { StoreModule } from '@ngrx/store';
+import { PokemonService } from './shared/services/Pokemon/pokemon.service';
 
 export const appRoutes: Route[] = [
   {
@@ -20,6 +21,7 @@ export const appRoutes: Route[] = [
       {
         path: 'list',
         providers: [
+          PokemonService,
           importProvidersFrom(EffectsModule.forFeature([PokemonListEffects])),
         ],
         loadComponent: () =>

@@ -34,6 +34,17 @@ export const pokemonListReducer = createReducer(
         currentPage: state.query.currentPage + 1
       }
     })),
+    on(PokemonListActions.getNextPokemonListPageRequestError, (state: PokemonListState) => ({
+      ...state,
+    })),
+    on(PokemonListActions.getNextPokemonListPageRequestSuccess, (state: PokemonListState, { pokemons }) => ({
+      ...state,
+      list: state.list.concat(pokemons.results),
+      query: {
+        ...state.query,
+        currentPage: state.query.currentPage + 1
+      }
+    })),
     on(PokemonListActions.clearPokemonList, () => ({
       ...initialPokemonListState
     }))

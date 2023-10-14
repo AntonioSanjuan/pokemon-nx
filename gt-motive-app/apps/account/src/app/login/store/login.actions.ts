@@ -1,7 +1,6 @@
 
 import { createAction, props } from '@ngrx/store';
 import { LoginData } from '../model/loginRequest.model';
-import { LoginResponseDto } from '@gt-motive-app/libs/models';
 
 export const loginRequest = createAction(
   '[Account/Login/API] Login Request', props<{ loginData: LoginData}>()

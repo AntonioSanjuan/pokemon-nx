@@ -1,1 +1,20 @@
-<p>pokemon-list works!</p>
+<div
+    class="PokemonList_MainContainer"
+    *ngrxLet="pokemonList$; let pokemonList">
+
+    <table>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+        </tr>
+        <tr *ngFor="let pokemon of pokemonList">
+          <td>{{pokemon.name}}</td>
+          <td>{{pokemon.url}}</td>
+        </tr>
+      </table>
+
+
+      <div class="PokemonList_ActionContainer">
+        <button (click)="getNextPage()" id="nextPageButton" type="button">Next</button>
+      </div>
+</div>
