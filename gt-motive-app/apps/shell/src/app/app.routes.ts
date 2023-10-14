@@ -1,18 +1,24 @@
 import { Route } from '@angular/router';
-import { loadRemoteModule } from '@nrwl/angular/mf'
+import { loadRemoteModule } from '@nrwl/angular/mf';
 import { HomeComponent } from './home/home.component';
 import { AuthenticateGuard } from './core/auth-guard.service';
 
 export const appRoutes: Route[] = [
   {
+    path: 'pokemon',
+    loadChildren: () =>
+      loadRemoteModule('pokemon', './routes').then((m) => m.appRoutes),
+    canActivate: [AuthenticateGuard],
+  },
+  {
     path: 'account',
     loadChildren: () =>
       loadRemoteModule('account', './routes').then((m) => m.appRoutes),
-    canActivate: []
+    canActivate: [],
   },
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AuthenticateGuard]
+    canActivate: [AuthenticateGuard],
   },
 ];

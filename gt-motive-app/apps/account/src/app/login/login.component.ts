@@ -1,14 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { LetDirective } from '@ngrx/component';
-import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { Store } from '@ngrx/store';
 import { LoginForm, loginForm } from './login.form';
 import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 import { loginRequest } from './store/login.actions';
 import { LoginData } from './model/loginRequest.model';
-import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
-import { getIsUserLogged, getUser } from '@gt-motive-app/store';
+import { getIsUserLogged } from '@gt-motive-app/store';
 
 @Component({
   selector: 'gt-motive-app-login',

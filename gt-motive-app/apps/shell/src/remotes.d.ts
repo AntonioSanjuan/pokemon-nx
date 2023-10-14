@@ -1,1 +1,2 @@
-declare module 'account/Module';
+declare module 'account/*';
+declare module 'pokemon/*';
