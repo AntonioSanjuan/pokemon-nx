@@ -1,8 +1,5 @@
 .PokemonList_MainContainer {
-
-    table {}
-
-    .PokemonList_ActionContainer {
-        
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
