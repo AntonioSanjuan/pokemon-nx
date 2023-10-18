@@ -1,3 +1,5 @@
+@use "./../sizes.scss" as sizes;
+
 :host {
 
 }
@@ -9,8 +11,32 @@
     justify-content: space-between;
 
     height: 100vh;
-
-    .Shell_ContentContainer {
-        height: 100%;
+    .Shell_HeaderContainer {
+        min-height: sizes.$headerHeigt;
+        height: sizes.$headerHeigt;
     }
+    .Shell_BodyContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: calc(100vh - sizes.$headerHeigt);
+
+        .Shell_ContentContainer {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 100%;
+        }
+
+        .Shell_FooterContainer {
+            display: flex;
+            flex-direction: column;
+
+            min-height: sizes.$footerHeigt;
+            height: sizes.$footerHeigt;
+        }
+    }
+
 }

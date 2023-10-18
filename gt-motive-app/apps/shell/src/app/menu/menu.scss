@@ -1,8 +1,10 @@
 .menu {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    
     background-color: grey;
 
-    padding: 20px 0px;
     min-height: 20px;
+    height: 100%
 }
