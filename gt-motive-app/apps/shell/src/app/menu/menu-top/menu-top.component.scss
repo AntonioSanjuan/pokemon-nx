@@ -1,26 +1,31 @@
 @use "./../../../sizes.scss" as sizes;
 
-.MenuTop_ContentContainer {
+.MenuTop_MainContainer {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
+    
     min-height: sizes.$headerHeigt;
     height: sizes.$headerHeigt;
 
-    .MenuTop_SideContainer {
+    .MenuTop_ContentContainer {
         display: flex;
         flex-direction: row;
-        
-        width: 20%;
-    }
-
-    .MenuTop_CenterContainer {
-        display: flex;
-        flex-direction: row;
-
-        justify-content: center;
-        gap: 15px;
-
-        width: 60%;
+    
+        .MenuTop_SideContainer {
+            display: flex;
+            flex-direction: row;
+            
+            width: 20%;
+        }
+    
+        .MenuTop_CenterContainer {
+            display: flex;
+            flex-direction: row;
+    
+            justify-content: center;
+            gap: 15px;
+    
+            width: 60%;
+        }
     }
 }
