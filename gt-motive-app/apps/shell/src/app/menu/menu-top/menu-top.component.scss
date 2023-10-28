@@ -1,6 +1,11 @@
+@use "./../../../sizes.scss" as sizes;
+
 .MenuTop_ContentContainer {
     display: flex;
     flex-direction: row;
+
+    min-height: sizes.$headerHeigt;
+    height: sizes.$headerHeigt;
 
     .MenuTop_SideContainer {
         display: flex;
