@@ -1,0 +1,27 @@
+@use "./../../../sizes.scss" as sizes;
+
+.BaseLayout_MainContainer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    height: 100vh;
+
+    .BaseLayout_BodyContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        min-height: calc(100vh - sizes.$headerHeigt);
+
+        .BaseLayout_ContentContainer {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 100%;
+        }
+    }
+
+}
