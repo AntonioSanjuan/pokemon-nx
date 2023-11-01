@@ -16,16 +16,29 @@ export class AuthService {
       password
     };
 
+    //mock
     const resp = { status: (request.userName === 'demo' && request.password === 'demo')} as LoginResponseDto;
 
     return of(resp).pipe(
       delay(2000),
       map((resp) => {
-        this.store.dispatch(setUser({ user: resp}))
-        this.router.navigate(['/'])
+        this.authenticateUser(resp)
         return resp
       }),
     )
+  }
+
+  private authenticateUser(resp: LoginResponseDto) {
+    this.store.dispatch(setUser({ user: resp}))
+    localStorage.setItem('authenticatedStatus', 'true')
+    this.router.navigate(['/'])
+  }
+
+  public checkAuthPersistance(): void {
+    const authenticatedStatus = localStorage.getItem('authenticatedStatus')
+    if(authenticatedStatus && authenticatedStatus === 'true') {
+      this.authenticateUser({ status: true} as LoginResponseDto)
+    }
   }
 
   public logOut(): void {
