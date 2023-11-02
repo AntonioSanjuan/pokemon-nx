@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { UiModule } from '@gt-motive-app/ui';
 
 @Component({
   selector: 'gt-motive-app-account',

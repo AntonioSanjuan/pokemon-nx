@@ -17,10 +17,12 @@ import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture'
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { LibsServicesAuthModule } from '@gt-motive-app/libs/services/auth';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     LibsServicesCultureModule,

@@ -3,14 +3,18 @@
     *ngrxLet="isUserLogged$; let isUserLogged">
 
     <form [formGroup]="loginForm">
-        <label for="userName">Name</label>
-        <input id="userName" name="userName" formControlName="userName"/>
-    
-        <label for="password">Password</label>
-        <input id="password" name="password" formControlName="password"/>
-    
-        <div >
-            <button [disabled]="isUserLogged" (click)="login()">log in</button>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput id="userName" name="userName" formControlName="userName"/>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput id="password" name="password" formControlName="password"/>     
+        </mat-form-field>
+        <div>
+            <button mat-flat-button color="primary" [disabled]="isUserLogged" (click)="login()">log in</button>
+
         </div>
     </form>
 </div>
