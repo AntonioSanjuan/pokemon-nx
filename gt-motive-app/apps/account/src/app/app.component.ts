@@ -7,7 +7,6 @@ import { UiModule } from '@gt-motive-app/ui';
   template: '<router-outlet></router-outlet>',
   styles: [':host { height: 100%; }'],
   imports: [RouterOutlet],
-  encapsulation: ViewEncapsulation.ShadowDom,
   standalone: true
 })
 export class AppComponent {}

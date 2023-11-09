@@ -1,18 +1,18 @@
 import { NgModule } from "@angular/core";
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule } from '@angular/material/button';
-import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 const modules = [
-    CommonModule,
-    FormsModule,
     MatInputModule,
     MatSlideToggleModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatTableModule,
+    MatIconModule
 ];
 
 @NgModule({

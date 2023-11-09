@@ -12,9 +12,7 @@
             <mat-label>Password</mat-label>
             <input matInput id="password" name="password" formControlName="password"/>     
         </mat-form-field>
-        <div>
-            <button mat-flat-button color="primary" [disabled]="isUserLogged" (click)="login()">log in</button>
+        <button mat-flat-button color="primary" [disabled]="isUserLogged" (click)="login()">log in</button>
 
-        </div>
     </form>
 </div>

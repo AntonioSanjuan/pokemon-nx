@@ -17,6 +17,12 @@
         "tsConfig": "apps/account/tsconfig.app.json",
         "assets": ["apps/account/src/favicon.ico", "apps/account/src/assets"],
         "styles": ["apps/account/src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/ui/src/",
+            "node_modules"
+          ]
+        },
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/account/webpack.config.js"
