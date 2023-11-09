@@ -21,7 +21,8 @@
         "libs/services/culture/src/index.ts"
       ],
       "@gt-motive-app/services/culture": ["libs/services/culture/src/index.ts"],
-      "@gt-motive-app/store": ["libs/store/src/index.ts"]
+      "@gt-motive-app/store": ["libs/store/src/index.ts"],
+      "@gt-motive-app/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

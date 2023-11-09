@@ -16,7 +16,14 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/shell/tsconfig.app.json",
         "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
-        "styles": ["apps/shell/src/styles.scss"],
+        "styles": ["apps/shell/src/assets/css/main.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "apps/shell/src/assets",
+            "libs/ui/src/",
+            "node_modules"
+          ]
+        },
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/shell/webpack.config.js"

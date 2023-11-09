@@ -2,17 +2,22 @@
     class="PokemonList_MainContainer"
     *ngrxLet="pokemonList$; let pokemonList">
 
-    <table>
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-        </tr>
-        <tr *ngFor="let pokemon of pokemonList">
-          <td>{{pokemon.name}}</td>
-          <td>{{pokemon.url}}</td>
-        </tr>
-      </table>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
 
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+            mat-row
+            (click)="selectPokemon(row)"
+            *matRowDef="let row; columns: displayedColumns;"
+        ></tr>
+      </table>
 
       <div class="PokemonList_ActionContainer">
         <button (click)="getNextPage()" id="nextPageButton" type="button">Next</button>
