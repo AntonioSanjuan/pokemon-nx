@@ -48,10 +48,10 @@ export const pokemonListReducer = createReducer(
     on(PokemonListActions.clearPokemonList, () => ({
       ...initialPokemonListState
     })),
-    on(PokemonListActions.setSelectPokemon, (state: PokemonListState, { pokemonName }) => ({
+    on(PokemonListActions.setSelectedPokemon, (state: PokemonListState, { pokemon: pokemonName }) => ({
       ...state,
-      selected: state.selected.some((selected) => { return selected.name === pokemonName}) ? 
-        state.selected.splice(state.selected.findIndex((selected: PokemonDto) => selected.name === pokemonName), 1) : 
-        state.selected.concat([state.list.find((pokemon) => pokemon.name === pokemonName) as PokemonDto])
+      selected: state.selected.some((selected) =>  selected === pokemonName ) ? 
+        state.selected.filter((selected: PokemonDto) => selected !== pokemonName) : 
+        state.selected.concat([state.list.find((pokemon) => pokemon === pokemonName) as PokemonDto])
     }))
 );

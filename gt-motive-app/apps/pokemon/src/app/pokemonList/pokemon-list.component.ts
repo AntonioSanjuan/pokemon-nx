@@ -1,16 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, setSelectPokemon } from './store/pokemonList.actions';
-import { selectPokemonList } from './store/pokemonList.selectors';
+import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, setSelectedPokemon } from './store/pokemonList.actions';
+import { selectPokemonList, selectPokemonSelected } from './store/pokemonList.selectors';
 import { LetDirective } from '@ngrx/component';
 import { PokemonDto } from '../shared/services/Pokemon/models/pokemonsResponseDto.model';
 import { UiModule } from '@gt-motive-app/ui';
-
-
-interface PokemonListTable {
-  name: string
-}
 
 @Component({
   selector: 'gt-motive-app-pokemon-list',
@@ -26,28 +21,23 @@ interface PokemonListTable {
 export class PokemonListComponent implements OnInit {
   private store = inject(Store)
   public pokemonList$ = this.store.select(selectPokemonList)
-  public dataSource: PokemonListTable[] = []
+  public pokemonSelected$ = this.store.select(selectPokemonSelected)
   public displayedColumns: string[] = ['name'];
 
   ngOnInit(): void {
       this.store.dispatch(clearPokemonList())
       this.store.dispatch(getPokemonListRequest())
-
-      this.pokemonList$.subscribe((pokemonList: PokemonDto[]) => {
-        this.dataSource = pokemonList.map((item) => {
-          return { 
-            name: item.name, 
-          }
-        })
-        console.log("this.dataSource", this.dataSource)
-      })
   }
   
   public getNextPage() {
     this.store.dispatch(getNextPokemonListPageRequest())
   }
 
-  public selectPokemon(pokemon: PokemonListTable) {
-    this.store.dispatch(setSelectPokemon({ pokemonName: pokemon.name }))
+  public selectPokemon(pokemon: PokemonDto) {
+    this.store.dispatch(setSelectedPokemon({ pokemon }))
+  }
+
+  public isPokemonSelected(pokemon: PokemonDto) {
+    
   }
 }

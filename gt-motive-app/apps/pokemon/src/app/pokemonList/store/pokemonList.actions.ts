@@ -1,8 +1,8 @@
 import { createAction, props } from '@ngrx/store';
-import { PokemonsResponseDto } from '../../shared/services/Pokemon/models/pokemonsResponseDto.model';
+import { PokemonDto, PokemonsResponseDto } from '../../shared/services/Pokemon/models/pokemonsResponseDto.model';
 
-export const setSelectPokemon = createAction(
-  '[Pokemon/PokemonList/API] selectPokemon', props<{ pokemonName: string}>())
+export const setSelectedPokemon = createAction(
+  '[Pokemon/PokemonList/API] setSelectedPokemon', props<{ pokemon: PokemonDto}>())
 
 export const clearPokemonList = createAction(
   '[Pokemon/PokemonList/API] clearPokemonList')
