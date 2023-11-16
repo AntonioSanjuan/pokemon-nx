@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, setSelectedPokemon } from './store/pokemonList.actions';
-import { selectPokemonList, selectPokemonSelected } from './store/pokemonList.selectors';
+import { selectPokemonList, selectPokemonQuery, selectPokemonSelected } from './store/pokemonList.selectors';
 import { LetDirective } from '@ngrx/component';
 import { PokemonDto } from '../shared/services/Pokemon/models/pokemonsResponseDto.model';
 import { UiModule } from '@gt-motive-app/ui';
@@ -21,6 +21,7 @@ import { UiModule } from '@gt-motive-app/ui';
 export class PokemonListComponent implements OnInit {
   private store = inject(Store)
   public pokemonList$ = this.store.select(selectPokemonList)
+  public pokemonQuery$ = this.store.select(selectPokemonQuery)
   public pokemonSelected$ = this.store.select(selectPokemonSelected)
   public displayedColumns: string[] = ['name'];
 
@@ -39,5 +40,13 @@ export class PokemonListComponent implements OnInit {
 
   public isPokemonSelected(pokemon: PokemonDto) {
     
+  }
+
+  isIntersecting() {
+    console.log("isIntersecting!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",)
+    // if (isIntersecting) {
+      // Load more data, update the UI, etc.
+      // this.store.dispatch(getNextPokemonListPageRequest())
+    // }
   }
 }

@@ -14,6 +14,9 @@ export const initialPokemonListState: PokemonListState = {
   selected: [],
   query: {
     currentPage: 0,
+    pageSize: 20,
+    totalPages: 100,
+    totalSize: 20 * 100,
     filters: {
       byText: '',
       byType: ''
@@ -31,7 +34,9 @@ export const pokemonListReducer = createReducer(
       list: state.list.concat(pokemons.results),
       query: {
         ...state.query,
-        currentPage: state.query.currentPage + 1
+        currentPage: state.query.currentPage + 1,
+        totalPages: Math.ceil(pokemons.count / state.query.pageSize),
+        totalSize: pokemons.count
       }
     })),
     on(PokemonListActions.getNextPokemonListPageRequestError, (state: PokemonListState) => ({

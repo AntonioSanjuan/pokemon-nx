@@ -14,8 +14,9 @@ export class PokemonListEffects {
 
     getPokemonListRequest$ = createEffect(() => this.actions$.pipe(
         ofType(getPokemonListRequest),
-        switchMap(() =>
-            this.pokemonService.getPokemonPage(0).pipe(
+        concatLatestFrom(() => this.store.select(selectPokemonQuery)),
+        switchMap(([_, query]) =>
+            this.pokemonService.getPokemonPage(0, query.pageSize).pipe(
                 map((pokemons: PokemonsResponseDto) => getPokemonListRequestSuccess({pokemons})),
                 catchError(_ => of(getPokemonListRequestError()))
             )
@@ -26,7 +27,7 @@ export class PokemonListEffects {
         ofType(getNextPokemonListPageRequest),
         concatLatestFrom(() => this.store.select(selectPokemonQuery)),
         mergeMap(([_, query]) => 
-            this.pokemonService.getPokemonPage(query.currentPage + 1).pipe(
+            this.pokemonService.getPokemonPage(query.currentPage + 1, query.pageSize).pipe(
                 map((pokemons: PokemonsResponseDto) => getNextPokemonListPageRequestSuccess({pokemons})),
                 catchError(_ => of(getNextPokemonListPageRequestError()))
             )

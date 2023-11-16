@@ -13,8 +13,9 @@
         flex-direction: column;
         justify-content: flex-start;
         height: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow: hidden;
+        // overflow-y: auto;
+        // overflow-x: hidden;
         min-height: calc(100vh - sizes.$headerHeigt);
 
         .BaseLayout_ContentContainer {

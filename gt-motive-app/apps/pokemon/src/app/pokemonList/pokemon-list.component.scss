@@ -1,9 +1,40 @@
+:host {
+    display: flex;
+    height: calc(100vh - 90px) !important;
+    flex-direction: row;
+    justify-content: center;
+} 
+
+
 .PokemonList_MainContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .demo-row-is-clicked {
-        font-weight: bold;
+    gap: 20px;
+    mat-card {
+        height: 100%;
+
+        mat-card-content {
+            height: 100%;
+
+            .PokemonList_TableContainer {
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+
+                mat-table {
+                    overflow: auto;
+                    .demo-row-is-clicked {
+                        font-weight: bold;
+                
+                
+                    }
+                }
+
+            }
+        }
     }
+
 }
+
