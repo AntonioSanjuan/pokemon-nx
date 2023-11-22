@@ -1,7 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
 import * as PokemonListActions from "./pokemonList.actions";
-import { PokemonDto } from '../../shared/services/Pokemon/models/pokemonsResponseDto.model';
-import { PokemonQuery } from '../../shared/models/pokemonQuery.model';
+import { PokemonDto, PokemonQuery } from '@gt-motive-app/libs/models';
+
+export const POKEMONLIST_FEATURE_KEY = 'pokemonList';
+
+export interface AuxState {
+  [POKEMONLIST_FEATURE_KEY]: PokemonListState
+}
 
 export interface PokemonListState {
     list: PokemonDto[],

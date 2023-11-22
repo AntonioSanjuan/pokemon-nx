@@ -5,7 +5,6 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { Observable, firstValueFrom, of, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http'
 import { PokemonListEffects } from './pokemonList.effects';
-import { initialPokemonState } from '../../+state/models/pokemonState.initialState';
 
 describe('PokemonListEffects', () => {
   let actions: Observable<Action>;
@@ -19,7 +18,8 @@ describe('PokemonListEffects', () => {
         PokemonListEffects,
         provideMockActions(() => actions),
         provideMockStore({
-          initialState: initialPokemonState
+          initialState: {}
+          // initialState: initialPokemonState
         }),
       ],
     });

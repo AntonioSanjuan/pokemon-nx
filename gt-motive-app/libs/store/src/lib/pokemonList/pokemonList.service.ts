@@ -1,9 +1,9 @@
 import { Injectable, inject } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable, of } from 'rxjs'
-import { PokemonsResponseDto } from './models/pokemonsResponseDto.model';
+import { PokemonsResponseDto } from '@gt-motive-app/libs/models';
 @Injectable()
-export class PokemonService {
+export class PokemonListService {
     private http: HttpClient = inject(HttpClient);
 
     public getPokemonPage(page: number, pageSize: number): Observable<PokemonsResponseDto> {

@@ -1,5 +1,4 @@
-import { PokemonListState } from "../../pokemonList/store/pokemonList.reducer";
+import { AuxState, PokemonListState } from "@gt-motive-app/store";
 
-export interface PokemonState {
-    pokemonList: PokemonListState
+export interface PokemonState extends AuxState {
   }

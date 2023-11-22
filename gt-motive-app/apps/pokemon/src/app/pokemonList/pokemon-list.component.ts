@@ -1,11 +1,10 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, setSelectedPokemon } from './store/pokemonList.actions';
-import { selectPokemonList, selectPokemonQuery, selectPokemonSelected } from './store/pokemonList.selectors';
 import { LetDirective } from '@ngrx/component';
-import { PokemonDto } from '../shared/services/Pokemon/models/pokemonsResponseDto.model';
 import { UiModule } from '@gt-motive-app/ui';
+import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon } from '@gt-motive-app/store';
+import { PokemonDto } from '@gt-motive-app/libs/models';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list',

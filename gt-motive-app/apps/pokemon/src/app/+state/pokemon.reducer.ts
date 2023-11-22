@@ -1,12 +1,12 @@
 import { Action, combineReducers } from '@ngrx/store';
 import { PokemonState } from './models/pokemonState.model';
 import { initialPokemonState } from './models/pokemonState.initialState';
-import { pokemonListReducer } from '../pokemonList/store/pokemonList.reducer';
+import { POKEMONLIST_FEATURE_KEY, pokemonListReducer } from '@gt-motive-app/store';
 
 
 export const POKEMON_FEATURE_KEY = 'pokemon';
 
 export const pokemonReducer = (state: PokemonState = initialPokemonState, action: Action) => 
   combineReducers({
-    pokemonList: pokemonListReducer
+    [POKEMONLIST_FEATURE_KEY]: pokemonListReducer
   }, initialPokemonState)(state, action)

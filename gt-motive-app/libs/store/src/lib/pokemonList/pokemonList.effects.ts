@@ -2,13 +2,13 @@ import { Injectable, inject } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { getNextPokemonListPageRequest, getNextPokemonListPageRequestError, getNextPokemonListPageRequestSuccess, getPokemonListRequest, getPokemonListRequestError, getPokemonListRequestSuccess } from './pokemonList.actions';
 import { map, switchMap, catchError, of, mergeMap } from 'rxjs'
-import { PokemonService } from '../../shared/services/Pokemon/pokemon.service';
-import { PokemonsResponseDto } from '../../shared/services/Pokemon/models/pokemonsResponseDto.model';
-import { selectPokemonQuery } from './pokemonList.selectors';
 import { Store } from '@ngrx/store';
+import { PokemonListService } from './pokemonList.service';
+import { PokemonsResponseDto } from '@gt-motive-app/libs/models';
+import { selectPokemonQuery } from './pokemonList.selectors';
 @Injectable()
 export class PokemonListEffects {
-    private pokemonService: PokemonService = inject(PokemonService)
+    private pokemonService: PokemonListService = inject(PokemonListService)
     private store: Store = inject(Store)
     private actions$: Actions = inject(Actions);
 

@@ -1,5 +1,5 @@
+import { PokemonDto, PokemonsResponseDto } from '@gt-motive-app/libs/models';
 import { createAction, props } from '@ngrx/store';
-import { PokemonDto, PokemonsResponseDto } from '../../shared/services/Pokemon/models/pokemonsResponseDto.model';
 
 export const setSelectedPokemon = createAction(
   '[Pokemon/PokemonList/API] setSelectedPokemon', props<{ pokemon: PokemonDto}>())
