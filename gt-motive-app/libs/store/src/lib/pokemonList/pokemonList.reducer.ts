@@ -4,7 +4,7 @@ import { PokemonDto, PokemonQuery } from '@gt-motive-app/libs/models';
 
 export const POKEMONLIST_FEATURE_KEY = 'pokemonList';
 
-export interface AuxState {
+export interface BasePokemonState {
   [POKEMONLIST_FEATURE_KEY]: PokemonListState
 }
 
