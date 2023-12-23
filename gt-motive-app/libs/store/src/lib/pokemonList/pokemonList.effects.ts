@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
-import { getNextPokemonListPageRequest, getNextPokemonListPageRequestError, getNextPokemonListPageRequestSuccess, getPokemonListRequest, getPokemonListRequestError, getPokemonListRequestSuccess } from './pokemonList.actions';
+import { getNextPokemonListPageRequest, getNextPokemonListPageRequestError, getNextPokemonListPageRequestSuccess, getPokemonListRequest, getPokemonListRequestError, getPokemonListRequestSuccess, updatePokemonListQueryFilters } from './pokemonList.actions';
 import { map, switchMap, catchError, of, mergeMap } from 'rxjs'
 import { Store } from '@ngrx/store';
 import { PokemonListService } from './pokemonList.service';
@@ -13,7 +13,7 @@ export class PokemonListEffects {
     private actions$: Actions = inject(Actions);
 
     getPokemonListRequest$ = createEffect(() => this.actions$.pipe(
-        ofType(getPokemonListRequest),
+        ofType(getPokemonListRequest, updatePokemonListQueryFilters),
         concatLatestFrom(() => this.store.select(selectPokemonQuery)),
         switchMap(([_, query]) =>
             this.pokemonService.getPokemonPage(0, query.pageSize).pipe(

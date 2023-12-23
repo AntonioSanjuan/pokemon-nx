@@ -4,6 +4,18 @@
 
     <mat-card>
       <mat-card-content>
+        <div class="PokemonList_FilterContainer">
+          <mat-form-field class="example-form-field">
+            <mat-label>Clearable input</mat-label>
+            <input matInput type="text" [(ngModel)]="filterByText">
+              <button matSuffix mat-icon-button aria-label="Clear" *ngIf="vm.pokemonQuery.filters.byText" (click)="clearFilter()">
+                <mat-icon>close</mat-icon>
+              </button>
+          </mat-form-field>
+          <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon"  [disabled]="!filterByText" (click)="applyFilter(vm.pokemonQuery.filters)">
+            <mat-icon>filter_list</mat-icon>
+          </button>
+        </div>
         <div class="PokemonList_TableContainer">
           <mat-table #table [dataSource]="vm.pokemonList" class="mat-elevation-z8" 
           appIntersectionObserver 

@@ -63,5 +63,12 @@ export const pokemonListReducer = createReducer(
       selected: state.selected.some((selected) =>  selected === pokemonName ) ? 
         state.selected.filter((selected: PokemonDto) => selected !== pokemonName) : 
         state.selected.concat([state.list.find((pokemon) => pokemon === pokemonName) as PokemonDto])
+    })),
+    on(PokemonListActions.updatePokemonListQueryFilters, (state: PokemonListState, { filters }) => ({
+      ...state,
+      query: {
+        ...state.query,
+        filters: filters
+      }
     }))
 );

@@ -3,8 +3,10 @@ export interface PokemonQuery {
     totalPages: number,
     totalSize: number,
     pageSize: number,
-    filters: {
-        byText: string,
-        byType: string
-    }
+    filters: PokemonQueryFilters
+}
+
+export interface PokemonQueryFilters {
+    byText: string,
+    byType: string
 }

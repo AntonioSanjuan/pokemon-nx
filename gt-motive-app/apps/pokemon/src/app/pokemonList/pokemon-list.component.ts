@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
 import { UiModule } from '@gt-motive-app/ui';
-import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon } from '@gt-motive-app/store';
-import { PokemonDto } from '@gt-motive-app/libs/models';
+import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon, updatePokemonListQueryFilters } from '@gt-motive-app/store';
+import { PokemonDto, PokemonQueryFilters } from '@gt-motive-app/libs/models';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list',
@@ -24,6 +24,9 @@ export class PokemonListComponent implements OnInit {
   public pokemonSelected$ = this.store.select(selectPokemonSelected)
   public displayedColumns: string[] = ['name'];
 
+  //filters
+  public filterByText = '';
+
   ngOnInit(): void {
       this.store.dispatch(clearPokemonList())
       this.store.dispatch(getPokemonListRequest())
@@ -40,6 +43,14 @@ export class PokemonListComponent implements OnInit {
   public isPokemonSelected(pokemon: PokemonDto) {
     
   }
+
+  public applyFilter(filters: PokemonQueryFilters) {
+    this.store.dispatch(updatePokemonListQueryFilters({ filters: {
+      ...filters,
+      byText: this.filterByText
+    }}))
+  }
+  public clearFilter() {}
 
   isIntersecting() {
     console.log("isIntersecting!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",)
