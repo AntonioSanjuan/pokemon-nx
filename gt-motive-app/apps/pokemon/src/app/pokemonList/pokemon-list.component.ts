@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
 import { UiModule } from '@gt-motive-app/ui';
-import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon, updatePokemonListQueryFilters } from '@gt-motive-app/store';
+import { getNextPokemonListPageRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon, updatePokemonListQueryFilters } from '@gt-motive-app/store';
 import { PokemonMinifiedDto, PokemonQueryFilters } from '@gt-motive-app/libs/models';
-import { getPokemonByNameRequest } from '../pokemonDetails/state/pokemonDetails.actions';
 import { Router } from '@angular/router';
 
 @Component({

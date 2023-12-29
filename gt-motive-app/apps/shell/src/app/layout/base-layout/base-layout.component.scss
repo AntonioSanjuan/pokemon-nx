@@ -21,8 +21,11 @@
         .BaseLayout_ContentContainer {
             display: flex;
             flex-direction: column;
+            height: 100%;            
             flex: 1 1 100%;
-            padding: 0 5%;
+            padding: 3% 5%;
+            overflow: auto;
+
         }
     }
 
