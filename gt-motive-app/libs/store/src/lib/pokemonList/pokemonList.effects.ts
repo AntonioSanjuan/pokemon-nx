@@ -4,11 +4,11 @@ import { getNextPokemonListPageRequest, getNextPokemonListPageRequestError, getN
 import { map, switchMap, catchError, of, mergeMap } from 'rxjs'
 import { Store } from '@ngrx/store';
 import { PokemonListService } from './pokemonList.service';
-import { PokemonsResponseDto } from '@gt-motive-app/libs/models';
+import { PokemonResponseDto, PokemonsResponseDto } from '@gt-motive-app/libs/models';
 import { selectPokemonQuery } from './pokemonList.selectors';
 @Injectable()
 export class PokemonListEffects {
-    private pokemonService: PokemonListService = inject(PokemonListService)
+    private pokemonListService: PokemonListService = inject(PokemonListService)
     private store: Store = inject(Store)
     private actions$: Actions = inject(Actions);
 
@@ -16,7 +16,7 @@ export class PokemonListEffects {
         ofType(getPokemonListRequest, updatePokemonListQueryFilters),
         concatLatestFrom(() => this.store.select(selectPokemonQuery)),
         switchMap(([_, query]) =>
-            this.pokemonService.getPokemonPage(0, query.pageSize).pipe(
+            this.pokemonListService.getPokemonPage(0, query.pageSize).pipe(
                 map((pokemons: PokemonsResponseDto) => getPokemonListRequestSuccess({pokemons})),
                 catchError(_ => of(getPokemonListRequestError()))
             )
@@ -27,7 +27,7 @@ export class PokemonListEffects {
         ofType(getNextPokemonListPageRequest),
         concatLatestFrom(() => this.store.select(selectPokemonQuery)),
         mergeMap(([_, query]) => 
-            this.pokemonService.getPokemonPage(query.currentPage + 1, query.pageSize).pipe(
+            this.pokemonListService.getPokemonPage(query.currentPage + 1, query.pageSize).pipe(
                 map((pokemons: PokemonsResponseDto) => getNextPokemonListPageRequestSuccess({pokemons})),
                 catchError(_ => of(getNextPokemonListPageRequestError()))
             )

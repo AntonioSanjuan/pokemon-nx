@@ -5,6 +5,10 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromPokemon from './+state/pokemon.reducer';
 import { StoreModule } from '@ngrx/store';
 import { POKEMONLIST_FEATURE_KEY, PokemonListEffects, PokemonListService, pokemonListReducer } from '@gt-motive-app/store';
+import { PokemonDetailsEffects } from './pokemonDetails/state/pokemonDetails.effects';
+import { PokemonDetailsService } from './pokemonDetails/state/pokemonDetails.service';
+import { PokemonDetailsResolver } from './pokemonDetails/shared/service/pokemonDetails.resolver';
+import { PokemonListResolver } from './pokemonList/shared/service/pokemonList.resolver';
 
 export const appRoutes: Route[] = [
   {
@@ -18,6 +22,7 @@ export const appRoutes: Route[] = [
     children: [
       {
         path: 'list',
+        resolve: { data: PokemonListResolver },
         providers: [
           PokemonListService,
           importProvidersFrom(
@@ -27,6 +32,20 @@ export const appRoutes: Route[] = [
         loadComponent: () =>
           import('./pokemonList/pokemon-list.component').then(
             (m) => m.PokemonListComponent
+          ),
+      },
+      {
+        path: ':id',
+        resolve: { data: PokemonDetailsResolver },
+        providers: [
+          PokemonDetailsService,
+          importProvidersFrom(
+            EffectsModule.forFeature([PokemonDetailsEffects]),
+          ),
+        ],
+        loadComponent: () =>
+          import('./pokemonDetails/pokemon-details.component').then(
+            (m) => m.PokemonDetailsComponent
           ),
       },
     ],

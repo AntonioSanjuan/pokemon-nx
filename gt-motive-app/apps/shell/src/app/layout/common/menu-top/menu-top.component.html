@@ -3,10 +3,10 @@
         <div class="MenuTop_SideContainer"></div>
         <div class="MenuTop_CenterContainer">
             <button *ngIf="isUserLogged">
-                <a routerLink="/">Home</a>
+                <a [routerLink]="appRoutes.Home">Home</a>
             </button>
             <button *ngIf="isUserLogged">
-                <a routerLink="/pokemon/list">Pokemons</a>
+                <a [routerLink]="appRoutes.PokemonList">Pokemons</a>
             </button>
         </div>
         <div class="MenuTop_SideContainer">

@@ -1,0 +1,11 @@
+<div
+    class="PokemonDetails_MainContainer"
+    *ngrxLet="{ pokemonDetails: pokemonDetails$} as vm">
+    <gt-motive-app-pokemon-details-header></gt-motive-app-pokemon-details-header>
+    <mat-card>
+      <mat-card-content>
+        {{vm.pokemonDetails?.height}}
+      </mat-card-content>
+    </mat-card>
+
+</div>

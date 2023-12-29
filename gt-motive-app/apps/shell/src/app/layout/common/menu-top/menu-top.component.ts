@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { AppRoutes } from '@gt-motive-app/libs/models';
 import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { getIsUserLogged } from '@gt-motive-app/store';
 import { LetDirective } from '@ngrx/component';
@@ -26,9 +27,10 @@ export class MenuTopComponent {
   private route: ActivatedRoute = inject(ActivatedRoute)
 
   public isUserLogged$ = this.store.select(getIsUserLogged)
+  public appRoutes = AppRoutes
 
   public logOut() {
     this.authService.logOut();
-    this.router.navigate(['account/login'], {relativeTo: this.route})
+    this.router.navigate([AppRoutes.Login])
   }
 }

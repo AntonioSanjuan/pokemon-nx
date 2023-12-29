@@ -1,4 +1,4 @@
 export enum AppInit {
-    UI,
-    ACCOUNT,
+    UI = 'UI',
+    ACCOUNT = 'ACCOUNT',
 }

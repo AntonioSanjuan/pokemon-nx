@@ -4,7 +4,9 @@ import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
 import { UiModule } from '@gt-motive-app/ui';
 import { clearPokemonList, getNextPokemonListPageRequest, getPokemonListRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon, updatePokemonListQueryFilters } from '@gt-motive-app/store';
-import { PokemonDto, PokemonQueryFilters } from '@gt-motive-app/libs/models';
+import { PokemonMinifiedDto, PokemonQueryFilters } from '@gt-motive-app/libs/models';
+import { getPokemonByNameRequest } from '../pokemonDetails/state/pokemonDetails.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list',
@@ -17,8 +19,9 @@ import { PokemonDto, PokemonQueryFilters } from '@gt-motive-app/libs/models';
   styleUrls: ['./pokemon-list.component.scss'],
   standalone: true,
 })
-export class PokemonListComponent implements OnInit {
-  private store = inject(Store)
+export class PokemonListComponent {
+  private store: Store = inject(Store)
+  private router: Router = inject(Router)
   public pokemonList$ = this.store.select(selectPokemonList)
   public pokemonQuery$ = this.store.select(selectPokemonQuery)
   public pokemonSelected$ = this.store.select(selectPokemonSelected)
@@ -26,21 +29,16 @@ export class PokemonListComponent implements OnInit {
 
   //filters
   public filterByText = '';
-
-  ngOnInit(): void {
-      this.store.dispatch(clearPokemonList())
-      this.store.dispatch(getPokemonListRequest())
-  }
   
   public getNextPage() {
     this.store.dispatch(getNextPokemonListPageRequest())
   }
 
-  public selectPokemon(pokemon: PokemonDto) {
+  public selectPokemon(pokemon: PokemonMinifiedDto) {
     this.store.dispatch(setSelectedPokemon({ pokemon }))
   }
 
-  public isPokemonSelected(pokemon: PokemonDto) {
+  public isPokemonSelected(pokemon: PokemonMinifiedDto) {
     
   }
 
@@ -50,6 +48,12 @@ export class PokemonListComponent implements OnInit {
       byText: this.filterByText
     }}))
   }
+  
+  
+  public searchPokemon() {
+    this.router.navigate([`/pokemon/${this.filterByText}`])
+  }
+
   public clearFilter() {}
 
   isIntersecting() {

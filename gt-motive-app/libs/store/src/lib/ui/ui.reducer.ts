@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store"
-import { endRequest, loadedApp, startRequest } from "./ui.actions"
+import { endRequest, loadedApp, startRequest, unloadedApp } from "./ui.actions"
 import { UiState } from "./models/uiState.model"
 import { uiInitialState } from "./models/uiState.initialState"
 
@@ -13,6 +13,12 @@ export const uiReducer = createReducer(
             loadedApps: !state.loadedApps.includes(initialized) ?
                 state.loadedApps.concat([initialized]):
                 state.loadedApps,
+        }
+    }),
+    on(unloadedApp, (state: UiState, { uninitialized }) => {
+        return {
+            ...state, 
+            loadedApps: state.loadedApps.filter((loadedApps) => loadedApps !== uninitialized)
         }
     }),
     on(startRequest, (state) => ({

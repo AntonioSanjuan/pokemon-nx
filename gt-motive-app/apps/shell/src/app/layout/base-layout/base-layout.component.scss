@@ -16,7 +16,7 @@
         overflow: hidden;
         // overflow-y: auto;
         // overflow-x: hidden;
-        min-height: calc(100vh - sizes.$headerHeigt);
+        min-height: calc(100vh - sizes.$headerHeigt - sizes.$footerHeigt);
 
         .BaseLayout_ContentContainer {
             display: flex;

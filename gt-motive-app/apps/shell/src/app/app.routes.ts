@@ -40,8 +40,8 @@ export const appRoutes: Route[] = [
     ],
     canActivate: [AuthenticateGuard],
   },
-  {
-    path: '**',
-    redirectTo: '', pathMatch: 'full'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: '', pathMatch: 'full'
+  // },
 ];

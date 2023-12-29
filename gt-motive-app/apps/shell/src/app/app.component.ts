@@ -10,11 +10,10 @@ import { CultureService } from "@gt-motive-app/libs/services/culture"
 })
 export class AppComponent implements OnInit {
   private cultureService: CultureService = inject(CultureService)
-  private authService: AuthService = inject(AuthService)
   title = 'shell';
 
   ngOnInit(): void {
       this.cultureService.setLanguage()
-      this.authService.checkAuthPersistance()
+      console.log("hola? que pasa?")
   }
 }

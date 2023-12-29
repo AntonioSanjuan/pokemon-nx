@@ -2,10 +2,10 @@ export interface PokemonsResponseDto {
     count: number
     next: string
     previous: any
-    results: PokemonDto[]
+    results: PokemonMinifiedDto[]
   }
   
-  export interface PokemonDto {
+  export interface PokemonMinifiedDto {
     name: string
     url: string
   }

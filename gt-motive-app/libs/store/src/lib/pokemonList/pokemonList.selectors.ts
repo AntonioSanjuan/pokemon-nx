@@ -1,7 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { BasePokemonState, POKEMONLIST_FEATURE_KEY, PokemonListState } from './pokemonList.reducer';
+import { BasePokemonState } from './pokemonList.reducer';
 
-export const selectPokemonFeature = createFeatureSelector<BasePokemonState>("pokemon");
+export const selectPokemonFeature = createFeatureSelector<BasePokemonState>('pokemon');
 export const selectPokemonListState = createSelector(
   selectPokemonFeature,
   (state: BasePokemonState) => state.pokemonList

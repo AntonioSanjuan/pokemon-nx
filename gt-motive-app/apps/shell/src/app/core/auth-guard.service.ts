@@ -1,25 +1,31 @@
 import { Injectable, inject } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
+import { AppRoutes } from "@gt-motive-app/libs/models";
+import { AuthService } from "@gt-motive-app/libs/services/auth";
 import { getUser } from "@gt-motive-app/store";
 import { Store } from "@ngrx/store";
-import { Observable, of } from "rxjs";
+import { Observable, filter, map, of, take } from "rxjs";
 
 @Injectable()
 export class AuthenticateGuard {
     private store: Store = inject(Store)
     private router: Router = inject(Router)
     private route: ActivatedRoute = inject(ActivatedRoute)
-    private user: any;
-
-    private user$ = this.store.select(getUser).subscribe((user) => {
-        this.user = user;
-    })
+    private authService: AuthService = inject(AuthService)
 
     canActivate(): Observable<boolean> {
-        if(!this.user) {
-            this.router.navigate(['account/login'], {relativeTo: this.route})
-            return of(false)
-        }
-        return of(true)
+        this.authService.checkAuthPersistance()
+
+        return this.store.select(getUser).pipe(
+            map((user) => {
+                if(!user) {
+                    console.log("me voy al login")
+                    this.router.navigate([AppRoutes.Login], {relativeTo: this.route})
+                    return false
+                }
+                console.log("me encontre")
+                return true
+            })
+        )
     }
 }
