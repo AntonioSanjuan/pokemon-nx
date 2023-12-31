@@ -1,6 +1,6 @@
 <div
     class="PokemonList_MainContainer"
-    *ngrxLet="{ pokemonList: pokemonList$, pokemonSelected: pokemonSelected$, pokemonQuery: pokemonQuery$ } as vm">
+    *ngrxLet="{ isBlockByRequest: isBlockByRequest$, pokemonList: pokemonList$, pokemonSelected: pokemonSelected$, pokemonQuery: pokemonQuery$ } as vm">
 
     <mat-card>
       <mat-card-content>
@@ -17,11 +17,8 @@
           </button>
         </div>
         <div class="PokemonList_TableContainer">
-          <mat-table #table [dataSource]="vm.pokemonList" class="mat-elevation-z8" 
-          appIntersectionObserver 
-          (isIntersecting)="isIntersecting()"
-          [offset]="50">
-          [active]="true"
+          <mat-table #table [dataSource]="vm.pokemonList" class="mat-elevation-z8">
+          
       
             <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
                 <mat-header-cell *matHeaderCellDef>{{disCol}}</mat-header-cell>
@@ -32,11 +29,11 @@
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
-        <mat-paginator [length]="vm.pokemonQuery.totalSize"
-                    [pageSize]="vm.pokemonQuery.pageSize"
-                    (page)="getNextPage()"
-                    aria-label="Select page">
-        </mat-paginator>
+        <area 
+          appIntersectionObserver
+          (isIntersecting)="isIntersecting($event)"
+          [offset]="10"
+          [active]="!!vm.pokemonList" />
         </div>
       </mat-card-content>
     </mat-card>

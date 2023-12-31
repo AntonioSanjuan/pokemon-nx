@@ -1,11 +1,11 @@
 import { ActivatedRouteSnapshot, Resolve } from "@angular/router";
-import { Observable, of } from "rxjs";
-import { PokemonDetailsService } from "../../state/pokemonDetails.service";
+import { Observable, of, tap } from "rxjs";
 import { Injectable, inject } from "@angular/core";
 import { PokemonResponseDto } from "@gt-motive-app/libs/models";
 import { Store } from "@ngrx/store";
 import { selectPokemonDetails } from "../../state/pokemonDetails.selectors";
 import { getPokemonByNameRequest } from "../../state/pokemonDetails.actions";
+import { initialPokemonDetailsState } from "../../state/pokemonDetails.reducer";
 
 @Injectable({
     providedIn: 'root'
@@ -13,12 +13,26 @@ import { getPokemonByNameRequest } from "../../state/pokemonDetails.actions";
   export class PokemonDetailsResolver implements Resolve<any> {
     private store: Store = inject(Store)
   
+    private pokemonDetailsAlreadyExists(currentPokemonDetails: PokemonResponseDto|undefined): boolean {
+      return currentPokemonDetails !== initialPokemonDetailsState.pokemon
+    }
+    private isOtherPokemonDetails(currentPokemonDetails: PokemonResponseDto|undefined, pokemonId: string): boolean {
+      return ![currentPokemonDetails?.id.toString(), currentPokemonDetails?.name].includes(pokemonId.toString())
+    }
+
     resolve(route: ActivatedRouteSnapshot): Observable<PokemonResponseDto|undefined> {
         const pokemonId = route.paramMap.get('id');
 
         if(pokemonId) {
-            this.store.dispatch(getPokemonByNameRequest({pokemonName: pokemonId}))
-            return this.store.select(selectPokemonDetails)
+            return this.store.select(selectPokemonDetails).pipe(
+              tap((pokemonDetails: PokemonResponseDto | undefined) => {
+                if(!this.pokemonDetailsAlreadyExists(pokemonDetails) || this.isOtherPokemonDetails(pokemonDetails, pokemonId)) {
+                  console.log("request from PokemonDetailsResolver")
+                  this.store.dispatch(getPokemonByNameRequest({pokemonName: pokemonId}))
+
+                }
+              })
+            )
         }
 
         return of(undefined);

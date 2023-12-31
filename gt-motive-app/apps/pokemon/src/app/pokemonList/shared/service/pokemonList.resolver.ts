@@ -1,9 +1,9 @@
 import { ActivatedRouteSnapshot, Resolve } from "@angular/router";
-import { Observable } from "rxjs";
+import { Observable, tap } from "rxjs";
 import { Injectable, inject } from "@angular/core";
 import { PokemonMinifiedDto } from "@gt-motive-app/libs/models";
 import { Store } from "@ngrx/store";
-import { getPokemonListRequest, selectPokemonList } from "@gt-motive-app/store";
+import { getPokemonListRequest, initialPokemonListState, selectPokemonList } from "@gt-motive-app/store";
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +12,13 @@ import { getPokemonListRequest, selectPokemonList } from "@gt-motive-app/store";
     private store: Store = inject(Store)
   
     resolve(route: ActivatedRouteSnapshot): Observable<PokemonMinifiedDto[]> {
-      this.store.dispatch(getPokemonListRequest())
-      return this.store.select(selectPokemonList)
+      return this.store.select(selectPokemonList).pipe(
+        tap((pokemonList: PokemonMinifiedDto[]) => {
+          if(pokemonList === initialPokemonListState.list) {
+            console.log("request from PokemonListResolver")
+            this.store.dispatch(getPokemonListRequest())
+          }
+        })
+      )
     }
   }

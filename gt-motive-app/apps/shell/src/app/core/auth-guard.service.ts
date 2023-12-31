@@ -19,11 +19,9 @@ export class AuthenticateGuard {
         return this.store.select(getUser).pipe(
             map((user) => {
                 if(!user) {
-                    console.log("me voy al login")
                     this.router.navigate([AppRoutes.Login], {relativeTo: this.route})
                     return false
                 }
-                console.log("me encontre")
                 return true
             })
         )

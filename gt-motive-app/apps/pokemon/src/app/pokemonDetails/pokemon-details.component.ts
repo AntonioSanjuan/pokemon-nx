@@ -27,7 +27,6 @@ export class PokemonDetailsComponent implements OnInit {
       // this.store.dispatch(clearPokemonDetails())
       // this.store.dispatch(getPokemonDetailsRequest())
       this.pokemonDetails$.subscribe((pokemonDetails?: PokemonResponseDto) => {
-        console.log('pokemonDetails', pokemonDetails)
       })
   }
 }

@@ -14,6 +14,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
       this.cultureService.setLanguage()
-      console.log("hola? que pasa?")
   }
 }
