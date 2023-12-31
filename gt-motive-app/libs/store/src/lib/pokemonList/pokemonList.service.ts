@@ -9,8 +9,4 @@ export class PokemonListService {
     public getPokemonPage(page: number, pageSize: number): Observable<PokemonsResponseDto> {
         return this.http.get<PokemonsResponseDto>(`https://pokeapi.co/api/v2/pokemon?limit=${pageSize}&offset=${pageSize * page}`)
     }
-
-    public getPokemonByName(name: string): Observable<PokemonResponseDto> {
-        return this.http.get<PokemonResponseDto>(`https://pokeapi.co/api/v2/pokemon/${name}`)
-    }
 }

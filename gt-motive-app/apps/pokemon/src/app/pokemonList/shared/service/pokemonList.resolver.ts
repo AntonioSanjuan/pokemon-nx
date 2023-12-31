@@ -3,7 +3,7 @@ import { Observable, tap } from "rxjs";
 import { Injectable, inject } from "@angular/core";
 import { PokemonMinifiedDto } from "@gt-motive-app/libs/models";
 import { Store } from "@ngrx/store";
-import { getPokemonListRequest, initialPokemonListState, selectPokemonList } from "@gt-motive-app/store";
+import { getPokemonListRequest, getpokemonTypesFiltersRequest, initialPokemonListState, selectPokemonList } from "@gt-motive-app/store";
 
 @Injectable({
     providedIn: 'root'
@@ -17,6 +17,7 @@ import { getPokemonListRequest, initialPokemonListState, selectPokemonList } fro
           if(pokemonList === initialPokemonListState.list) {
             console.log("request from PokemonListResolver")
             this.store.dispatch(getPokemonListRequest())
+            this.store.dispatch(getpokemonTypesFiltersRequest())
           }
         })
       )

@@ -4,10 +4,6 @@ import { PokemonMinifiedDto, PokemonQuery } from '@gt-motive-app/libs/models';
 
 export const POKEMONLIST_FEATURE_KEY = 'pokemonList';
 
-export interface BasePokemonState {
-  [POKEMONLIST_FEATURE_KEY]: PokemonListState
-}
-
 export interface PokemonListState {
     list: PokemonMinifiedDto[],
     selected: PokemonMinifiedDto[],
