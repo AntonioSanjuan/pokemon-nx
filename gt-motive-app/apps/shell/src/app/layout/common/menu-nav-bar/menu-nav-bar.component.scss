@@ -1,0 +1,40 @@
+@use "./../../../../sizes.scss" as sizes;
+
+.MenuNavBar_MainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #ffff;
+    .MenuNavBar_ContentContainer {
+        display: flex;
+        flex-direction: row;
+
+        position: sticky;
+        top: 0;
+
+        min-height: sizes.$headerHeigt;
+        height: sizes.$headerHeigt;
+        width: 85.49%;
+        max-width: 1024px;
+
+        z-index: 3;
+    
+        .MenuNavBar_SideContainer {
+            display: flex;
+            flex-direction: row;
+            
+            width: 20%;
+        }
+    
+        .MenuNavBar_CenterContainer {
+            display: flex;
+            flex-direction: row;
+    
+            justify-content: center;
+            gap: 15px;
+    
+            width: 60%;
+        }
+    }
+}

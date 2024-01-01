@@ -3,29 +3,8 @@
 .MenuTop_MainContainer {
     display: flex;
     flex-direction: column;
-    
-    min-height: sizes.$headerHeigt;
-    height: sizes.$headerHeigt;
+    align-items: center;
 
-    .MenuTop_ContentContainer {
-        display: flex;
-        flex-direction: row;
-    
-        .MenuTop_SideContainer {
-            display: flex;
-            flex-direction: row;
-            
-            width: 20%;
-        }
-    
-        .MenuTop_CenterContainer {
-            display: flex;
-            flex-direction: row;
-    
-            justify-content: center;
-            gap: 15px;
-    
-            width: 60%;
-        }
-    }
+    background-color: #f5f5f5;
+    border-bottom: solid 2px #dedede;
 }

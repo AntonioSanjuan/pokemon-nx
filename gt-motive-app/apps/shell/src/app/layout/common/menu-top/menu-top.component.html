@@ -1,18 +1,3 @@
-<div class="MenuTop_MainContainer menu" *ngrxLet="isUserLogged$; let isUserLogged">
-    <div class="MenuTop_ContentContainer">
-        <div class="MenuTop_SideContainer"></div>
-        <div class="MenuTop_CenterContainer">
-            <button *ngIf="isUserLogged">
-                <a [routerLink]="appRoutes.Home">Home</a>
-            </button>
-            <button *ngIf="isUserLogged">
-                <a [routerLink]="appRoutes.PokemonList">Pokemons</a>
-            </button>
-        </div>
-        <div class="MenuTop_SideContainer">
-            <button *ngIf="isUserLogged" (click)="logOut()">
-                {{'shell.menuTop.logout' | translate}}
-            </button>
-        </div>
-    </div>
+<div class="MenuTop_MainContainer">
+    <p>menu top works</p>
 </div>

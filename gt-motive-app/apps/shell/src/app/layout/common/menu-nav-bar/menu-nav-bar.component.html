@@ -1,0 +1,18 @@
+<div class="MenuNavBar_MainContainer" *ngrxLet="isUserLogged$; let isUserLogged">
+    <div class="MenuNavBar_ContentContainer">
+        <div class="MenuNavBar_SideContainer"></div>
+        <div class="MenuNavBar_CenterContainer">
+            <button *ngIf="isUserLogged">
+                <a [routerLink]="appRoutes.Home">Home</a>
+            </button>
+            <button *ngIf="isUserLogged">
+                <a [routerLink]="appRoutes.PokemonList">Pokemons</a>
+            </button>
+        </div>
+        <div class="MenuNavBar_SideContainer">
+            <button *ngIf="isUserLogged" (click)="logOut()">
+                {{'shell.menuTop.logout' | translate}}
+            </button>
+        </div>
+    </div>
+</div>
