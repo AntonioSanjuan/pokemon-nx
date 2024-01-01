@@ -7,7 +7,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IntersectionObserverDirective } from './directives/intersection-observer.directive';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
-import { collapseAnimation } from './animations/collapse/collapse.animation';
 
 @NgModule({
   imports: [

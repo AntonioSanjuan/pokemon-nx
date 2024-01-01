@@ -31,5 +31,5 @@ export const updatePokemonListQueryFilters = createAction(
 export const updatePokemonTypeFilter = createAction(
   '[Pokemon/PokemonList/API] updatePokemonTypeFilter', props<{ selectedPokemonType: PokemonType}>())
 
-
-  
+export const getFilteredPokemonListRequest = createAction(
+  '[Pokemon/PokemonList/API] getFilteredPokemonListRequest Request')

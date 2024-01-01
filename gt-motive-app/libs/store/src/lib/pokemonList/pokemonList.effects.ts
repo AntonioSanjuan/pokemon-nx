@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
-import { getNextPokemonListPageRequest, getNextPokemonListPageRequestError, getNextPokemonListPageRequestSuccess, getPokemonListRequest, getPokemonListRequestError, getPokemonListRequestSuccess, updatePokemonListQueryFilters, updatePokemonTypeFilter } from './pokemonList.actions';
+import { getFilteredPokemonListRequest, getNextPokemonListPageRequest, getNextPokemonListPageRequestError, getNextPokemonListPageRequestSuccess, getPokemonListRequest, getPokemonListRequestError, getPokemonListRequestSuccess, updatePokemonListQueryFilters, updatePokemonTypeFilter } from './pokemonList.actions';
 import { map, switchMap, catchError, of, mergeMap } from 'rxjs'
 import { Store } from '@ngrx/store';
 import { PokemonListService } from './pokemonList.service';
@@ -13,24 +13,15 @@ export class PokemonListEffects {
     private store: Store = inject(Store)
     private actions$: Actions = inject(Actions);
     
-
-    getFilteredPokemonListReques$ = createEffect(() => this.actions$.pipe(
+    updatePokemonTypeFilter$ = createEffect(() => this.actions$.pipe(
         ofType(updatePokemonTypeFilter),
         concatLatestFrom(() => this.store.select(selectPokemonQuery)),
         switchMap(([_, query]) =>
             {
                 if(query.filters.byType) {
-                    console.log("1")
-                    return this.pokemonListService.getFilteredPokemonPage(query.filters.byType).pipe(
-                        map((pokemons: PokemonsResponseDto) => getPokemonListRequestSuccess({pokemons})),
-                        catchError(_ => of(getPokemonListRequestError()))
-                    )
+                    return of(getFilteredPokemonListRequest())
                 } else {
-                    console.log("2")
-                    return this.pokemonListService.getPokemonPage(0, query.pageSize).pipe(
-                        map((pokemons: PokemonsResponseDto) => getPokemonListRequestSuccess({pokemons})),
-                        catchError(_ => of(getPokemonListRequestError()))
-                    )
+                    return of(getPokemonListRequest())
                 }
             })
     ))
@@ -46,6 +37,17 @@ export class PokemonListEffects {
         )
     ))
     
+    getFilteredPokemonListRequest$ = createEffect(() => this.actions$.pipe(
+        ofType(getFilteredPokemonListRequest),
+        concatLatestFrom(() => this.store.select(selectPokemonQuery)),
+        switchMap(([_, query]) =>
+            this.pokemonListService.getFilteredPokemonPage(query.filters.byType as PokemonType).pipe(
+                map((filteredPokemons: PokemonsResponseDto) => getPokemonListRequestSuccess({pokemons: filteredPokemons})),
+                catchError(_ => of(getPokemonListRequestError()))
+            )
+        )
+    ))
+
     getNextPokemonListPageRequest$ = createEffect(() => this.actions$.pipe(
         ofType(getNextPokemonListPageRequest),
         concatLatestFrom(() => this.store.select(selectPokemonQuery)),
