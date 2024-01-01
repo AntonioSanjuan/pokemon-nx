@@ -28,7 +28,7 @@ export class IntersectionObserverDirective implements OnInit, OnDestroy {
   createAndObserve () {
     const options: IntersectionObserverInit = {
       root: document.querySelector('#rootObserver'),
-      rootMargin: `20px`,
+      rootMargin: `${this.offset}px`,
       threshold: 0,
     }
 
@@ -38,9 +38,6 @@ export class IntersectionObserverDirective implements OnInit, OnDestroy {
         const { isIntersecting } = entries[0];
         subscriber.next(isIntersecting);
 
-        isIntersecting &&
-          !this.active &&
-          intersectionObserver.disconnect()
       }, options)
 
       intersectionObserver.observe(this.element.nativeElement)
@@ -52,8 +49,10 @@ export class IntersectionObserverDirective implements OnInit, OnDestroy {
       }
     })
       .subscribe(insideElementOffset => {
-        this.isIntersecting.emit(insideElementOffset)
-        this._isIntersecting = !insideElementOffset
+        if(this.active) {
+          this.isIntersecting.emit(insideElementOffset)
+          this._isIntersecting = !insideElementOffset
+        }
       })
   }
 }

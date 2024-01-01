@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Observable, combineLatest, forkJoin, map, of, switchMap } from 'rxjs'
+import { Observable, combineLatest, defaultIfEmpty, forkJoin, map, of, switchMap } from 'rxjs'
 import { PokemonsResponseDto, PokemonResponseDto, PokemonType, PokemonsByTypeResponseDto, PokemonByTypeDto } from '@gt-motive-app/libs/models';
 import { PokemonService } from '@gt-motive-app/services/pokemon'
 
@@ -25,7 +25,9 @@ export class PokemonListService extends PokemonService {
         return this.getRawPokemonsByType(pokemonType).pipe(
             switchMap((pokemonsByType: PokemonsByTypeResponseDto) => {
                 const requests = pokemonsByType.pokemon.map((pokemon: PokemonByTypeDto) => this.getRawPokemon(pokemon.pokemon.name))
-                return forkJoin<PokemonResponseDto[]>(requests);
+                return forkJoin<PokemonResponseDto[]>(requests).pipe(
+                    defaultIfEmpty([])
+                  );
             }),
             map((rawPokemons: PokemonResponseDto[]) => {
                 return {

@@ -33,10 +33,11 @@ export const pokemonListReducer = createReducer(
     on(PokemonListActions.getPokemonListRequestSuccess, (state: PokemonListState, { pokemons }) => ({
       ...state,
       list: pokemons.results,
+      selected: [],
       query: {
         ...state.query,
-        currentPage: state.query.currentPage + 1,
-        totalPages: Math.ceil(pokemons.count / state.query.pageSize),
+        currentPage: 1,
+        totalPages: Math.ceil(pokemons.count / pokemons.results.length),
         totalSize: pokemons.count
       }
     })),
