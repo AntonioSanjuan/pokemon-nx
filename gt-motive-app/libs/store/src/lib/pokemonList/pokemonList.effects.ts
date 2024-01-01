@@ -16,14 +16,9 @@ export class PokemonListEffects {
     updatePokemonTypeFilter$ = createEffect(() => this.actions$.pipe(
         ofType(updatePokemonTypeFilter),
         concatLatestFrom(() => this.store.select(selectPokemonQuery)),
-        switchMap(([_, query]) =>
-            {
-                if(query.filters.byType) {
-                    return of(getFilteredPokemonListRequest())
-                } else {
-                    return of(getPokemonListRequest())
-                }
-            })
+        switchMap(([_, query]) => of( query.filters.byType ? 
+            getFilteredPokemonListRequest(): 
+            getPokemonListRequest()))
     ))
 
     getPokemonListRequest$ = createEffect(() => this.actions$.pipe(

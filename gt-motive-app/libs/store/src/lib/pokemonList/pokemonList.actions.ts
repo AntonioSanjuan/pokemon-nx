@@ -10,6 +10,9 @@ export const clearPokemonList = createAction(
 export const getPokemonListRequest = createAction(
   '[Pokemon/PokemonList/API] getPokemonListRequest Request')
 
+export const getFilteredPokemonListRequest = createAction(
+  '[Pokemon/PokemonList/API] getFilteredPokemonListRequest Request')
+  
 export const getPokemonListRequestSuccess = createAction(
   '[Pokemon/PokemonList/API] getPokemonListRequest Request Success', props<{ pokemons: PokemonsResponseDto}>())
 
@@ -30,6 +33,3 @@ export const updatePokemonListQueryFilters = createAction(
 
 export const updatePokemonTypeFilter = createAction(
   '[Pokemon/PokemonList/API] updatePokemonTypeFilter', props<{ selectedPokemonType: PokemonType}>())
-
-export const getFilteredPokemonListRequest = createAction(
-  '[Pokemon/PokemonList/API] getFilteredPokemonListRequest Request')
