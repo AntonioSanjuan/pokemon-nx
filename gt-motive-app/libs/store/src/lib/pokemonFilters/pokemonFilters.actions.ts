@@ -1,4 +1,4 @@
-import { PokemonMinifiedDto, PokemonQueryFilters, PokemonResponseDto, PokemonTypesFiltersResponseDto, PokemonsResponseDto } from '@gt-motive-app/libs/models';
+import { PokemonTypesFiltersResponseDto } from '@gt-motive-app/libs/models';
 import { createAction, props } from '@ngrx/store';
 
 export const getpokemonTypesFiltersRequest = createAction(

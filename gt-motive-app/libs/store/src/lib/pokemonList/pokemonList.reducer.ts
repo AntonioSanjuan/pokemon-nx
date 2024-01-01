@@ -20,7 +20,8 @@ export const initialPokemonListState: PokemonListState = {
     totalSize: 20 * 100,
     filters: {
       byText: '',
-      byType: ''
+      byType: '',
+      byTypes: []
     }
   }
 }

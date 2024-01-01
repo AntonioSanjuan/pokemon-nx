@@ -1,12 +1,8 @@
-export interface PokemonsResponseDto {
-    count: number
-    next: string
-    previous: any
-    results: PokemonMinifiedDto[]
-  }
-  
-  export interface PokemonMinifiedDto {
-    name: string
-    url: string
-  }
-  
+import { PokemonsPaginationResponseDto } from "../common/pokemonPaginationDto.model"
+
+export type PokemonsResponseDto = PokemonsPaginationResponseDto<PokemonMinifiedDto>
+
+export interface PokemonMinifiedDto {
+  name: string
+  url: string
+}

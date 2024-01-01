@@ -1,0 +1,30 @@
+<div class="PokemonFilter_MainContainer"
+*ngrxLet="{ pokemonQuery: pokemonQuery$, pokemonTypes: pokemonTypes$ } as vm">
+
+  <div class="PokemonFilter_FilterContainer" [@collapse]="collapsed">
+      <div class="PokemonFilter_Filter">
+          <div class="PokemonFilter_FilterHeader">
+              <h2>Filtra por tipo</h2>
+          </div>
+          <div class="PokemonFilter_FilterContent">
+              <div class="PokemonFilter_FilterType"  
+                  *ngFor="let pokemonType of vm.pokemonTypes?.results" 
+                  (click)="pokemonTypeSelected(pokemonType)">
+                  <!-- <app-pokemon-type-pill [pokemonType]="pokemonType"></app-pokemon-type-pill> -->
+                  {{pokemonType.name}}
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="PokemonFilter_ActionsContainer">
+      <button 
+          [@rotate]="!collapsed"
+          (click)="toggle()"
+          mat-mini-fab 
+          color="primary" 
+          aria-label="Open pokemon list filter">
+              <mat-icon
+                  >keyboard_arrow_down</mat-icon>
+      </button>
+  </div>
+</div>

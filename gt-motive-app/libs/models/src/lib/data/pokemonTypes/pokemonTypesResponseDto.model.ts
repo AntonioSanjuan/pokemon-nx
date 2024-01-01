@@ -1,9 +1,6 @@
-export interface PokemonTypesFiltersResponseDto {
-  count: number
-  next: string
-  previous: any
-  results: PokemonType[]
-}
+import { PokemonsPaginationResponseDto } from "../common/pokemonPaginationDto.model"
+
+export type PokemonTypesFiltersResponseDto = PokemonsPaginationResponseDto<PokemonType>
 
 export interface PokemonType {
   name: string

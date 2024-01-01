@@ -6,13 +6,15 @@ import { UiModule } from '@gt-motive-app/ui';
 import { getIsBlockByRequest, getNextPokemonListPageRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon, updatePokemonListQueryFilters } from '@gt-motive-app/store';
 import { PokemonMinifiedDto, PokemonQueryFilters } from '@gt-motive-app/libs/models';
 import { Router } from '@angular/router';
+import { PokemonListFilterComponent } from './pokemonListFilter/pokemon-list-filter.component';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list',
   imports: [
     CommonModule,
     LetDirective,
-    UiModule
+    UiModule,
+    PokemonListFilterComponent
   ],
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],

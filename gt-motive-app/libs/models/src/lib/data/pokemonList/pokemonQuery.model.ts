@@ -1,3 +1,5 @@
+import { PokemonType } from "../pokemonTypes/pokemonTypesResponseDto.model"
+
 export interface PokemonQuery {
     currentPage: number,
     totalPages: number,
@@ -9,4 +11,5 @@ export interface PokemonQuery {
 export interface PokemonQueryFilters {
     byText: string,
     byType: string
+    byTypes: PokemonType[]
 }
