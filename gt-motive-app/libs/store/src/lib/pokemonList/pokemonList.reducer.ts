@@ -20,8 +20,7 @@ export const initialPokemonListState: PokemonListState = {
     totalSize: 20 * 100,
     filters: {
       byText: '',
-      byType: '',
-      byTypes: []
+      byType: undefined
     }
   }
 }
@@ -33,7 +32,7 @@ export const pokemonListReducer = createReducer(
     })),
     on(PokemonListActions.getPokemonListRequestSuccess, (state: PokemonListState, { pokemons }) => ({
       ...state,
-      list: state.list.concat(pokemons.results),
+      list: pokemons.results,
       query: {
         ...state.query,
         currentPage: state.query.currentPage + 1,
@@ -66,6 +65,16 @@ export const pokemonListReducer = createReducer(
       query: {
         ...state.query,
         filters: filters
+      }
+    })),
+    on(PokemonListActions.updatePokemonTypeFilter, (state: PokemonListState, { selectedPokemonType }) => ({
+      ...state,
+      query: {
+        ...state.query,
+        filters: {
+          ...state.query.filters,
+          byType: state.query.filters.byType === selectedPokemonType ? undefined : selectedPokemonType
+        }
       }
     })),
     // on(PokemonListActions.searchPokemonRequestSuccess, (state: PokemonListState, { pokemon }) => ({

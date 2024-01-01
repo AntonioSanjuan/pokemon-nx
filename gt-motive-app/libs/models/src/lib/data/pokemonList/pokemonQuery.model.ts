@@ -10,6 +10,5 @@ export interface PokemonQuery {
 
 export interface PokemonQueryFilters {
     byText: string,
-    byType: string
-    byTypes: PokemonType[]
+    byType?: PokemonType
 }

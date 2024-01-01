@@ -1,4 +1,4 @@
-import { PokemonQueryFilters, PokemonResponseDto, PokemonsResponseDto } from '@gt-motive-app/libs/models';
+import { PokemonQueryFilters, PokemonResponseDto, PokemonType, PokemonsResponseDto } from '@gt-motive-app/libs/models';
 import { createAction, props } from '@ngrx/store';
 
 export const setSelectedPokemon = createAction(
@@ -27,6 +27,9 @@ export const getNextPokemonListPageRequestError = createAction(
   
 export const updatePokemonListQueryFilters = createAction(
   '[Pokemon/PokemonList/API] updatePokemonListQueryFilters', props<{ filters: PokemonQueryFilters}>())
+
+export const updatePokemonTypeFilter = createAction(
+  '[Pokemon/PokemonList/API] updatePokemonTypeFilter', props<{ selectedPokemonType: PokemonType}>())
 
 
   

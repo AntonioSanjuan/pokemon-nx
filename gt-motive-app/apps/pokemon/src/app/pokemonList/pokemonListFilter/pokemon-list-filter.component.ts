@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
 import { UiModule, collapseAnimation, rotateAnimation } from '@gt-motive-app/ui';
-import { selectPokemonQuery, selectPokemonTypesFiltersState } from '@gt-motive-app/store';
-import { PokemonType } from '@gt-motive-app/libs/models';
+import { selectPokemonQuery, selectPokemonTypesFiltersState, updatePokemonTypeFilter } from '@gt-motive-app/store';
+import { PokemonQueryFilters, PokemonType } from '@gt-motive-app/libs/models';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list-filter',
@@ -31,6 +31,8 @@ export class PokemonListFilterComponent {
   }
 
   public pokemonTypeSelected(pokemonType: PokemonType): void {
-    console.log("pokemonType", pokemonType)
+    this.store.dispatch(updatePokemonTypeFilter({ 
+      selectedPokemonType: pokemonType
+    }))
   }
 }
