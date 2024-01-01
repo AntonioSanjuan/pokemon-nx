@@ -1,12 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
 import * as PokemonListActions from "./pokemonList.actions";
-import { PokemonMinifiedDto, PokemonQuery } from '@gt-motive-app/libs/models';
+import { PokemonQuery, PokemonResponseDto } from '@gt-motive-app/libs/models';
 
 export const POKEMONLIST_FEATURE_KEY = 'pokemonList';
 
 export interface PokemonListState {
-    list: PokemonMinifiedDto[],
-    selected: PokemonMinifiedDto[],
+    list: PokemonResponseDto[],
+    selected: PokemonResponseDto[],
     query: PokemonQuery
 }
 
@@ -58,8 +58,8 @@ export const pokemonListReducer = createReducer(
     on(PokemonListActions.setSelectedPokemon, (state: PokemonListState, { pokemon: pokemonName }) => ({
       ...state,
       selected: state.selected.some((selected) =>  selected === pokemonName ) ? 
-        state.selected.filter((selected: PokemonMinifiedDto) => selected !== pokemonName) : 
-        state.selected.concat([state.list.find((pokemon) => pokemon === pokemonName) as PokemonMinifiedDto])
+        state.selected.filter((selected: PokemonResponseDto) => selected !== pokemonName) : 
+        state.selected.concat([state.list.find((pokemon) => pokemon === pokemonName) as PokemonResponseDto])
     })),
     on(PokemonListActions.updatePokemonListQueryFilters, (state: PokemonListState, { filters }) => ({
       ...state,

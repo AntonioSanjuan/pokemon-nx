@@ -1,12 +1,23 @@
 import { Injectable, inject } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { Observable, of } from 'rxjs'
+import { Observable, combineLatest, forkJoin, map, of, switchMap } from 'rxjs'
 import { PokemonsResponseDto, PokemonResponseDto } from '@gt-motive-app/libs/models';
-@Injectable()
-export class PokemonListService {
-    private http: HttpClient = inject(HttpClient);
+import { PokemonService } from '@gt-motive-app/services/pokemon'
 
+@Injectable()
+export class PokemonListService extends PokemonService {
+    
     public getPokemonPage(page: number, pageSize: number): Observable<PokemonsResponseDto> {
-        return this.http.get<PokemonsResponseDto>(`https://pokeapi.co/api/v2/pokemon?limit=${pageSize}&offset=${pageSize * page}`)
+        return this.getRawPokemons(page, pageSize).pipe(
+            switchMap((pokemons: PokemonsResponseDto) => {
+                const requests = pokemons.results.map((pokemon: PokemonResponseDto) => this.getRawPokemon(pokemon.name))
+                return combineLatest([of(pokemons), forkJoin<PokemonResponseDto[]>(requests)]);
+            }),
+            map(([pokemons, rawPokemons]: [PokemonsResponseDto, PokemonResponseDto[]]) => {
+                return {
+                    ...pokemons,
+                    results: rawPokemons
+                };
+            })
+        )
     }
 }

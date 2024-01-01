@@ -9,6 +9,7 @@ import { PokemonDetailsEffects } from './pokemonDetails/state/pokemonDetails.eff
 import { PokemonDetailsService } from './pokemonDetails/state/pokemonDetails.service';
 import { PokemonDetailsResolver } from './pokemonDetails/shared/service/pokemonDetails.resolver';
 import { PokemonListResolver } from './pokemonList/shared/service/pokemonList.resolver';
+import { PokemonService } from '@gt-motive-app/services/pokemon';
 
 export const appRoutes: Route[] = [
   {

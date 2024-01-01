@@ -1,8 +1,5 @@
 import { PokemonsPaginationResponseDto } from "../common/pokemonPaginationDto.model"
+import { PokemonResponseDto } from "../pokemon/pokemonResponseDto.model"
 
-export type PokemonsResponseDto = PokemonsPaginationResponseDto<PokemonMinifiedDto>
+export type PokemonsResponseDto = PokemonsPaginationResponseDto<PokemonResponseDto>
 
-export interface PokemonMinifiedDto {
-  name: string
-  url: string
-}

@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
 import { UiModule } from '@gt-motive-app/ui';
 import { getIsBlockByRequest, getNextPokemonListPageRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon, updatePokemonListQueryFilters } from '@gt-motive-app/store';
-import { PokemonMinifiedDto, PokemonQueryFilters } from '@gt-motive-app/libs/models';
+import { PokemonQueryFilters, PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { Router } from '@angular/router';
 import { PokemonListFilterComponent } from './pokemonListFilter/pokemon-list-filter.component';
 
@@ -33,7 +33,7 @@ export class PokemonListComponent {
   //filters
   public filterByText = '';
 
-  public selectPokemon(pokemon: PokemonMinifiedDto) {
+  public selectPokemon(pokemon: PokemonResponseDto) {
     this.store.dispatch(setSelectedPokemon({ pokemon }))
   }
 
