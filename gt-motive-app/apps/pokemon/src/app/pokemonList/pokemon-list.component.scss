@@ -15,15 +15,50 @@
     
     mat-card {
         height: 100%;
+        width: 100%;
 
         mat-card-content {
             display: flex;
             flex-direction: column;
             height: 100%;
+            padding: 0;
 
             .PokemonList_FilterContainer {
                 display: flex;
+
                 flex-direction: row;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+
+                background: #313131;
+                min-height: 200px;
+
+
+                .mat-mdc-form-field {
+                    .mat-mdc-form-field-subscript-wrapper  {
+                        display: none !important;
+                    }
+                }
+
+                > button {
+                    border-radius: 5px;
+                }
+
+                .PokemonList_FilterContainer_Banner {
+                    background-color: #4dad5b;
+                    border-radius: 5px;
+                    width: 200px;
+                    padding: 5px 10px;
+                    margin-left: 25px;
+
+                    p {
+                        font-size: 20px;
+                        margin: 0;
+                        color: #ffff
+                    }
+                }
+                
             }
             .PokemonList_TableContainer {
                 display: flex;

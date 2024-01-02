@@ -17,6 +17,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 10px;
 
             .PokemonFilter_FilterHeader {
                 color: #ffff
@@ -47,6 +48,7 @@
     }
     .PokemonFilter_ActionsContainer {
         position: relative;
+        min-height: 25px;
     
         button {
             position: absolute;
