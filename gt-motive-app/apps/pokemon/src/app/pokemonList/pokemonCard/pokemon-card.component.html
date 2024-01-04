@@ -1,0 +1,31 @@
+<div class="PokemonCard_MainContainer"
+  [@shake]="animationActive"
+  (mouseenter)="toggle()"
+  (mouseleave)="toggle()"
+>
+
+  <div class="PokemonCard_Image">
+    <img 
+      mat-card-image 
+      src={{pokemon.sprites.front_default}} 
+      alt="Photo of a Shiba Inu">
+  </div>
+  <div class="PokemonCard_Info">
+    <p id="pokemonNumber" 
+      appPokemonId
+      [pokemonId]="pokemon.id">
+        N* {{pokemon.id}}
+    </p>
+    <p id="pokemonName">
+      {{pokemon.name}}
+  </p>
+
+    <div class="PokemonCard_Types">
+      <!-- <gt-motive-app-pokemon-type-pill
+        *ngFor="let type of pokemon.types"
+        [pokemonType]="type" 
+        
+      ></gt-motive-app-pokemon-type-pill> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+[NX Daemon Server] - 2024-01-04T14:29:44.670Z - Started listening on: \\.\pipe\nx\C:\Users\tonys\AppData\Local\Temp\c7aa383f05c24d9f45c9\d.sock
+[NX Daemon Server] - 2024-01-04T14:29:44.672Z - [WATCHER]: Subscribed to changes within: C:\Users\tonys\source\nxMfe\gt-motive-app (native)
+[NX Daemon Server] - 2024-01-04T14:29:44.673Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-04T14:29:44.674Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-04T14:29:44.676Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-04T14:29:44.677Z - [REQUEST]: Client Request for Project Graph Received

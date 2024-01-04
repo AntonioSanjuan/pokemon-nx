@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@gt-motive-app/components": ["libs/components/src/index.ts"],
       "@gt-motive-app/libs/models": ["libs/models/src/index.ts"],
       "@gt-motive-app/libs/services/auth": ["libs/services/auth/src/index.ts"],
       "@gt-motive-app/libs/services/culture": [

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MenuTopComponent } from './menu-top.component';
+import { MenuTopComponent } from './menu-nav-bar.component';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { appRoutes } from '../../../app.routes';
