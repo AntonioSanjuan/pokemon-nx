@@ -110,10 +110,6 @@
         "hash": "5628738610252882264"
       },
       {
-        "file": ".nx/cache/d/daemon.log",
-        "hash": "2112950106287891340"
-      },
-      {
         "file": ".nx/cache/d/server-process.json",
         "hash": "2829171311040732985"
       },
@@ -156,10 +152,6 @@
       {
         "file": ".nx/cache/run.json",
         "hash": "686348611600487958"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/11829319925182652399",
-        "hash": "12686123477634037466"
       },
       {
         "file": ".prettierignore",
@@ -214,16 +206,24 @@
         "hash": "13228586476358407145"
       },
       {
-        "file": ".nx/cache/file-map.json",
-        "hash": "1879895946578435623"
+        "file": ".nx/cache/project-graph.json",
+        "hash": "16448406677579480813"
       },
       {
-        "file": ".nx/cache/project-graph.json",
-        "hash": "11929991572648211111"
+        "file": ".nx/cache/file-map.json",
+        "hash": "298798573632632193"
+      },
+      {
+        "file": ".nx/cache/terminalOutputs/11829319925182652399",
+        "hash": "15177105705049417849"
       },
       {
         "file": ".nx/cache/terminalOutputs/2754738408354324537",
         "hash": "3244421341483603138"
+      },
+      {
+        "file": ".nx/cache/d/daemon.log",
+        "hash": "2073037410292067981"
       }
     ],
     "projectFileMap": {
@@ -270,7 +270,7 @@
         },
         {
           "file": "libs/models/src/lib/data/pokemon/pokemonResponseDto.model.ts",
-          "hash": "6174175429902593925"
+          "hash": "3055625063100150645"
         },
         {
           "file": "libs/models/src/lib/data/pokemonByTypes/pokemonByTypesResponseDto.model.ts",
@@ -1787,11 +1787,11 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.html",
-          "hash": "11686235973193173397"
+          "hash": "3028396580309967931"
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.scss",
-          "hash": "5911783087840722348"
+          "hash": "11915913712792600107"
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.spec.ts",
@@ -1802,7 +1802,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.ts",
-          "hash": "3508055832687875263",
+          "hash": "6724101353551048649",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
@@ -1816,11 +1816,11 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.html",
-          "hash": "6661724472429695922"
+          "hash": "6380816472001880751"
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.scss",
-          "hash": "6753756473682063666"
+          "hash": "1835553045773526823"
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.spec.ts",
@@ -1845,7 +1845,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.html",
-          "hash": "5423486510253634616"
+          "hash": "16835616954364512749"
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.scss",
@@ -1860,7 +1860,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.ts",
-          "hash": "1966654818418275113",
+          "hash": "1855040895295715224",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
@@ -1868,7 +1868,8 @@
             "npm:@ngrx/component",
             "ui",
             "store",
-            "libs/models"
+            "libs/models",
+            "components"
           ]
         },
         {

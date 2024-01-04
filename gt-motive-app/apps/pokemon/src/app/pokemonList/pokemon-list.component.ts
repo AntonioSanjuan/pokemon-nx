@@ -7,6 +7,7 @@ import { getIsBlockByRequest, getNextPokemonListPageRequest, selectPokemonList, 
 import { PokemonQueryFilters, PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { Router } from '@angular/router';
 import { PokemonListFilterComponent } from './pokemonListFilter/pokemon-list-filter.component';
+import { PokemonCardComponent } from './pokemonCard/pokemon-card.component';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list',
@@ -14,7 +15,8 @@ import { PokemonListFilterComponent } from './pokemonListFilter/pokemon-list-fil
     CommonModule,
     LetDirective,
     UiModule,
-    PokemonListFilterComponent
+    PokemonListFilterComponent,
+    PokemonCardComponent,
   ],
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],

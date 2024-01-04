@@ -1,3 +1,5 @@
+import { PokemonType } from "../pokemonTypes/pokemonTypesResponseDto.model"
+
 type StatNames = "hp" | "attack" | "defense" | "special-attack" | "special-defense" | "speed"
 
 export interface PokemonResponseDto {
@@ -350,11 +352,8 @@ export interface PokemonResponseDto {
   
   export interface Type {
     slot: number
-    type: Type2
+    type: PokemonType
   }
   
-  export interface Type2 {
-    name: string
-    url: string
-  }
+
   

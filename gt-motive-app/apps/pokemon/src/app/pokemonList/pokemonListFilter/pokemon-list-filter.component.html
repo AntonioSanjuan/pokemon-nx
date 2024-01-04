@@ -10,8 +10,8 @@
               <div class="PokemonFilter_FilterType"  
                   *ngFor="let pokemonType of vm.pokemonTypes?.results" 
                   (click)="pokemonTypeSelected(pokemonType)">
-                  <!-- <app-pokemon-type-pill [pokemonType]="pokemonType"></app-pokemon-type-pill> -->
-                    {{pokemonType.name}}
+                  <gt-motive-app-pokemon-type-pill [pokemonType]="pokemonType"></gt-motive-app-pokemon-type-pill>
+                    
               </div>
           </div>
       </div>

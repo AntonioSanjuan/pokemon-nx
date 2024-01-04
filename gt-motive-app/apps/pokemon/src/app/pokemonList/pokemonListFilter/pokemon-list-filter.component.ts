@@ -4,13 +4,15 @@ import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
 import { UiModule, collapseAnimation, rotateAnimation } from '@gt-motive-app/ui';
 import { selectPokemonQuery, selectPokemonTypesFiltersState, updatePokemonTypeFilter } from '@gt-motive-app/store';
-import { PokemonQueryFilters, PokemonType } from '@gt-motive-app/libs/models';
+import { PokemonType } from '@gt-motive-app/libs/models';
+import { PokemonTypePillComponent } from '@gt-motive-app/components';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list-filter',
   imports: [
     CommonModule,
     LetDirective,
+    PokemonTypePillComponent,
     UiModule
   ],
   templateUrl: './pokemon-list-filter.component.html',
