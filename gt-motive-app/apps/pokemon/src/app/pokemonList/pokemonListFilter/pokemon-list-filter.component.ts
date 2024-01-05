@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
   templateUrl: './pokemon-list-filter.component.html',
   styleUrls: ['./pokemon-list-filter.component.scss'],
   animations: [rotateAnimation, collapseAnimation],
+  encapsulation: ViewEncapsulation.None,
   standalone: true,
 })
 export class PokemonListFilterComponent {

@@ -15,15 +15,20 @@
         min-height: 200px;
         width: 100%;
 
-
-        .mat-mdc-form-field {
-            .mat-mdc-form-field-subscript-wrapper  {
-                display: none !important;
+        mat-form-field {
+            .mat-mdc-form-field-subscript-wrapper {
+                display: none;
             }
         }
 
         > button {
             border-radius: 5px;
+            &:disabled { 
+                border: 1px solid white;
+                mat-icon {
+                    color: white;    
+                }
+            }
         }
 
         .PokemonFilter_NameFilterContainer_Banner {
