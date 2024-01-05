@@ -18,11 +18,11 @@ describe('PokemonService', () => {
     service = TestBed.inject(PokemonService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-
   describe('Unit tests', () => {
+    it('should be created', () => {
+      expect(service).toBeTruthy();
+    });
+
     it('getRawPokemons should made http request', () => {
       const pageSut = 5;
       const pageSizeSut = 30
