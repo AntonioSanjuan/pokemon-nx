@@ -1,7 +1,8 @@
 import { Component, DebugElement } from '@angular/core'
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { IntersectionObserverDirective } from './intersectionObserver.directive';
+import { IntersectionObserverDirective } from './intersection-observer.directive';
+import { CommonModule } from '@angular/common';
 
 let sutActive: boolean = false
 let sutOffset: number = 0
@@ -16,7 +17,11 @@ let sutOffset: number = 0
       [offset]="sutOffset"
       [active]="sutActive">
       <p>hola</p>
-    </div>`
+    </div>`,
+    imports: [
+        IntersectionObserverDirective
+    ],
+    standalone: true
 })
 class DummyComponent {
     constructor() {}
@@ -32,8 +37,11 @@ describe('IntersectionObserverDirective', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [DummyComponent, IntersectionObserverDirective],
-            imports: [],
+            imports: 
+            [
+                CommonModule,
+                DummyComponent, 
+            ],
         }).compileComponents();
 
         fixture = TestBed.createComponent(DummyComponent);

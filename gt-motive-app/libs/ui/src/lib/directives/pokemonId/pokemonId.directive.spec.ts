@@ -1,7 +1,7 @@
 import { Component, DebugElement, Input } from '@angular/core'
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { PokemonIdDirective } from './pokemon-id.directive';
+import { PokemonIdDirective } from './pokemonId.directive';
 
 @Component({
     template: `
@@ -10,7 +10,9 @@ import { PokemonIdDirective } from './pokemon-id.directive';
         appPokemonId
         [pokemonId]="pokemonId">
         {{pokemonId}}
-    </p>`
+    </p>`,
+    imports: [PokemonIdDirective],
+    standalone: true
 })
 class DummyComponent {
     public pokemonId: number = 7
@@ -25,8 +27,7 @@ describe('PokemonIdDirective', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [DummyComponent, PokemonIdDirective],
-            imports: [],
+            imports: [DummyComponent],
         }).compileComponents();
 
         fixture = TestBed.createComponent(DummyComponent);
