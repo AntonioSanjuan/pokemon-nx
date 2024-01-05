@@ -82,6 +82,22 @@
         position: relative;
         min-height: 25px;
     
+        .PokemonFilter_TypeFiltersActive {
+            display: flex;
+            padding: 0.75em 0.675em;
+            border-radius: 10px;
+            background-color: #a4a4a4;
+            flex-direction: row;
+            margin-bottom: 20px;
+            align-items: center;
+            gap: 10px;
+
+            .PokemonFilter_TypeFiltersCurrent {
+                display: flex;
+                flex-direction: row;
+                cursor: pointer;
+            }
+        }
         button {
             position: absolute;
             bottom: -20px;

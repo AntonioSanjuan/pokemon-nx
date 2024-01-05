@@ -21,7 +21,7 @@
             <div class="PokemonFilter_TypeFilterContent">
                 <div class="PokemonFilter_TypeFilters"  
                     *ngFor="let pokemonType of vm.pokemonTypes?.results" 
-                    (click)="pokemonTypeSelected(pokemonType)">
+                    (click)="filterByPokemonType(pokemonType)">
                     <gt-motive-app-pokemon-type-pill [pokemonType]="pokemonType"></gt-motive-app-pokemon-type-pill>
                         
                 </div>
@@ -29,6 +29,14 @@
         </div>
     </div>
     <div class="PokemonFilter_TypeFilterActionsContainer">
+        
+        <div class="PokemonFilter_TypeFiltersActive" *ngIf="vm.pokemonQuery.filters.byType">
+            <h2>Filtrando por...</h2>
+            <div class="PokemonFilter_TypeFiltersCurrent" (click)="clearPokemonTypeFilter(vm.pokemonQuery.filters.byType)">
+                <gt-motive-app-pokemon-type-pill [pokemonType]="vm.pokemonQuery.filters.byType"></gt-motive-app-pokemon-type-pill>
+                <mat-icon>close</mat-icon>
+            </div>
+        </div>
         <button 
             [@rotate]="!collapsed"
             (click)="toggle()"

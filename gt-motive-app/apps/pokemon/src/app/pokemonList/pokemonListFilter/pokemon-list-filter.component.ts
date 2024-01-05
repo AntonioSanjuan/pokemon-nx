@@ -36,12 +36,17 @@ export class PokemonListFilterComponent {
     this.collapsed = !this.collapsed;
   }
 
-  public pokemonTypeSelected(pokemonType: PokemonType): void {
+  public filterByPokemonType(pokemonType: PokemonType): void {
     this.store.dispatch(updatePokemonTypeFilter({ 
       selectedPokemonType: pokemonType
     }))
   }
   
+  public clearPokemonTypeFilter(pokemonType: PokemonType) {
+    this.store.dispatch(updatePokemonTypeFilter({
+      selectedPokemonType: pokemonType
+    }))
+  }
   
   public searchPokemon() {
     this.router.navigate([`/pokemon/${this.filterByText}`])
