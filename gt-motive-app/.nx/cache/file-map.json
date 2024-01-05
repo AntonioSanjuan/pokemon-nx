@@ -111,7 +111,7 @@
       },
       {
         "file": ".nx/cache/d/daemon.log",
-        "hash": "15743827012322977315"
+        "hash": "12900961456370156141"
       },
       {
         "file": ".nx/cache/d/server-process.json",
@@ -171,11 +171,11 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "16979633835443666577"
+        "hash": "12209215954436382202"
       },
       {
         "file": ".nx/cache/project-graph.json",
-        "hash": "7066601049227312293"
+        "hash": "6556471516118105216"
       }
     ],
     "projectFileMap": {
@@ -476,7 +476,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.ts",
-          "hash": "16927418773553537497",
+          "hash": "15330216082615761426",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
@@ -588,7 +588,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.scss",
-          "hash": "15282211180713552537"
+          "hash": "14995815762640426339"
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.spec.ts",
@@ -1091,11 +1091,11 @@
         },
         {
           "file": "apps/shell/src/app/layout/base-layout/base-layout.component.html",
-          "hash": "15847778345044010470"
+          "hash": "1300881387126432332"
         },
         {
           "file": "apps/shell/src/app/layout/base-layout/base-layout.component.scss",
-          "hash": "7522642719821001057"
+          "hash": "7107998299847559814"
         },
         {
           "file": "apps/shell/src/app/layout/base-layout/base-layout.component.spec.ts",
@@ -1106,7 +1106,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/base-layout/base-layout.component.ts",
-          "hash": "246598250397204388",
+          "hash": "10646448951151643465",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router"
@@ -1136,11 +1136,11 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/menu-nav-bar/menu-nav-bar.component.html",
-          "hash": "2786068589127294685"
+          "hash": "8872923619579247638"
         },
         {
           "file": "apps/shell/src/app/layout/common/menu-nav-bar/menu-nav-bar.component.scss",
-          "hash": "16252343388579634419"
+          "hash": "14594509061505248304"
         },
         {
           "file": "apps/shell/src/app/layout/common/menu-nav-bar/menu-nav-bar.component.spec.ts",
@@ -1153,7 +1153,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/menu-nav-bar/menu-nav-bar.component.ts",
-          "hash": "8514059018379828888",
+          "hash": "16888860570352710976",
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core",
@@ -1161,6 +1161,7 @@
             "libs/models",
             "libs/services/auth",
             "store",
+            "ui",
             "npm:@ngrx/component",
             "npm:@ngrx/store",
             "npm:@ngx-translate/core"
@@ -1324,6 +1325,39 @@
           "hash": "7369099702485768251",
           "deps": [
             "npm:@nx/angular"
+          ]
+        },
+        {
+          "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.html",
+          "hash": "8771451928050587020"
+        },
+        {
+          "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.scss",
+          "hash": "16631609429813823641"
+        },
+        {
+          "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.spec.ts",
+          "hash": "12948005989980171872",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:@ngx-translate/core"
+          ]
+        },
+        {
+          "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.ts",
+          "hash": "8903732912747369831",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "libs/models",
+            "libs/services/auth",
+            "store",
+            "ui",
+            "npm:@ngrx/component",
+            "npm:@ngrx/store",
+            "npm:@ngx-translate/core"
           ]
         }
       ],

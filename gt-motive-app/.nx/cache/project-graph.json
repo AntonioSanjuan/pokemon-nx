@@ -1,61 +1,5 @@
 {
   "nodes": {
-    "services-pokemon": {
-      "name": "services-pokemon",
-      "type": "lib",
-      "data": {
-        "name": "services-pokemon",
-        "root": "libs/services/pokemon",
-        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/services/pokemon/src",
-        "prefix": "gt-motive-app",
-        "tags": [],
-        "projectType": "library",
-        "targets": {
-          "test": {
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}/jest.preset.js"
-            ],
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "libs/services/pokemon/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "configurations": {
-              "ci": {
-                "ci": true,
-                "codeCoverage": true
-              }
-            }
-          },
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore",
-              "{workspaceRoot}/eslint.config.js"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/services/pokemon/**/*.ts",
-                "libs/services/pokemon/**/*.html"
-              ]
-            },
-            "configurations": {}
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
     "libs/services/culture": {
       "name": "libs/services/culture",
       "type": "lib",
@@ -104,6 +48,62 @@
               "lintFilePatterns": [
                 "libs/services/culture/**/*.ts",
                 "libs/services/culture/**/*.html"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "services-pokemon": {
+      "name": "services-pokemon",
+      "type": "lib",
+      "data": {
+        "name": "services-pokemon",
+        "root": "libs/services/pokemon",
+        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/services/pokemon/src",
+        "prefix": "gt-motive-app",
+        "tags": [],
+        "projectType": "library",
+        "targets": {
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/services/pokemon/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/services/pokemon/**/*.ts",
+                "libs/services/pokemon/**/*.html"
               ]
             },
             "configurations": {}
@@ -219,164 +219,6 @@
               ]
             },
             "configurations": {}
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
-    "pokemon": {
-      "name": "pokemon",
-      "type": "app",
-      "data": {
-        "name": "pokemon",
-        "root": "apps/pokemon",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "projectType": "application",
-        "prefix": "gt-motive-app",
-        "sourceRoot": "apps/pokemon/src",
-        "tags": [],
-        "targets": {
-          "build": {
-            "dependsOn": [
-              "^build"
-            ],
-            "inputs": [
-              "production",
-              "^production"
-            ],
-            "executor": "@nx/angular:webpack-browser",
-            "outputs": [
-              "{options.outputPath}"
-            ],
-            "options": {
-              "outputPath": "dist/apps/pokemon",
-              "index": "apps/pokemon/src/index.html",
-              "main": "apps/pokemon/src/main.ts",
-              "polyfills": [
-                "zone.js"
-              ],
-              "tsConfig": "apps/pokemon/tsconfig.app.json",
-              "assets": [
-                "apps/pokemon/src/favicon.ico",
-                "apps/pokemon/src/assets"
-              ],
-              "styles": [
-                "apps/pokemon/src/styles.scss"
-              ],
-              "scripts": [],
-              "customWebpackConfig": {
-                "path": "apps/pokemon/webpack.config.js"
-              }
-            },
-            "configurations": {
-              "production": {
-                "budgets": [
-                  {
-                    "type": "initial",
-                    "maximumWarning": "500kb",
-                    "maximumError": "1mb"
-                  },
-                  {
-                    "type": "anyComponentStyle",
-                    "maximumWarning": "2kb",
-                    "maximumError": "4kb"
-                  }
-                ],
-                "outputHashing": "all",
-                "customWebpackConfig": {
-                  "path": "apps/pokemon/webpack.prod.config.js"
-                }
-              },
-              "development": {
-                "buildOptimizer": false,
-                "optimization": false,
-                "vendorChunk": true,
-                "extractLicenses": false,
-                "sourceMap": true,
-                "namedChunks": true
-              }
-            },
-            "defaultConfiguration": "production"
-          },
-          "serve": {
-            "executor": "@nx/angular:webpack-dev-server",
-            "options": {
-              "port": 4202,
-              "publicHost": "http://localhost:4202"
-            },
-            "configurations": {
-              "production": {
-                "browserTarget": "pokemon:build:production"
-              },
-              "development": {
-                "browserTarget": "pokemon:build:development"
-              }
-            },
-            "defaultConfiguration": "development"
-          },
-          "extract-i18n": {
-            "executor": "@angular-devkit/build-angular:extract-i18n",
-            "options": {
-              "browserTarget": "pokemon:build"
-            },
-            "configurations": {}
-          },
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore",
-              "{workspaceRoot}/eslint.config.js"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "apps/pokemon/**/*.ts",
-                "apps/pokemon/**/*.html"
-              ]
-            },
-            "configurations": {}
-          },
-          "test": {
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}/jest.preset.js"
-            ],
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "apps/pokemon/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "configurations": {
-              "ci": {
-                "ci": true,
-                "codeCoverage": true
-              }
-            }
-          },
-          "serve-static": {
-            "executor": "@nx/web:file-server",
-            "defaultConfiguration": "production",
-            "options": {
-              "buildTarget": "pokemon:build",
-              "port": 4202,
-              "watch": false
-            },
-            "configurations": {
-              "development": {
-                "buildTarget": "pokemon:build:development"
-              },
-              "production": {
-                "buildTarget": "pokemon:build:production"
-              }
-            }
           }
         },
         "implicitDependencies": []
@@ -546,6 +388,164 @@
         "implicitDependencies": []
       }
     },
+    "pokemon": {
+      "name": "pokemon",
+      "type": "app",
+      "data": {
+        "name": "pokemon",
+        "root": "apps/pokemon",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "prefix": "gt-motive-app",
+        "sourceRoot": "apps/pokemon/src",
+        "tags": [],
+        "targets": {
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production"
+            ],
+            "executor": "@nx/angular:webpack-browser",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "options": {
+              "outputPath": "dist/apps/pokemon",
+              "index": "apps/pokemon/src/index.html",
+              "main": "apps/pokemon/src/main.ts",
+              "polyfills": [
+                "zone.js"
+              ],
+              "tsConfig": "apps/pokemon/tsconfig.app.json",
+              "assets": [
+                "apps/pokemon/src/favicon.ico",
+                "apps/pokemon/src/assets"
+              ],
+              "styles": [
+                "apps/pokemon/src/styles.scss"
+              ],
+              "scripts": [],
+              "customWebpackConfig": {
+                "path": "apps/pokemon/webpack.config.js"
+              }
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ],
+                "outputHashing": "all",
+                "customWebpackConfig": {
+                  "path": "apps/pokemon/webpack.prod.config.js"
+                }
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "sourceMap": true,
+                "namedChunks": true
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "serve": {
+            "executor": "@nx/angular:webpack-dev-server",
+            "options": {
+              "port": 4202,
+              "publicHost": "http://localhost:4202"
+            },
+            "configurations": {
+              "production": {
+                "browserTarget": "pokemon:build:production"
+              },
+              "development": {
+                "browserTarget": "pokemon:build:development"
+              }
+            },
+            "defaultConfiguration": "development"
+          },
+          "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              "browserTarget": "pokemon:build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "apps/pokemon/**/*.ts",
+                "apps/pokemon/**/*.html"
+              ]
+            },
+            "configurations": {}
+          },
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/pokemon/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "serve-static": {
+            "executor": "@nx/web:file-server",
+            "defaultConfiguration": "production",
+            "options": {
+              "buildTarget": "pokemon:build",
+              "port": 4202,
+              "watch": false
+            },
+            "configurations": {
+              "development": {
+                "buildTarget": "pokemon:build:development"
+              },
+              "production": {
+                "buildTarget": "pokemon:build:production"
+              }
+            }
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
     "libs/models": {
       "name": "libs/models",
       "type": "lib",
@@ -594,6 +594,62 @@
               "lintFilePatterns": [
                 "libs/models/**/*.ts",
                 "libs/models/**/*.html"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "store": {
+      "name": "store",
+      "type": "lib",
+      "data": {
+        "name": "store",
+        "root": "libs/store",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/store/src",
+        "prefix": "gt-motive-app",
+        "tags": [],
+        "projectType": "library",
+        "targets": {
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/store/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/store/**/*.ts",
+                "libs/store/**/*.html"
               ]
             },
             "configurations": {}
@@ -745,62 +801,6 @@
                 "codeCoverage": true
               }
             }
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
-    "store": {
-      "name": "store",
-      "type": "lib",
-      "data": {
-        "name": "store",
-        "root": "libs/store",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/store/src",
-        "prefix": "gt-motive-app",
-        "tags": [],
-        "projectType": "library",
-        "targets": {
-          "test": {
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}/jest.preset.js"
-            ],
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "libs/store/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "configurations": {
-              "ci": {
-                "ci": true,
-                "codeCoverage": true
-              }
-            }
-          },
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore",
-              "{workspaceRoot}/eslint.config.js"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/store/**/*.ts",
-                "libs/store/**/*.html"
-              ]
-            },
-            "configurations": {}
           }
         },
         "implicitDependencies": []
@@ -14024,33 +14024,6 @@
     }
   },
   "dependencies": {
-    "services-pokemon": [
-      {
-        "source": "services-pokemon",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "libs/models",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "npm:jest-preset-angular",
-        "type": "static"
-      }
-    ],
     "libs/services/culture": [
       {
         "source": "libs/services/culture",
@@ -14084,6 +14057,33 @@
       },
       {
         "source": "libs/services/culture",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "services-pokemon": [
+      {
+        "source": "services-pokemon",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
+        "target": "libs/models",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }
@@ -14159,6 +14159,78 @@
       {
         "source": "components",
         "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "account": [
+      {
+        "source": "account",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "ui",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:@ngrx/effects",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:@angular/forms",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "store",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "libs/services/auth",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "libs/models",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      },
+      {
+        "source": "account",
+        "target": "npm:@nx/angular",
         "type": "static"
       }
     ],
@@ -14244,78 +14316,6 @@
         "type": "static"
       }
     ],
-    "account": [
-      {
-        "source": "account",
-        "target": "npm:@ngrx/store",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:@angular/router",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "ui",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:@ngrx/effects",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:@angular/forms",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "store",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "libs/services/auth",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "libs/models",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:@angular/platform-browser",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:jest-preset-angular",
-        "type": "static"
-      },
-      {
-        "source": "account",
-        "target": "npm:@nx/angular",
-        "type": "static"
-      }
-    ],
     "libs/models": [
       {
         "source": "libs/models",
@@ -14329,6 +14329,48 @@
       },
       {
         "source": "libs/models",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "store": [
+      {
+        "source": "store",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "libs/models",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:@ngrx/effects",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "services-pokemon",
+        "type": "static"
+      },
+      {
+        "source": "store",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }
@@ -14437,48 +14479,6 @@
       {
         "source": "shell",
         "target": "npm:@nx/angular",
-        "type": "static"
-      }
-    ],
-    "store": [
-      {
-        "source": "store",
-        "target": "npm:@ngrx/store",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "libs/models",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:@ngrx/effects",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "services-pokemon",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:jest-preset-angular",
         "type": "static"
       }
     ],

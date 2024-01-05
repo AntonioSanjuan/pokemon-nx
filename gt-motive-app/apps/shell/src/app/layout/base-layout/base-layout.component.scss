@@ -21,6 +21,7 @@
         z-index: 5;
     }
     .BaseLayout_BodyContainer {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;

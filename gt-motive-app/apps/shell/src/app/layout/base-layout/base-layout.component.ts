@@ -3,6 +3,7 @@ import { MenuTopComponent } from '../common/menu-top/menu-top.component';
 import { MenuBottomComponent } from '../common/menu-bottom/menu-bottom.component';
 import { RouterOutlet } from '@angular/router';
 import { MenuNavBarComponent } from '../common/menu-nav-bar/menu-nav-bar.component';
+import { ProfileNavBarComponent } from '../common/profile-nav/profile-nav-bar.component';
 
 @Component({
   selector: 'gt-motive-app-base-layout',
@@ -12,7 +13,8 @@ import { MenuNavBarComponent } from '../common/menu-nav-bar/menu-nav-bar.compone
     RouterOutlet,
     MenuBottomComponent,
     MenuTopComponent,
-    MenuNavBarComponent
+    MenuNavBarComponent,
+    ProfileNavBarComponent
   ],
   standalone: true
 })

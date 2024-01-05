@@ -19,14 +19,7 @@ import { PokemonDetailsHeaderComponent } from './pokemonDetailsHeader/pokemon-de
   styleUrls: ['./pokemon-details.component.scss'],
   standalone: true,
 })
-export class PokemonDetailsComponent implements OnInit {
+export class PokemonDetailsComponent {
   private store = inject(Store)
   public pokemonDetails$ = this.store.select(selectPokemonDetails)
-
-  ngOnInit(): void {
-      // this.store.dispatch(clearPokemonDetails())
-      // this.store.dispatch(getPokemonDetailsRequest())
-      this.pokemonDetails$.subscribe((pokemonDetails?: PokemonResponseDto) => {
-      })
-  }
 }

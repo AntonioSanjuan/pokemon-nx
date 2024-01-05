@@ -1,0 +1,24 @@
+@use "./../../../../sizes.scss" as sizes;
+
+:host {
+    width: 100%;
+}
+
+.ProfileNavBar_MainContainer {
+    top:100px;
+    position: absolute;
+
+    .ProfileNavBar_ContentContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        height: 100px;
+        width: 50px;
+
+        position: fixed;
+
+        z-index: 3;
+    }
+}
