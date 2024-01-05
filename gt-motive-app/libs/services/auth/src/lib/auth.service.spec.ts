@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { AuthService } from './auth.service';
 import { Store } from '@ngrx/store';
-import { AppInit, loadedApp, setUser, userInitialState } from '@gt-motive-app/store';
+import { AppInit, clearUser, loadedApp, setUser, unloadedApp, userInitialState } from '@gt-motive-app/store';
 import { AppRoutes, LoginResponseDto } from '@gt-motive-app/libs/models';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -48,11 +48,45 @@ describe('AuthService', () => {
         })
       })
       it('Login success should redirect to Home', () => {
-
         const navigateSpy = jest.spyOn(router, 'navigate')
         service.logIn(userNameSut, userPassSut).subscribe((_) => {
           expect(navigateSpy).toHaveBeenCalledWith([AppRoutes.Home])
         })
+      })
+    })
+
+    describe('logOut', () => {
+      it('logOut success should clear user', () => {
+        const dispatchSpy = jest.spyOn(store, 'dispatch')
+        service.logOut()
+        expect(dispatchSpy).toHaveBeenCalledWith(clearUser())
+        expect(dispatchSpy).toHaveBeenCalledWith(unloadedApp({uninitialized: AppInit.ACCOUNT}))
+      })
+      it('Login success should redirect to Home', () => {
+        const navigateSpy = jest.spyOn(router, 'navigate')
+        service.logOut()
+        expect(navigateSpy).toHaveBeenCalledWith([AppRoutes.Login])
+      })
+    })
+
+    describe('checkAuthPersistance', () => {
+      const authStorageKey = 'authenticatedStatus'
+      beforeEach(() => { 
+        localStorage.removeItem(authStorageKey)
+      })
+      
+      it('if its already logged', () => {
+        const dispatchSpy = jest.spyOn(store, 'dispatch')
+        localStorage.setItem(authStorageKey, 'true')
+        service.checkAuthPersistance()
+        expect(dispatchSpy).toHaveBeenCalledWith(setUser({ user: expect.anything()}))
+        expect(dispatchSpy).toHaveBeenCalledWith(loadedApp({initialized: AppInit.ACCOUNT}))
+      })
+      it('If its not already logged', () => {
+        const dispatchSpy = jest.spyOn(store, 'dispatch')
+        service.checkAuthPersistance()
+        expect(dispatchSpy).not.toHaveBeenCalledWith(setUser(expect.anything()))
+        expect(dispatchSpy).not.toHaveBeenCalledWith(loadedApp({initialized: AppInit.ACCOUNT}))
       })
     })
   })
