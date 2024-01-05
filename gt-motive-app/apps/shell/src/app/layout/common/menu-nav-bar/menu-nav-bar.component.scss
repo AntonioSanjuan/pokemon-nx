@@ -35,6 +35,16 @@
             gap: 15px;
     
             width: 60%;
+
+            button:after {
+                content: ' ';
+                height: 6px;
+                left: 0;
+                position: absolute;
+                bottom: -6px;
+                width: 100%;
+                z-index: 1;
+            }
         }
     }
 }

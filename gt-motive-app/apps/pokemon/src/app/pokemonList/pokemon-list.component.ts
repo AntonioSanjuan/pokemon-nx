@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
 import { UiModule } from '@gt-motive-app/ui';
-import { getIsBlockByRequest, getNextPokemonListPageRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon, updatePokemonListQueryFilters } from '@gt-motive-app/store';
-import { PokemonQueryFilters, PokemonResponseDto } from '@gt-motive-app/libs/models';
-import { Router } from '@angular/router';
+import { getIsBlockByRequest, getNextPokemonListPageRequest, selectPokemonList, selectPokemonQuery, selectPokemonSelected, setSelectedPokemon } from '@gt-motive-app/store';
+import { PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { PokemonListFilterComponent } from './pokemonListFilter/pokemon-list-filter.component';
 import { PokemonCardComponent } from './pokemonCard/pokemon-card.component';
 
@@ -24,7 +23,6 @@ import { PokemonCardComponent } from './pokemonCard/pokemon-card.component';
 })
 export class PokemonListComponent {
   private store: Store = inject(Store)
-  private router: Router = inject(Router)
   public pokemonList$ = this.store.select(selectPokemonList)
   public pokemonQuery$ = this.store.select(selectPokemonQuery)
   public pokemonSelected$ = this.store.select(selectPokemonSelected)
@@ -32,26 +30,10 @@ export class PokemonListComponent {
   
   public displayedColumns: string[] = ['name'];
 
-  //filters
-  public filterByText = '';
 
   public selectPokemon(pokemon: PokemonResponseDto) {
     this.store.dispatch(setSelectedPokemon({ pokemon }))
   }
-
-  public applyFilter(filters: PokemonQueryFilters) {
-    this.store.dispatch(updatePokemonListQueryFilters({ filters: {
-      ...filters,
-      byText: this.filterByText
-    }}))
-  }
-  
-  
-  public searchPokemon() {
-    this.router.navigate([`/pokemon/${this.filterByText}`])
-  }
-
-  public clearFilter() {}
 
   isIntersecting(isIntersecting: any) {
     if (isIntersecting) {

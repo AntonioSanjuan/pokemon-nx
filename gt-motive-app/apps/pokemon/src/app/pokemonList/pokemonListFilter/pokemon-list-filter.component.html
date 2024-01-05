@@ -1,30 +1,41 @@
 <div class="PokemonFilter_MainContainer"
 *ngrxLet="{ pokemonQuery: pokemonQuery$, pokemonTypes: pokemonTypes$ } as vm">
 
-  <div class="PokemonFilter_FilterContainer" [@collapse]="collapsed">
-      <div class="PokemonFilter_Filter">
-          <div class="PokemonFilter_FilterHeader">
-              <h2>Filtra por tipo</h2>
-          </div>
-          <div class="PokemonFilter_FilterContent">
-              <div class="PokemonFilter_FilterType"  
-                  *ngFor="let pokemonType of vm.pokemonTypes?.results" 
-                  (click)="pokemonTypeSelected(pokemonType)">
-                  <gt-motive-app-pokemon-type-pill [pokemonType]="pokemonType"></gt-motive-app-pokemon-type-pill>
-                    
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="PokemonFilter_ActionsContainer">
-      <button 
-          [@rotate]="!collapsed"
-          (click)="toggle()"
-          mat-mini-fab 
-          color="primary" 
-          aria-label="Open pokemon list filter">
-              <mat-icon
-                  >keyboard_arrow_down</mat-icon>
-      </button>
-  </div>
+    <div class="PokemonFilter_NameFilterContainer">
+        <mat-form-field>
+            <mat-label>Search by name/id</mat-label>
+            <input matInput type="text" [(ngModel)]="filterByText">
+        </mat-form-field>
+        <button mat-mini-fab color="warn" aria-label="Search pokemon by name/id"  [disabled]="!filterByText" (click)="searchPokemon()">
+            <mat-icon>search</mat-icon>
+        </button>
+        <div class="PokemonFilter_NameFilterContainer_Banner">
+            <p>Busca un Pokémon por su nombre o usando su número de la Pokédex Nacional.</p>
+        </div>
+    </div>
+    <div class="PokemonFilter_TypeFilterContainer" [@collapse]="collapsed">
+        <div class="PokemonFilter_TypeFilter">
+            <div class="PokemonFilter_TypeFilterHeader">
+                <h2>Filtra por tipo</h2>
+            </div>
+            <div class="PokemonFilter_TypeFilterContent">
+                <div class="PokemonFilter_TypeFilters"  
+                    *ngFor="let pokemonType of vm.pokemonTypes?.results" 
+                    (click)="pokemonTypeSelected(pokemonType)">
+                    <gt-motive-app-pokemon-type-pill [pokemonType]="pokemonType"></gt-motive-app-pokemon-type-pill>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="PokemonFilter_TypeFilterActionsContainer">
+        <button 
+            [@rotate]="!collapsed"
+            (click)="toggle()"
+            mat-mini-fab 
+            color="primary" 
+            aria-label="Open pokemon list filter">
+                <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+    </div>
 </div>

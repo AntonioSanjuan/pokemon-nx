@@ -4,46 +4,22 @@
 
     <mat-card>
       <mat-card-content>
-        <div class="PokemonList_FilterContainer">
-          <mat-form-field>
-            <mat-label>Search by name/id</mat-label>
-            <input matInput type="text" [(ngModel)]="filterByText">
-              <button mat-fab color="accent" aria-label="Search" *ngIf="vm.pokemonQuery.filters.byText" (click)="clearFilter()">
-                <mat-icon>close</mat-icon>
-              </button>
-          </mat-form-field>
-          <button mat-mini-fab color="warn" aria-label="Search pokemon by name/id"  [disabled]="!filterByText" (click)="searchPokemon()">
-            <mat-icon>search</mat-icon>
-          </button>
-          <div class="PokemonList_FilterContainer_Banner">
-            <p>Busca un Pokémon por su nombre o usando su número de la Pokédex Nacional.</p>
-          </div>
+        <div class="PokemonList_HeaderContainer">
+          <p>Pokedex</p>
         </div>
         <gt-motive-app-pokemon-list-filter></gt-motive-app-pokemon-list-filter>
-        <div class="PokemonList_TableContainer">
-          <!-- <mat-table #table [dataSource]="vm.pokemonList" class="mat-elevation-z8">
-          
-      
-            <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{disCol}}">
-                <mat-header-cell *matHeaderCellDef>{{disCol}}</mat-header-cell>
-                <mat-cell *matCellDef="let element "> {{element[disCol]}}
-                </mat-cell>
-            </ng-container>
-      
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table> -->
-        <div class="PokemonList_Cards">
-          <div  class="PokemonList_List" 
-            *ngFor="let pokemon of vm.pokemonList">
-            <gt-motive-app-pokemon-card [pokemon]="pokemon"></gt-motive-app-pokemon-card>
+        <div class="PokemonList_ListContainer">
+          <div class="PokemonList_Cards">
+            <div class="PokemonList_Card" 
+              *ngFor="let pokemon of vm.pokemonList">
+              <gt-motive-app-pokemon-card [pokemon]="pokemon"></gt-motive-app-pokemon-card>
+            </div>
           </div>
-        </div>
-        <area 
-          appIntersectionObserver
-          (isIntersecting)="isIntersecting($event)"
-          [offset]="50"
-          [active]="vm.pokemonList.length > 0 && vm.pokemonQuery.currentPage !== vm.pokemonQuery.totalPages" />
+          <area 
+            appIntersectionObserver
+            (isIntersecting)="isIntersecting($event)"
+            [offset]="50"
+            [active]="vm.pokemonList.length > 0 && vm.pokemonQuery.currentPage !== vm.pokemonQuery.totalPages" />
         </div>
       </mat-card-content>
     </mat-card>

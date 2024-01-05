@@ -4,8 +4,44 @@
     width: 100%;
     align-items: center;
     background-color: #616161;
-    
-    .PokemonFilter_FilterContainer {
+
+    .PokemonFilter_NameFilterContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        background: #313131;
+        min-height: 200px;
+        width: 100%;
+
+
+        .mat-mdc-form-field {
+            .mat-mdc-form-field-subscript-wrapper  {
+                display: none !important;
+            }
+        }
+
+        > button {
+            border-radius: 5px;
+        }
+
+        .PokemonFilter_NameFilterContainer_Banner {
+            background-color: #4dad5b;
+            border-radius: 5px;
+            width: 200px;
+            padding: 5px 10px;
+            margin-left: 25px;
+
+            p {
+                font-size: 20px;
+                margin: 0;
+                color: #ffff
+            }
+        }
+        
+    }
+    .PokemonFilter_TypeFilterContainer {
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -13,17 +49,17 @@
         justify-content: flex-start;
         overflow: hidden;
         
-        .PokemonFilter_Filter {
+        .PokemonFilter_TypeFilter {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-bottom: 10px;
 
-            .PokemonFilter_FilterHeader {
+            .PokemonFilter_TypeFilterHeader {
                 color: #ffff
             }
 
-            .PokemonFilter_FilterContent {
+            .PokemonFilter_TypeFilterContent {
                 display: flex;
                 flex-direction: row;
                 gap: 10px;
@@ -31,22 +67,13 @@
                 flex-wrap: wrap;
                 justify-content: center;
 
-                .PokemonFilter_FilterType {
+                .PokemonFilter_TypeFilters {
                     cursor: pointer;
-                }
-                .PokemonFilter_FilterName {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                    
-                    button {
-                        margin-bottom: 30px;
-                    }
                 }
             }
         }
     }
-    .PokemonFilter_ActionsContainer {
+    .PokemonFilter_TypeFilterActionsContainer {
         position: relative;
         min-height: 25px;
     

@@ -4,8 +4,6 @@
     display: flex;
     flex-direction: column;
 
-    // justify-content: space-between;
-
     background: #424242 url("https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png");
     align-items: center;
     min-height: 100vh;
@@ -32,22 +30,18 @@
         max-width: 1280px;
         width: 100%;
         background: #fff url("https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png");
-    
-    
-        // overflow: hidden;
-        // overflow-y: auto;
-        // overflow-x: hidden;
-        // min-height: calc(100vh - sizes.$headerHeigt - sizes.$footerHeigt);
 
         .BaseLayout_ContentContainer {
             display: flex;
             flex-direction: column;
-            // height: 100%;            
             flex: 1 1 100%;
-            // overflow: auto;
             max-width: 1024px;
             width: 85.49%;
 
         }
+    }
+
+    .BaseLayout_FooterContainer {
+        width: 100%;
     }
 }
