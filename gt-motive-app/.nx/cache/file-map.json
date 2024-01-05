@@ -111,7 +111,7 @@
       },
       {
         "file": ".nx/cache/d/daemon.log",
-        "hash": "12900961456370156141"
+        "hash": "372526216747763335"
       },
       {
         "file": ".nx/cache/d/server-process.json",
@@ -171,11 +171,11 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "12209215954436382202"
+        "hash": "3789636515036591044"
       },
       {
         "file": ".nx/cache/project-graph.json",
-        "hash": "6556471516118105216"
+        "hash": "6809549470436147868"
       }
     ],
     "projectFileMap": {
@@ -1068,11 +1068,11 @@
         },
         {
           "file": "apps/shell/src/app/home/home.component.html",
-          "hash": "394106715321277193"
+          "hash": "9030629743481743888"
         },
         {
           "file": "apps/shell/src/app/home/home.component.scss",
-          "hash": "3244421341483603138"
+          "hash": "13042711879821437579"
         },
         {
           "file": "apps/shell/src/app/home/home.component.spec.ts",
@@ -1941,3 +1941,4 @@
     }
   }
 }
+ 

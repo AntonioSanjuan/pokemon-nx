@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+
+.Home_MainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    mat-card {
+        height: 100%;
+        width: 100%;
+
+        mat-card-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 0;
+        }
+    }
+
+}
+
