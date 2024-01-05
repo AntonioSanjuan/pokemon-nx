@@ -2,16 +2,20 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 8;
+    pointer-events: none;
  
 
     .LoadingSpinner_ContentContainer {
-        position: relative;
+        position: fixed;
         display: flex;
+        flex-direction: column;
         height: 100%;
+        width: 100%;
         align-content: center;
         justify-content: center;
         align-items: center;
+        z-index: 8;
+        
         
         pointer-events: none;
         transition: backdrop-filter 0.2s;

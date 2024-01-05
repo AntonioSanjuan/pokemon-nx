@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { getIsUILoadedApp, getIsBlockByRequest } from '@gt-motive-app/store';
 import { LetDirective } from '@ngrx/component';
 import { TranslateModule } from '@ngx-translate/core';
+import { UiModule } from '@gt-motive-app/ui';
 
 @Component({
   selector: 'gt-motive-app-loading-spinner',
@@ -12,6 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     CommonModule,
     TranslateModule,
+    UiModule,
     LetDirective
   ],
   templateUrl: './loading-spinner.component.html',

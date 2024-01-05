@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IntersectionObserverDirective } from './directives/intersectionObserver/intersection-observer.directive';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { MatCardModule } from '@angular/material/card';
     TranslateModule,
     IntersectionObserverDirective,
     MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatCardModule
   ]
 })
