@@ -1,25 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MenuTopComponent } from './menu-nav-bar.component';
+import { MenuNavBarComponent } from './menu-nav-bar.component';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { appRoutes } from '../../../app.routes';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('MenuTopComponent', () => {
-  let component: MenuTopComponent;
-  let fixture: ComponentFixture<MenuTopComponent>;
+describe('MenuNavBarComponent', () => {
+  let component: MenuNavBarComponent;
+  let fixture: ComponentFixture<MenuNavBarComponent>;
   let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        MenuTopComponent,
+        MenuNavBarComponent,
         RouterTestingModule.withRoutes(appRoutes),
         TranslateModule.forRoot()
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MenuTopComponent);
+    fixture = TestBed.createComponent(MenuNavBarComponent);
     component = fixture.componentInstance;
     router = TestBed.inject(Router);
 
