@@ -5,8 +5,6 @@ import { POKEMONFILTERS_FEATURE_KEY, POKEMONLIST_FEATURE_KEY, pokemonFiltersRedu
 import { POKEMONDETAILS_FEATURE_KEY, pokemonDetailsReducer } from '../pokemonDetails/state/pokemonDetails.reducer';
 
 
-export const POKEMON_FEATURE_KEY = 'pokemon';
-
 export const pokemonReducer = (state: PokemonState = initialPokemonState, action: Action) => 
   combineReducers({
     [POKEMONLIST_FEATURE_KEY]: pokemonListReducer,
