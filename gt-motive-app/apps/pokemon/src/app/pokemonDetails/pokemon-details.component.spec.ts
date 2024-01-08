@@ -3,7 +3,6 @@ import { PokemonDetailsComponent } from './pokemon-details.component';
 import { PokemonDetailsHeaderComponent } from './pokemonDetailsHeader/pokemon-details-header.component';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { BasePokemonStateMock } from '@gt-motive-app/test';
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { initialPokemonState } from '../+state/models/pokemonState.initialState';

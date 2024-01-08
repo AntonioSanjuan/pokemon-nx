@@ -26,7 +26,9 @@ describe('MenuTopComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  describe('Unit tests', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
+  })
 });
