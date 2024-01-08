@@ -86,6 +86,9 @@
     "@gt-motive-app/store": [
       "libs/store/src/index.ts"
     ],
+    "@gt-motive-app/test": [
+      "libs/test/src/index.ts"
+    ],
     "@gt-motive-app/ui": [
       "libs/ui/src/index.ts"
     ]
@@ -151,10 +154,229 @@
       },
       {
         "file": "tsconfig.base.json",
-        "hash": "2090626326414758752"
+        "hash": "2952195057794027195"
       }
     ],
     "projectFileMap": {
+      "account": [
+        {
+          "file": "apps/account/.eslintrc.json",
+          "hash": "5015818778099008089"
+        },
+        {
+          "file": "apps/account/jest.config.ts",
+          "hash": "17834687415447834470"
+        },
+        {
+          "file": "apps/account/module-federation.config.js",
+          "hash": "13736485599496579693"
+        },
+        {
+          "file": "apps/account/project.json",
+          "hash": "8769466323596370598"
+        },
+        {
+          "file": "apps/account/src/app/+state/account.reducer.ts",
+          "hash": "7720241341787579913",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/+state/account.selectors.ts",
+          "hash": "9479927381032220806",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/+state/models/accountState.initialState.ts",
+          "hash": "7187478787350768819"
+        },
+        {
+          "file": "apps/account/src/app/+state/models/accountState.model.ts",
+          "hash": "15302138898342965473"
+        },
+        {
+          "file": "apps/account/src/app/+state/test/accountStateMock/accountStateMock.mock.ts",
+          "hash": "105063644905711542"
+        },
+        {
+          "file": "apps/account/src/app/app.component.ts",
+          "hash": "15725025700233744738",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/app.routes.ts",
+          "hash": "14925332210399216599",
+          "deps": [
+            "npm:@angular/router",
+            "npm:@ngrx/store",
+            "npm:@angular/core",
+            "npm:@ngrx/effects"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/login/login.component.html",
+          "hash": "11424107480616330116"
+        },
+        {
+          "file": "apps/account/src/app/login/login.component.scss",
+          "hash": "9005734642169038916"
+        },
+        {
+          "file": "apps/account/src/app/login/login.component.spec.ts",
+          "hash": "10113625628889117076",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/store",
+            "test",
+            "npm:@angular/platform-browser"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/login/login.component.ts",
+          "hash": "16567480056421916332",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@ngrx/store",
+            "npm:@angular/forms",
+            "store",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/login/login.form.ts",
+          "hash": "14550813396178113525",
+          "deps": [
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/login/model/loginRequest.model.ts",
+          "hash": "10170242632351744783"
+        },
+        {
+          "file": "apps/account/src/app/login/store/login.actions.ts",
+          "hash": "14249515760230070415",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/login/store/login.effects.spec.ts",
+          "hash": "12108598558678551056",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
+            "npm:rxjs",
+            "npm:@angular/common",
+            "libs/services/auth"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/login/store/login.effects.ts",
+          "hash": "12482561568114793080",
+          "deps": [
+            "libs/services/auth",
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:rxjs",
+            "libs/models"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/login/store/login.reducer.spec.ts",
+          "hash": "14227288041937590606"
+        },
+        {
+          "file": "apps/account/src/app/login/store/login.reducer.ts",
+          "hash": "2417343408988970436",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/account/src/app/login/store/login.selectors.ts",
+          "hash": "15499979009022389638",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/account/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/account/src/bootstrap.ts",
+          "hash": "2137568666965449876",
+          "deps": [
+            "npm:@angular/platform-browser",
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/account/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/account/src/index.html",
+          "hash": "3194341804420687129"
+        },
+        {
+          "file": "apps/account/src/main.ts",
+          "hash": "3495665193403183614"
+        },
+        {
+          "file": "apps/account/src/styles.scss",
+          "hash": "2779208751810291572"
+        },
+        {
+          "file": "apps/account/src/test-setup.ts",
+          "hash": "10765977267162271731",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/account/tsconfig.app.json",
+          "hash": "6939181460324988079"
+        },
+        {
+          "file": "apps/account/tsconfig.editor.json",
+          "hash": "6816855480324741077"
+        },
+        {
+          "file": "apps/account/tsconfig.json",
+          "hash": "17021277375021554599"
+        },
+        {
+          "file": "apps/account/tsconfig.spec.json",
+          "hash": "1930986853382524452"
+        },
+        {
+          "file": "apps/account/webpack.config.js",
+          "hash": "9526548568040610005",
+          "deps": [
+            "npm:@nx/angular"
+          ]
+        },
+        {
+          "file": "apps/account/webpack.prod.config.js",
+          "hash": "7369099702485768251",
+          "deps": [
+            "npm:@nx/angular"
+          ]
+        }
+      ],
       "libs/services/culture": [
         {
           "file": "libs/services/culture/.eslintrc.json",
@@ -178,7 +400,7 @@
         },
         {
           "file": "libs/services/culture/src/lib/culture.service copy.spec.ts",
-          "hash": "11277688159118645507",
+          "hash": "7746184707616840590",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/store",
@@ -226,6 +448,144 @@
           "hash": "7652445452192956988"
         }
       ],
+      "test": [
+        {
+          "file": "libs/test/.eslintrc.json",
+          "hash": "5015818778099008089"
+        },
+        {
+          "file": "libs/test/README.md",
+          "hash": "11306297636338721556"
+        },
+        {
+          "file": "libs/test/jest.config.ts",
+          "hash": "17728194378390961108"
+        },
+        {
+          "file": "libs/test/project.json",
+          "hash": "12249845618043144844"
+        },
+        {
+          "file": "libs/test/src/index.ts",
+          "hash": "13835723806355651471"
+        },
+        {
+          "file": "libs/test/src/lib/pokemonStateMock/pokemonStateMock.mock.ts",
+          "hash": "11955599607504843358",
+          "deps": [
+            "store"
+          ]
+        },
+        {
+          "file": "libs/test/src/lib/test.module.ts",
+          "hash": "840060198319854383",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/test/src/lib/uiStateMock/uiStateMock.mock.ts",
+          "hash": "6200144626049997521",
+          "deps": [
+            "store"
+          ]
+        },
+        {
+          "file": "libs/test/src/lib/userStateMock/userStateMock.mock.ts",
+          "hash": "14727245143237199689",
+          "deps": [
+            "store"
+          ]
+        },
+        {
+          "file": "libs/test/src/test-setup.ts",
+          "hash": "10765977267162271731",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/test/tsconfig.json",
+          "hash": "7184861466157324158"
+        },
+        {
+          "file": "libs/test/tsconfig.lib.json",
+          "hash": "15304444604046903881"
+        },
+        {
+          "file": "libs/test/tsconfig.spec.json",
+          "hash": "1930986853382524452"
+        }
+      ],
+      "services-pokemon": [
+        {
+          "file": "libs/services/pokemon/.eslintrc.json",
+          "hash": "7809763361113708233"
+        },
+        {
+          "file": "libs/services/pokemon/README.md",
+          "hash": "16016490101798032357"
+        },
+        {
+          "file": "libs/services/pokemon/jest.config.ts",
+          "hash": "17482913999179334092"
+        },
+        {
+          "file": "libs/services/pokemon/project.json",
+          "hash": "9460097708270063731"
+        },
+        {
+          "file": "libs/services/pokemon/src/index.ts",
+          "hash": "14446873310616464917"
+        },
+        {
+          "file": "libs/services/pokemon/src/lib/libs/services/pokemon.module.ts",
+          "hash": "5960010599443190959",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/services/pokemon/src/lib/pokemon.service.spec.ts",
+          "hash": "4022447005716534063",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "libs/models"
+          ]
+        },
+        {
+          "file": "libs/services/pokemon/src/lib/pokemon.service.ts",
+          "hash": "11792320715734247334",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs",
+            "npm:@angular/common",
+            "libs/models"
+          ]
+        },
+        {
+          "file": "libs/services/pokemon/src/test-setup.ts",
+          "hash": "10765977267162271731",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/services/pokemon/tsconfig.json",
+          "hash": "6922415355334431150"
+        },
+        {
+          "file": "libs/services/pokemon/tsconfig.lib.json",
+          "hash": "5210152845168933800"
+        },
+        {
+          "file": "libs/services/pokemon/tsconfig.spec.json",
+          "hash": "7652445452192956988"
+        }
+      ],
       "components": [
         {
           "file": "libs/components/.eslintrc.json",
@@ -265,11 +625,10 @@
         },
         {
           "file": "libs/components/src/lib/pokemon-type-pill/pokemon-type-pill.component.spec.ts",
-          "hash": "3152567632524154415",
+          "hash": "13571275356935024157",
           "deps": [
             "npm:@angular/core",
-            "npm:src/app/directives/skeleton/skeleton.directive",
-            "npm:src/app/directives/pokemonTypeColor/pokemon-type-pill.directive"
+            "libs/models"
           ]
         },
         {
@@ -303,558 +662,6 @@
           "hash": "1930986853382524452"
         }
       ],
-      "ui": [
-        {
-          "file": "libs/ui/.eslintrc.json",
-          "hash": "5015818778099008089"
-        },
-        {
-          "file": "libs/ui/README.md",
-          "hash": "17507811124529675953"
-        },
-        {
-          "file": "libs/ui/jest.config.ts",
-          "hash": "16699829734566568597"
-        },
-        {
-          "file": "libs/ui/project.json",
-          "hash": "6361117453501613083"
-        },
-        {
-          "file": "libs/ui/src/index.ts",
-          "hash": "618036845113979959"
-        },
-        {
-          "file": "libs/ui/src/lib/animations/collapse/collapse.animation.ts",
-          "hash": "10600443172890727053",
-          "deps": [
-            "npm:@angular/animations"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/animations/rotate/rotate.animation.ts",
-          "hash": "15253647679716645393",
-          "deps": [
-            "npm:@angular/animations"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/animations/shake/shake.animation.ts",
-          "hash": "2092623389078873470",
-          "deps": [
-            "npm:@angular/animations"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/directives/intersectionObserver/intersection-observer.directive.spec.ts",
-          "hash": "6877511514070360207",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/platform-browser"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/directives/intersectionObserver/intersection-observer.directive.ts",
-          "hash": "216238742643656313",
-          "deps": [
-            "npm:@angular/core",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/directives/pokemonId/pokemonId.directive.spec.ts",
-          "hash": "6324546330168573445",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/platform-browser"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/directives/pokemonId/pokemonId.directive.ts",
-          "hash": "8171497955997293426",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/directives/pokemonTypeColor/pokemonTypeColor.directive.spec.ts",
-          "hash": "8276591710280770628",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/platform-browser"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/directives/pokemonTypeColor/pokemonTypeColor.directive.ts",
-          "hash": "15870916601168526621",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/material/material.module.ts",
-          "hash": "283356290455297275",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/material"
-          ]
-        },
-        {
-          "file": "libs/ui/src/lib/ui.module.ts",
-          "hash": "5778444589838266090",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@angular/forms",
-            "npm:@ngrx/component",
-            "npm:@ngx-translate/core",
-            "npm:@angular/material"
-          ]
-        },
-        {
-          "file": "libs/ui/src/test-setup.ts",
-          "hash": "10765977267162271731",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/ui/tsconfig.json",
-          "hash": "7184861466157324158"
-        },
-        {
-          "file": "libs/ui/tsconfig.lib.json",
-          "hash": "15304444604046903881"
-        },
-        {
-          "file": "libs/ui/tsconfig.spec.json",
-          "hash": "1930986853382524452"
-        }
-      ],
-      "pokemon": [
-        {
-          "file": "apps/pokemon/.eslintrc.json",
-          "hash": "5015818778099008089"
-        },
-        {
-          "file": "apps/pokemon/jest.config.ts",
-          "hash": "17781263549915941874"
-        },
-        {
-          "file": "apps/pokemon/module-federation.config.js",
-          "hash": "14104891367941935880"
-        },
-        {
-          "file": "apps/pokemon/project.json",
-          "hash": "5500875894652382285"
-        },
-        {
-          "file": "apps/pokemon/src/app/+state/models/pokemonState.initialState.ts",
-          "hash": "11063742770649142501",
-          "deps": [
-            "store",
-            "libs/models"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/+state/models/pokemonState.model.ts",
-          "hash": "6077878349034099876",
-          "deps": [
-            "libs/models",
-            "store"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/+state/pokemon.reducer.ts",
-          "hash": "2083667219278538593",
-          "deps": [
-            "npm:@ngrx/store",
-            "store"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/+state/pokemon.selectors.ts",
-          "hash": "16006971466140862627",
-          "deps": [
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/app.component.ts",
-          "hash": "12804222445020936894",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/app.routes.ts",
-          "hash": "5931431043385153725",
-          "deps": [
-            "npm:@angular/router",
-            "npm:@angular/core",
-            "npm:@ngrx/effects",
-            "npm:@ngrx/store",
-            "store",
-            "services-pokemon"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.html",
-          "hash": "10429292450936215318"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.scss",
-          "hash": "3448370893041908221"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.spec.ts",
-          "hash": "6563374540676205383",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.ts",
-          "hash": "15330216082615761426",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@ngrx/store",
-            "npm:@ngrx/component",
-            "ui",
-            "libs/models"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.html",
-          "hash": "6046538510438925676"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.scss",
-          "hash": "16017849778263758756"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.spec.ts",
-          "hash": "11639533292798384979",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.ts",
-          "hash": "9852445103815115827",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "ui",
-            "npm:@angular/router",
-            "npm:@ngx-translate/core",
-            "libs/models"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/shared/service/pokemonDetails.resolver.ts",
-          "hash": "11278622982961672437",
-          "deps": [
-            "npm:@angular/router",
-            "npm:rxjs",
-            "npm:@angular/core",
-            "libs/models",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.actions.ts",
-          "hash": "10281589834528138865",
-          "deps": [
-            "libs/models",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.effects.spec.ts",
-          "hash": "2263553903954063560",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@ngrx/effects",
-            "npm:@ngrx/store",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.effects.ts",
-          "hash": "3335099119868455151",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@ngrx/effects",
-            "npm:rxjs",
-            "npm:@ngrx/store",
-            "libs/models"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.reducer.spec.ts",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.reducer.ts",
-          "hash": "1372870053200080007",
-          "deps": [
-            "npm:@ngrx/store",
-            "libs/models"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.selectors.ts",
-          "hash": "1210327370430004563",
-          "deps": [
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.service.ts",
-          "hash": "15961647540664596770",
-          "deps": [
-            "npm:@angular/core",
-            "npm:rxjs",
-            "libs/models",
-            "services-pokemon"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.html",
-          "hash": "9175096329957671682"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.scss",
-          "hash": "14995815762640426339"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.spec.ts",
-          "hash": "15604587231454421018",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.ts",
-          "hash": "14932455364798901477",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@ngrx/store",
-            "npm:@ngrx/component",
-            "ui",
-            "store",
-            "libs/models"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.html",
-          "hash": "6380816472001880751"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.scss",
-          "hash": "1835553045773526823"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.spec.ts",
-          "hash": "11496950738565225749",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router",
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.ts",
-          "hash": "16579841688162920120",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@ngrx/component",
-            "ui",
-            "libs/models",
-            "components"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.html",
-          "hash": "6951942941196573069"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.scss",
-          "hash": "2603207032029289789"
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.spec.ts",
-          "hash": "9150210182635420313",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.ts",
-          "hash": "6859507422503198961",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@ngrx/store",
-            "npm:@ngrx/component",
-            "ui",
-            "store",
-            "libs/models",
-            "components",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/app/pokemonList/shared/service/pokemonList.resolver.ts",
-          "hash": "12567422136144844324",
-          "deps": [
-            "npm:@angular/router",
-            "npm:rxjs",
-            "npm:@angular/core",
-            "npm:@ngrx/store",
-            "store",
-            "libs/models"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/pokemon/src/bootstrap.ts",
-          "hash": "14111898317897817271",
-          "deps": [
-            "npm:@angular/platform-browser",
-            "npm:@angular/common",
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/pokemon/src/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/pokemon/src/index.html",
-          "hash": "8818430837285340597"
-        },
-        {
-          "file": "apps/pokemon/src/main.ts",
-          "hash": "3495665193403183614"
-        },
-        {
-          "file": "apps/pokemon/src/styles.scss",
-          "hash": "2917954890128038984"
-        },
-        {
-          "file": "apps/pokemon/src/test-setup.ts",
-          "hash": "10765977267162271731",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "apps/pokemon/tsconfig.app.json",
-          "hash": "6939181460324988079"
-        },
-        {
-          "file": "apps/pokemon/tsconfig.editor.json",
-          "hash": "6816855480324741077"
-        },
-        {
-          "file": "apps/pokemon/tsconfig.json",
-          "hash": "17021277375021554599"
-        },
-        {
-          "file": "apps/pokemon/tsconfig.spec.json",
-          "hash": "1930986853382524452"
-        },
-        {
-          "file": "apps/pokemon/webpack.config.js",
-          "hash": "9526548568040610005",
-          "deps": [
-            "npm:@nx/angular"
-          ]
-        },
-        {
-          "file": "apps/pokemon/webpack.prod.config.js",
-          "hash": "7369099702485768251",
-          "deps": [
-            "npm:@nx/angular"
-          ]
-        }
-      ],
-      "services-pokemon": [
-        {
-          "file": "libs/services/pokemon/.eslintrc.json",
-          "hash": "7809763361113708233"
-        },
-        {
-          "file": "libs/services/pokemon/README.md",
-          "hash": "16016490101798032357"
-        },
-        {
-          "file": "libs/services/pokemon/jest.config.ts",
-          "hash": "17482913999179334092"
-        },
-        {
-          "file": "libs/services/pokemon/project.json",
-          "hash": "9460097708270063731"
-        },
-        {
-          "file": "libs/services/pokemon/src/index.ts",
-          "hash": "14446873310616464917"
-        },
-        {
-          "file": "libs/services/pokemon/src/lib/libs/services/pokemon.module.ts",
-          "hash": "5960010599443190959",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/services/pokemon/src/lib/pokemon.service.spec.ts",
-          "hash": "4809553710711895393",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/services/pokemon/src/lib/pokemon.service.ts",
-          "hash": "11792320715734247334",
-          "deps": [
-            "npm:@angular/core",
-            "npm:rxjs",
-            "npm:@angular/common",
-            "libs/models"
-          ]
-        },
-        {
-          "file": "libs/services/pokemon/src/test-setup.ts",
-          "hash": "10765977267162271731",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/services/pokemon/tsconfig.json",
-          "hash": "6922415355334431150"
-        },
-        {
-          "file": "libs/services/pokemon/tsconfig.lib.json",
-          "hash": "5210152845168933800"
-        },
-        {
-          "file": "libs/services/pokemon/tsconfig.spec.json",
-          "hash": "7652445452192956988"
-        }
-      ],
       "store": [
         {
           "file": "libs/store/.eslintrc.json",
@@ -882,11 +689,11 @@
         },
         {
           "file": "libs/store/src/lib/pokemon/pokemon.reducer.ts",
-          "hash": "15870850742804420941"
+          "hash": "10053794276509029152"
         },
         {
           "file": "libs/store/src/lib/pokemon/pokemon.selectors.ts",
-          "hash": "3323990327071368822",
+          "hash": "8153571590415635757",
           "deps": [
             "npm:@ngrx/store"
           ]
@@ -905,13 +712,15 @@
         },
         {
           "file": "libs/store/src/lib/pokemonFilters/pokemonFilters.effects.spec.ts",
-          "hash": "4268214204604559585",
+          "hash": "5450380139696974716",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/effects",
             "npm:@ngrx/store",
             "npm:rxjs",
-            "npm:@angular/common"
+            "npm:@angular/common",
+            "test",
+            "libs/models"
           ]
         },
         {
@@ -927,7 +736,10 @@
         },
         {
           "file": "libs/store/src/lib/pokemonFilters/pokemonFilters.reducer.spec.ts",
-          "hash": "3244421341483603138"
+          "hash": "6206989743445032814",
+          "deps": [
+            "libs/models"
+          ]
         },
         {
           "file": "libs/store/src/lib/pokemonFilters/pokemonFilters.reducer.ts",
@@ -969,13 +781,15 @@
         },
         {
           "file": "libs/store/src/lib/pokemonList/pokemonList.effects.spec.ts",
-          "hash": "4084567892819256167",
+          "hash": "14616224016937297235",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/effects",
             "npm:@ngrx/store",
             "npm:rxjs",
-            "npm:@angular/common"
+            "npm:@angular/common",
+            "test",
+            "libs/models"
           ]
         },
         {
@@ -991,7 +805,10 @@
         },
         {
           "file": "libs/store/src/lib/pokemonList/pokemonList.reducer.spec.ts",
-          "hash": "3244421341483603138"
+          "hash": "4746050310374047528",
+          "deps": [
+            "libs/models"
+          ]
         },
         {
           "file": "libs/store/src/lib/pokemonList/pokemonList.reducer.ts",
@@ -1003,7 +820,7 @@
         },
         {
           "file": "libs/store/src/lib/pokemonList/pokemonList.selectors.ts",
-          "hash": "11754251207761512479",
+          "hash": "18061019643153826266",
           "deps": [
             "npm:@ngrx/store"
           ]
@@ -1150,72 +967,133 @@
           "hash": "1930986853382524452"
         }
       ],
-      "libs/services/auth": [
+      "ui": [
         {
-          "file": "libs/services/auth/.eslintrc.json",
-          "hash": "7809763361113708233"
+          "file": "libs/ui/.eslintrc.json",
+          "hash": "5015818778099008089"
         },
         {
-          "file": "libs/services/auth/README.md",
-          "hash": "13886283563476178429"
+          "file": "libs/ui/README.md",
+          "hash": "17507811124529675953"
         },
         {
-          "file": "libs/services/auth/jest.config.ts",
-          "hash": "645796793574435848"
+          "file": "libs/ui/jest.config.ts",
+          "hash": "16699829734566568597"
         },
         {
-          "file": "libs/services/auth/project.json",
-          "hash": "8500713554741650235"
+          "file": "libs/ui/project.json",
+          "hash": "6361117453501613083"
         },
         {
-          "file": "libs/services/auth/src/index.ts",
-          "hash": "9571308767185705755"
+          "file": "libs/ui/src/index.ts",
+          "hash": "618036845113979959"
         },
         {
-          "file": "libs/services/auth/src/lib/auth.service.spec.ts",
-          "hash": "6927655796975040699",
+          "file": "libs/ui/src/lib/animations/collapse/collapse.animation.ts",
+          "hash": "10600443172890727053",
+          "deps": [
+            "npm:@angular/animations"
+          ]
+        },
+        {
+          "file": "libs/ui/src/lib/animations/rotate/rotate.animation.ts",
+          "hash": "15253647679716645393",
+          "deps": [
+            "npm:@angular/animations"
+          ]
+        },
+        {
+          "file": "libs/ui/src/lib/animations/shake/shake.animation.ts",
+          "hash": "2092623389078873470",
+          "deps": [
+            "npm:@angular/animations"
+          ]
+        },
+        {
+          "file": "libs/ui/src/lib/directives/intersectionObserver/intersection-observer.directive.spec.ts",
+          "hash": "8274434010152481291",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/ui/src/lib/directives/intersectionObserver/intersection-observer.directive.ts",
+          "hash": "216238742643656313",
+          "deps": [
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/ui/src/lib/directives/pokemonId/pokemonId.directive.ts",
+          "hash": "8171497955997293426",
           "deps": [
             "npm:@angular/core"
           ]
         },
         {
-          "file": "libs/services/auth/src/lib/auth.service.ts",
-          "hash": "10886798871758975198",
+          "file": "libs/ui/src/lib/directives/pokemonTypeColor/pokemonTypeColor.directive.spec.ts",
+          "hash": "12071543245392398483",
           "deps": [
             "npm:@angular/core",
-            "libs/models",
-            "store",
-            "npm:@ngrx/store",
-            "npm:rxjs",
-            "npm:@angular/router"
+            "npm:@angular/platform-browser"
           ]
         },
         {
-          "file": "libs/services/auth/src/lib/libs/services/auth.module.ts",
-          "hash": "3030045134069541342",
+          "file": "libs/ui/src/lib/directives/pokemonTypeColor/pokemonTypeColor.directive.ts",
+          "hash": "15870916601168526621",
           "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
+            "npm:@angular/core"
           ]
         },
         {
-          "file": "libs/services/auth/src/test-setup.ts",
+          "file": "libs/ui/src/lib/material/material.module.ts",
+          "hash": "283356290455297275",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/material"
+          ]
+        },
+        {
+          "file": "libs/ui/src/lib/ui.module.ts",
+          "hash": "5778444589838266090",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms",
+            "npm:@ngrx/component",
+            "npm:@ngx-translate/core",
+            "npm:@angular/material"
+          ]
+        },
+        {
+          "file": "libs/ui/src/test-setup.ts",
           "hash": "10765977267162271731",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/services/auth/tsconfig.json",
-          "hash": "6922415355334431150"
+          "file": "libs/ui/tsconfig.json",
+          "hash": "7184861466157324158"
         },
         {
-          "file": "libs/services/auth/tsconfig.lib.json",
-          "hash": "5210152845168933800"
+          "file": "libs/ui/tsconfig.lib.json",
+          "hash": "15304444604046903881"
         },
         {
-          "file": "libs/services/auth/tsconfig.spec.json",
-          "hash": "7652445452192956988"
+          "file": "libs/ui/tsconfig.spec.json",
+          "hash": "1930986853382524452"
+        },
+        {
+          "file": "libs/ui/src/lib/directives/pokemonId/pokemonId.directive.spec.ts",
+          "hash": "18756859558631150",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser"
+          ]
         }
       ],
       "shell": [
@@ -1245,10 +1123,9 @@
         },
         {
           "file": "apps/shell/src/app/app.component.spec.ts",
-          "hash": "8836568235872351648",
+          "hash": "16882595954203006373",
           "deps": [
             "npm:@angular/core",
-            "npm:@angular/router",
             "libs/services/culture"
           ]
         },
@@ -1288,6 +1165,21 @@
           ]
         },
         {
+          "file": "apps/shell/src/app/core/auth-guard.service.spec.ts",
+          "hash": "5778440109471410727",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/store",
+            "libs/services/auth",
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:@ngrx/effects",
+            "test",
+            "libs/models",
+            "store"
+          ]
+        },
+        {
           "file": "apps/shell/src/app/core/auth-guard.service.ts",
           "hash": "3659407529664221753",
           "deps": [
@@ -1320,7 +1212,7 @@
         },
         {
           "file": "apps/shell/src/app/home/home.component.spec.ts",
-          "hash": "15618241637266539250",
+          "hash": "15910578157697453436",
           "deps": [
             "npm:@angular/core"
           ]
@@ -1343,9 +1235,13 @@
         },
         {
           "file": "apps/shell/src/app/layout/base-layout/base-layout.component.spec.ts",
-          "hash": "18070962437129042094",
+          "hash": "10645544793057461495",
           "deps": [
-            "npm:@angular/core"
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "libs/services/auth",
+            "test",
+            "npm:@ngrx/store"
           ]
         },
         {
@@ -1366,7 +1262,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/menu-bottom/menu-bottom.component.spec.ts",
-          "hash": "5623238916068061838",
+          "hash": "627623295890591238",
           "deps": [
             "npm:@angular/core"
           ]
@@ -1388,7 +1284,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/menu-nav-bar/menu-nav-bar.component.spec.ts",
-          "hash": "11238485121305162723",
+          "hash": "15830966861280004834",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router",
@@ -1421,7 +1317,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/menu-top/menu-top.component.spec.ts",
-          "hash": "4910920695844187848",
+          "hash": "16799913473790145149",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router",
@@ -1457,21 +1353,25 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.spec.ts",
-          "hash": "12948005989980171872",
+          "hash": "829129938928868186",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router",
-            "npm:@ngx-translate/core"
+            "npm:@ngx-translate/core",
+            "libs/services/auth",
+            "npm:@ngrx/store",
+            "npm:@ngrx/effects",
+            "npm:rxjs",
+            "test"
           ]
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.ts",
-          "hash": "8903732912747369831",
+          "hash": "17515684248285709308",
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core",
             "npm:@angular/router",
-            "libs/models",
             "libs/services/auth",
             "store",
             "ui",
@@ -1490,7 +1390,7 @@
         },
         {
           "file": "apps/shell/src/app/loading-spinner/loading-spinner.component.spec.ts",
-          "hash": "4742024952889250871",
+          "hash": "17961339686141899762",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/store",
@@ -1703,126 +1603,166 @@
           "hash": "1930986853382524452"
         }
       ],
-      "account": [
+      "pokemon": [
         {
-          "file": "apps/account/.eslintrc.json",
+          "file": "apps/pokemon/.eslintrc.json",
           "hash": "5015818778099008089"
         },
         {
-          "file": "apps/account/jest.config.ts",
-          "hash": "17834687415447834470"
+          "file": "apps/pokemon/jest.config.ts",
+          "hash": "17781263549915941874"
         },
         {
-          "file": "apps/account/module-federation.config.js",
-          "hash": "13736485599496579693"
+          "file": "apps/pokemon/module-federation.config.js",
+          "hash": "14104891367941935880"
         },
         {
-          "file": "apps/account/project.json",
-          "hash": "8769466323596370598"
+          "file": "apps/pokemon/project.json",
+          "hash": "5500875894652382285"
         },
         {
-          "file": "apps/account/src/app/+state/account.reducer.ts",
-          "hash": "7720241341787579913",
+          "file": "apps/pokemon/src/app/+state/models/pokemonState.initialState.ts",
+          "hash": "1763791849696413194",
           "deps": [
-            "npm:@ngrx/store"
+            "store"
           ]
         },
         {
-          "file": "apps/account/src/app/+state/account.selectors.ts",
-          "hash": "9479927381032220806",
+          "file": "apps/pokemon/src/app/+state/models/pokemonState.model.ts",
+          "hash": "14306526305033368007",
           "deps": [
-            "npm:@ngrx/store"
+            "store"
           ]
         },
         {
-          "file": "apps/account/src/app/+state/models/accountState.initialState.ts",
-          "hash": "7187478787350768819"
-        },
-        {
-          "file": "apps/account/src/app/+state/models/accountState.model.ts",
-          "hash": "15302138898342965473"
-        },
-        {
-          "file": "apps/account/src/app/app.component.ts",
-          "hash": "15725025700233744738",
+          "file": "apps/pokemon/src/app/+state/pokemon.reducer.ts",
+          "hash": "1571823868043002612",
           "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router",
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/account/src/app/app.routes.ts",
-          "hash": "14925332210399216599",
-          "deps": [
-            "npm:@angular/router",
             "npm:@ngrx/store",
-            "npm:@angular/core",
-            "npm:@ngrx/effects"
+            "store"
           ]
         },
         {
-          "file": "apps/account/src/app/login/login.component.html",
-          "hash": "11424107480616330116"
-        },
-        {
-          "file": "apps/account/src/app/login/login.component.scss",
-          "hash": "9005734642169038916"
-        },
-        {
-          "file": "apps/account/src/app/login/login.component.spec.ts",
-          "hash": "13877209119180320798",
+          "file": "apps/pokemon/src/app/+state/pokemon.selectors.ts",
+          "hash": "17342040303224221423",
           "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/account/src/app/login/login.component.ts",
-          "hash": "16567480056421916332",
-          "deps": [
-            "npm:@angular/common",
-            "npm:@angular/core",
             "npm:@ngrx/store",
-            "npm:@angular/forms",
+            "store"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/app.component.ts",
+          "hash": "12804222445020936894",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/app.routes.ts",
+          "hash": "11157912038729776434",
+          "deps": [
+            "npm:@angular/router",
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
             "store",
-            "ui"
+            "services-pokemon"
           ]
         },
         {
-          "file": "apps/account/src/app/login/login.form.ts",
-          "hash": "14550813396178113525",
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.html",
+          "hash": "10429292450936215318"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.scss",
+          "hash": "3448370893041908221"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.spec.ts",
+          "hash": "14407099627073388267",
           "deps": [
-            "npm:@angular/forms"
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
+            "npm:rxjs"
           ]
         },
         {
-          "file": "apps/account/src/app/login/model/loginRequest.model.ts",
-          "hash": "10170242632351744783"
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.ts",
+          "hash": "15330216082615761426",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@ngrx/store",
+            "npm:@ngrx/component",
+            "ui",
+            "libs/models"
+          ]
         },
         {
-          "file": "apps/account/src/app/login/store/login.actions.ts",
-          "hash": "14249515760230070415",
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.html",
+          "hash": "6046538510438925676"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.scss",
+          "hash": "16017849778263758756"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.spec.ts",
+          "hash": "12502766317018838579",
           "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.ts",
+          "hash": "9328789231421315156",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "ui",
+            "npm:@angular/router",
+            "npm:@ngx-translate/core",
+            "libs/models"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/shared/service/pokemonDetails.resolver.ts",
+          "hash": "11278622982961672437",
+          "deps": [
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:@angular/core",
+            "libs/models",
             "npm:@ngrx/store"
           ]
         },
         {
-          "file": "apps/account/src/app/login/store/login.effects.spec.ts",
-          "hash": "12108598558678551056",
+          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.actions.ts",
+          "hash": "10281589834528138865",
+          "deps": [
+            "libs/models",
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.effects.spec.ts",
+          "hash": "15207391125731990943",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/effects",
             "npm:@ngrx/store",
             "npm:rxjs",
             "npm:@angular/common",
-            "libs/services/auth"
+            "libs/models"
           ]
         },
         {
-          "file": "apps/account/src/app/login/store/login.effects.ts",
-          "hash": "12482561568114793080",
+          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.effects.ts",
+          "hash": "11166442822032937609",
           "deps": [
-            "libs/services/auth",
             "npm:@angular/core",
             "npm:@ngrx/effects",
             "npm:rxjs",
@@ -1830,30 +1770,161 @@
           ]
         },
         {
-          "file": "apps/account/src/app/login/store/login.reducer.spec.ts",
-          "hash": "14227288041937590606"
+          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.reducer.spec.ts",
+          "hash": "7530674121052852091",
+          "deps": [
+            "libs/models"
+          ]
         },
         {
-          "file": "apps/account/src/app/login/store/login.reducer.ts",
-          "hash": "2417343408988970436",
+          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.reducer.ts",
+          "hash": "1372870053200080007",
+          "deps": [
+            "npm:@ngrx/store",
+            "libs/models"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.selectors.ts",
+          "hash": "1210327370430004563",
           "deps": [
             "npm:@ngrx/store"
           ]
         },
         {
-          "file": "apps/account/src/app/login/store/login.selectors.ts",
-          "hash": "15499979009022389638",
+          "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.service.ts",
+          "hash": "15961647540664596770",
           "deps": [
-            "npm:@ngrx/store"
+            "npm:@angular/core",
+            "npm:rxjs",
+            "libs/models",
+            "services-pokemon"
           ]
         },
         {
-          "file": "apps/account/src/assets/.gitkeep",
+          "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.html",
+          "hash": "9175096329957671682"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.scss",
+          "hash": "15087223678379338875"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.spec.ts",
+          "hash": "2784923365179543445",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
+            "npm:rxjs",
+            "test",
+            "npm:@angular/platform-browser",
+            "libs/models",
+            "store"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.ts",
+          "hash": "13784577391458244521",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@ngrx/store",
+            "npm:@ngrx/component",
+            "ui",
+            "store",
+            "libs/models"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.html",
+          "hash": "7303738621156025824"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.scss",
+          "hash": "1835553045773526823"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.spec.ts",
+          "hash": "18367492569049235274",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "ui",
+            "npm:@angular/platform-browser",
+            "libs/models"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemonCard/pokemon-card.component.ts",
+          "hash": "493641996487923771",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@ngrx/component",
+            "ui",
+            "libs/models",
+            "components"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.html",
+          "hash": "6951942941196573069"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.scss",
+          "hash": "2603207032029289789"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.spec.ts",
+          "hash": "204013346283798122",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/store",
+            "components",
+            "npm:@ngrx/effects",
+            "npm:rxjs",
+            "test",
+            "npm:@angular/router",
+            "npm:@angular/platform-browser",
+            "libs/models",
+            "store"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/pokemonListFilter/pokemon-list-filter.component.ts",
+          "hash": "14317289627252506914",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@ngrx/store",
+            "npm:@ngrx/component",
+            "ui",
+            "store",
+            "libs/models",
+            "components",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonList/shared/service/pokemonList.resolver.ts",
+          "hash": "12567422136144844324",
+          "deps": [
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:@angular/core",
+            "npm:@ngrx/store",
+            "store",
+            "libs/models"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/assets/.gitkeep",
           "hash": "3244421341483603138"
         },
         {
-          "file": "apps/account/src/bootstrap.ts",
-          "hash": "2137568666965449876",
+          "file": "apps/pokemon/src/bootstrap.ts",
+          "hash": "14111898317897817271",
           "deps": [
             "npm:@angular/platform-browser",
             "npm:@angular/common",
@@ -1862,57 +1933,129 @@
           ]
         },
         {
-          "file": "apps/account/src/favicon.ico",
+          "file": "apps/pokemon/src/favicon.ico",
           "hash": "9303420814833116677"
         },
         {
-          "file": "apps/account/src/index.html",
-          "hash": "3194341804420687129"
+          "file": "apps/pokemon/src/index.html",
+          "hash": "8818430837285340597"
         },
         {
-          "file": "apps/account/src/main.ts",
+          "file": "apps/pokemon/src/main.ts",
           "hash": "3495665193403183614"
         },
         {
-          "file": "apps/account/src/styles.scss",
-          "hash": "2779208751810291572"
+          "file": "apps/pokemon/src/styles.scss",
+          "hash": "2917954890128038984"
         },
         {
-          "file": "apps/account/src/test-setup.ts",
+          "file": "apps/pokemon/src/test-setup.ts",
           "hash": "10765977267162271731",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "apps/account/tsconfig.app.json",
+          "file": "apps/pokemon/tsconfig.app.json",
           "hash": "6939181460324988079"
         },
         {
-          "file": "apps/account/tsconfig.editor.json",
+          "file": "apps/pokemon/tsconfig.editor.json",
           "hash": "6816855480324741077"
         },
         {
-          "file": "apps/account/tsconfig.json",
+          "file": "apps/pokemon/tsconfig.json",
           "hash": "17021277375021554599"
         },
         {
-          "file": "apps/account/tsconfig.spec.json",
+          "file": "apps/pokemon/tsconfig.spec.json",
           "hash": "1930986853382524452"
         },
         {
-          "file": "apps/account/webpack.config.js",
+          "file": "apps/pokemon/webpack.config.js",
           "hash": "9526548568040610005",
           "deps": [
             "npm:@nx/angular"
           ]
         },
         {
-          "file": "apps/account/webpack.prod.config.js",
+          "file": "apps/pokemon/webpack.prod.config.js",
           "hash": "7369099702485768251",
           "deps": [
             "npm:@nx/angular"
           ]
+        }
+      ],
+      "libs/services/auth": [
+        {
+          "file": "libs/services/auth/.eslintrc.json",
+          "hash": "7809763361113708233"
+        },
+        {
+          "file": "libs/services/auth/README.md",
+          "hash": "13886283563476178429"
+        },
+        {
+          "file": "libs/services/auth/jest.config.ts",
+          "hash": "645796793574435848"
+        },
+        {
+          "file": "libs/services/auth/project.json",
+          "hash": "8500713554741650235"
+        },
+        {
+          "file": "libs/services/auth/src/index.ts",
+          "hash": "9571308767185705755"
+        },
+        {
+          "file": "libs/services/auth/src/lib/auth.service.spec.ts",
+          "hash": "5747448185981898480",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/store",
+            "store",
+            "libs/models",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/services/auth/src/lib/auth.service.ts",
+          "hash": "10886798871758975198",
+          "deps": [
+            "npm:@angular/core",
+            "libs/models",
+            "store",
+            "npm:@ngrx/store",
+            "npm:rxjs",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "libs/services/auth/src/lib/libs/services/auth.module.ts",
+          "hash": "3030045134069541342",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/services/auth/src/test-setup.ts",
+          "hash": "10765977267162271731",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/services/auth/tsconfig.json",
+          "hash": "6922415355334431150"
+        },
+        {
+          "file": "libs/services/auth/tsconfig.lib.json",
+          "hash": "5210152845168933800"
+        },
+        {
+          "file": "libs/services/auth/tsconfig.spec.json",
+          "hash": "7652445452192956988"
         }
       ]
     }

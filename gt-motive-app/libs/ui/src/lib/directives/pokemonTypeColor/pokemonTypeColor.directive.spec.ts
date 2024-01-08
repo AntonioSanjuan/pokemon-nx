@@ -1,7 +1,7 @@
 import { Component, DebugElement } from '@angular/core'
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { PokemonTypePillDirective } from './pokemon-type-pill.directive';
+import { PokemonTypePillDirective } from './pokemonTypeColor.directive';
 
 function rgbToHex(rgb: string) {
     // Verificar si el valor de entrada tiene el formato correcto
@@ -27,7 +27,11 @@ function rgbToHex(rgb: string) {
         <p appPokemonTypePill [typeName]="typeName">
             test
         </p>
-    </div>`
+    </div>`,
+    imports: [
+        PokemonTypePillDirective
+    ],
+    standalone: true
 })
 class DummyComponent {
     public typeName = "grass";
@@ -41,8 +45,7 @@ describe('PokemonIdDirective', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [DummyComponent, PokemonTypePillDirective],
-            imports: [],
+            imports: [DummyComponent],
         }).compileComponents();
 
         fixture = TestBed.createComponent(DummyComponent);

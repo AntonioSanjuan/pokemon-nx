@@ -21,11 +21,14 @@ import { PokemonTypePillComponent } from '@gt-motive-app/components'
 })
 export class PokemonCardComponent {
   @Input() public pokemon!: PokemonResponseDto;
-  @Input() public isLoading!: boolean;
 
   public animationActive = false;
 
   public toggle(): void {
     this.animationActive = !this.animationActive;
+  }
+
+  public getImage(): string {
+    return this.pokemon.sprites.other['official-artwork'].front_default
   }
 }

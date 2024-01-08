@@ -1,23 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonTypePillComponent } from './pokemon-type-pill.component';
-import { SkeletonDirective } from 'src/app/directives/skeleton/skeleton.directive';
-import { PokemonTypePillDirective } from 'src/app/directives/pokemonTypeColor/pokemon-type-pill.directive';
+import { PokemonType } from '@gt-motive-app/libs/models';
 
 describe('PokemonTypePillComponent', () => {
+  let dummyPokemonType = { name: 'bug'} as PokemonType;
+
   let component: PokemonTypePillComponent;
   let fixture: ComponentFixture<PokemonTypePillComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PokemonTypePillComponent, SkeletonDirective, PokemonTypePillDirective]
-    });
+      imports: [PokemonTypePillComponent]
+    }).compileComponents();
     fixture = TestBed.createComponent(PokemonTypePillComponent);
     component = fixture.componentInstance;
+    component.pokemonType = dummyPokemonType
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  describe('Unit tests', () => {
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
+  })
 });
