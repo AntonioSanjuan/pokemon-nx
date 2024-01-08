@@ -1,12 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { Action, Store } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Observable, firstValueFrom, of, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http'
-import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { PokemonListEffects } from './pokemonList.effects';
-import { PokemonStateMock } from '@gt-motive-app/test';
+import { BasePokemonStateMock } from '@gt-motive-app/test';
 import { PokemonListService } from './pokemonList.service';
 import { getFilteredPokemonListRequest, getNextPokemonListPageRequest, getNextPokemonListPageRequestError, getNextPokemonListPageRequestSuccess, getPokemonListRequest, getPokemonListRequestError, getPokemonListRequestSuccess, updatePokemonListQueryFilters, updatePokemonTypeFilter } from './pokemonList.actions';
 import { selectPokemonQuery } from './pokemonList.selectors';
@@ -26,10 +25,9 @@ describe('PokemonListEffects', () => {
       providers: [
         PokemonListEffects,
         PokemonListService,
-        AuthService,
         provideMockActions(() => actions),
         provideMockStore({
-          initialState: PokemonStateMock
+          initialState: BasePokemonStateMock
         }),
       ],
     });

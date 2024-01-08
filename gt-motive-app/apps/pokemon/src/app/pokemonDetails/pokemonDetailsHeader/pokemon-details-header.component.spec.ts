@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PokemonDetailsHeaderComponent } from './pokemon-details-header.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('PokemonDetailsHeaderComponent', () => {
   let component: PokemonDetailsHeaderComponent;
@@ -7,7 +8,10 @@ describe('PokemonDetailsHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PokemonDetailsHeaderComponent],
+      imports: [
+        PokemonDetailsHeaderComponent,
+        RouterTestingModule.withRoutes([]),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonDetailsHeaderComponent);

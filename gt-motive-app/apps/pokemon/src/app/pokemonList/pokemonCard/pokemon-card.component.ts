@@ -21,7 +21,6 @@ import { PokemonTypePillComponent } from '@gt-motive-app/components'
 })
 export class PokemonCardComponent {
   @Input() public pokemon!: PokemonResponseDto;
-  @Input() public isLoading!: boolean;
 
   public animationActive = false;
 

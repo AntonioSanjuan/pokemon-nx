@@ -4,7 +4,6 @@ import { provideMockStore } from '@ngrx/store/testing';
 import { accountAppStateMock } from '../+state/test/accountStateMock/accountStateMock.mock';
 import { Store } from '@ngrx/store';
 import { userStateMock } from '@gt-motive-app/test'
-import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { loginRequest } from './store/login.actions';
 import { LoginData } from './model/loginRequest.model';

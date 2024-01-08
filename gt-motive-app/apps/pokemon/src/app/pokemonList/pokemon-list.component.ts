@@ -31,11 +31,11 @@ export class PokemonListComponent {
   public displayedColumns: string[] = ['name'];
 
 
-  public selectPokemon(pokemon: PokemonResponseDto) {
+  public selectPokemon(pokemon: PokemonResponseDto): void {
     this.store.dispatch(setSelectedPokemon({ pokemon }))
   }
 
-  isIntersecting(isIntersecting: any) {
+  public isIntersecting(isIntersecting: boolean): void {
     if (isIntersecting) {
       // Load more data, update the UI, etc.
       this.store.dispatch(getNextPokemonListPageRequest())
