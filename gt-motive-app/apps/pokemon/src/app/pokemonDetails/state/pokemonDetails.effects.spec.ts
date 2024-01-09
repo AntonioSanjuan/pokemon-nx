@@ -49,7 +49,7 @@ describe('PokemonDetailsEffects', () => {
 
         it('should call getNextPokemonListPageRequestError', async () => {
           const result = await firstValueFrom(effects.getPokemonByNameRequest$)
-          expect(result).toEqual(getPokemonByNameRequestError())
+          expect(result).toEqual(getPokemonByNameRequestError({ pokemonName: pokemonNameSut}))
         })
       })
 

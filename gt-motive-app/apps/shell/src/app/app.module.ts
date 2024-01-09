@@ -11,13 +11,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, rootInitialState } from './store/reducers';
 import { CoreModule } from './core/core.module';
 import { AuthenticateGuard } from './core/auth-guard.service';
-import { UiEffects, RequestEffects, UserEffects } from '@gt-motive-app/store';
+import { UiEffects, RequestEffects, UserEffects, ErrorMessageEffects } from '@gt-motive-app/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { LibsServicesAuthModule } from '@gt-motive-app/libs/services/auth';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
 import { CommonModule } from '@angular/common';
+import { LibsServicesMessageModule } from '@gt-motive-app/services/message';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     LibsServicesCultureModule,
     LibsServicesAuthModule,
+    LibsServicesMessageModule,
     CoreModule,
     TranslateModule,
     BaseLayoutComponent,
@@ -40,7 +42,7 @@ import { CommonModule } from '@angular/common';
         strictStateImmutability: true,
       },
     }),
-    EffectsModule.forRoot([UiEffects, UserEffects, RequestEffects]),
+    EffectsModule.forRoot([UiEffects, UserEffects, RequestEffects, ErrorMessageEffects]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ logOnly: !isDevMode() }),
   ],

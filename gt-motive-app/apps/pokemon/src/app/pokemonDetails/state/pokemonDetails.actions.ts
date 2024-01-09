@@ -8,4 +8,4 @@ export const getPokemonByNameRequestSuccess = createAction(
   '[Pokemon/PokemonList/API] getPokemonByNameRequest Request Success', props<{ pokemon: PokemonResponseDto}>())
 
 export const getPokemonByNameRequestError = createAction(
-  '[Pokemon/PokemonList/API] getPokemonByNameRequest Request Error')
+  '[Pokemon/PokemonList/API] getPokemonByNameRequest Request Error', props<{ pokemonName: string}>())

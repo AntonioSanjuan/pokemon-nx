@@ -22,6 +22,7 @@
         "libs/services/culture/src/index.ts"
       ],
       "@gt-motive-app/services/culture": ["libs/services/culture/src/index.ts"],
+      "@gt-motive-app/services/message": ["libs/services/message/src/index.ts"],
       "@gt-motive-app/services/pokemon": ["libs/services/pokemon/src/index.ts"],
       "@gt-motive-app/store": ["libs/store/src/index.ts"],
       "@gt-motive-app/test": ["libs/test/src/index.ts"],
