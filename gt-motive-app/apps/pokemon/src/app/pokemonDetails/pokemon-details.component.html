@@ -4,7 +4,24 @@
     <gt-motive-app-pokemon-details-header></gt-motive-app-pokemon-details-header>
     <mat-card>
       <mat-card-content>
-        {{vm.pokemonDetails?.height}}
+        <div class="PokemonDetails_HeaderContainer">
+          <h2>{{vm.pokemonDetails?.name | titlecase}}</h2>
+          <h2 id="pokemonNumber" 
+            appPokemonId
+            [pokemonId]="vm.pokemonDetails?.id">
+              N* {{vm.pokemonDetails?.id}}
+          </h2>
+          
+        </div>
+        <div class="PokemonDetails_BodyContainer">
+          <div class="PokemonDetails_ImageContainer">
+            <img 
+            mat-card-image 
+            src={{vm.pokemonDetails?.sprites?.front_default}} 
+            alt="Photo of a Shiba Inu">
+          </div>
+          <div class="PokemonDetails_InfoContainer"></div>
+        </div>
       </mat-card-content>
     </mat-card>
 

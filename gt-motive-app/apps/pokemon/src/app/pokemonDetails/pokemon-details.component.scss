@@ -1,6 +1,5 @@
 :host {
     display: flex;
-    height: calc(100vh - 90px) !important;
     flex-direction: row;
     justify-content: center;
 } 
@@ -21,6 +20,45 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            .PokemonDetails_HeaderContainer {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+
+                gap: 16px;
+
+                color: #212121;
+                font-size: 225%;
+                width: 100%;
+                word-break: break-word;
+                margin-top: 0!important;
+
+
+                h2 {
+                    margin-top: 0!important;
+
+                }
+            }
+            .PokemonDetails_BodyContainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                gap: 20px;
+
+                .PokemonDetails_ImageContainer,
+                .PokemonDetails_InfoContainer {
+                    width: 100%;
+                }
+
+                .PokemonDetails_ImageContainer {
+                    img {
+                        width: 100%;
+                        background-color: #F2F2F2 ;
+                        border-radius: 5px;
+                    }
+                }
+            }
         }
     }
 

@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
-import { UiModule } from '@gt-motive-app/ui';
+import { PokemonIdDirective, UiModule } from '@gt-motive-app/ui';
 import { selectPokemonDetails } from './state/pokemonDetails.selectors';
 import { PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { PokemonDetailsHeaderComponent } from './pokemonDetailsHeader/pokemon-details-header.component';
@@ -12,6 +12,7 @@ import { PokemonDetailsHeaderComponent } from './pokemonDetailsHeader/pokemon-de
   imports: [
     CommonModule,
     LetDirective,
+    PokemonIdDirective,
     UiModule,
     PokemonDetailsHeaderComponent
   ],
