@@ -11,7 +11,6 @@ import { PokemonResponseDto } from '@gt-motive-app/libs/models';
 describe('PokemonCardComponent', () => {
   let component: PokemonCardComponent;
   let fixture: ComponentFixture<PokemonCardComponent>;
-  let router: Router;
 
   const inputPokemonSut = {
     sprites:{ other: { 'official-artwork': { front_default: 'testUrl'}}}
@@ -24,14 +23,12 @@ describe('PokemonCardComponent', () => {
         BrowserAnimationsModule,
         PokemonIdDirective,
         PokemonCardComponent,
-        RouterTestingModule.withRoutes(appRoutes)
       ]
     });
     fixture = TestBed.createComponent(PokemonCardComponent);
     component = fixture.componentInstance;
     component.pokemon = inputPokemonSut
     fixture.detectChanges();
-    router = TestBed.inject(Router);
 
   });
 
