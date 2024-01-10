@@ -30,7 +30,7 @@ import { initialPokemonDetailsState } from "../../state/pokemonDetails.reducer";
                   this.store.dispatch(getPokemonByNameRequest({pokemonName: pokemonId}))
                 }
               }),
-              filter((pokemonDetails) => !!pokemonDetails)
+              filter((pokemonDetails) => !!pokemonDetails && !this.isOtherPokemonDetails(pokemonDetails, pokemonId))
             )
         }
 
