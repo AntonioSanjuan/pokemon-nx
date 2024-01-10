@@ -8,6 +8,7 @@ import { IntersectionObserverDirective } from './directives/intersectionObserver
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     TranslateModule,
     IntersectionObserverDirective,
     MatPaginatorModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
 
   ],
   exports: [
@@ -34,7 +36,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     IntersectionObserverDirective,
     MatPaginatorModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
   ]
 })
 export class UiModule {}

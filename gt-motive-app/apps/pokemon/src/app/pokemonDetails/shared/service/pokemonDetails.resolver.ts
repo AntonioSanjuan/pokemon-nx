@@ -1,5 +1,5 @@
 import { ActivatedRouteSnapshot, Resolve } from "@angular/router";
-import { Observable, of, tap } from "rxjs";
+import { Observable, catchError, defaultIfEmpty, filter, of, tap } from "rxjs";
 import { Injectable, inject } from "@angular/core";
 import { PokemonResponseDto } from "@gt-motive-app/libs/models";
 import { Store } from "@ngrx/store";
@@ -27,11 +27,10 @@ import { initialPokemonDetailsState } from "../../state/pokemonDetails.reducer";
             return this.store.select(selectPokemonDetails).pipe(
               tap((pokemonDetails: PokemonResponseDto | undefined) => {
                 if(!this.pokemonDetailsAlreadyExists(pokemonDetails) || this.isOtherPokemonDetails(pokemonDetails, pokemonId)) {
-                  console.log("request from PokemonDetailsResolver")
                   this.store.dispatch(getPokemonByNameRequest({pokemonName: pokemonId}))
-
                 }
-              })
+              }),
+              filter((pokemonDetails) => !!pokemonDetails)
             )
         }
 
