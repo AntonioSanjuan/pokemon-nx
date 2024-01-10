@@ -7,6 +7,7 @@ import { getIsBlockByRequest, getNextPokemonListPageRequest, selectPokemonList, 
 import { PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { PokemonListFilterComponent } from './pokemonListFilter/pokemon-list-filter.component';
 import { PokemonCardComponent } from './pokemonCard/pokemon-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list',
@@ -23,6 +24,7 @@ import { PokemonCardComponent } from './pokemonCard/pokemon-card.component';
 })
 export class PokemonListComponent {
   private store: Store = inject(Store)
+  private router: Router = inject(Router)
   public pokemonList$ = this.store.select(selectPokemonList)
   public pokemonQuery$ = this.store.select(selectPokemonQuery)
   public pokemonSelected$ = this.store.select(selectPokemonSelected)
@@ -40,5 +42,10 @@ export class PokemonListComponent {
       // Load more data, update the UI, etc.
       this.store.dispatch(getNextPokemonListPageRequest())
     }
+  }
+
+  public openPokemonDetails(pokemon: PokemonResponseDto): void {
+    this.router.navigate([`/pokemon/${pokemon.name}`])
+
   }
 }

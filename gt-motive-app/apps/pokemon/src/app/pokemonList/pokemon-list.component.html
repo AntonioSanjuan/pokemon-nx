@@ -11,7 +11,8 @@
         <div class="PokemonList_ListContainer">
           <div class="PokemonList_Cards">
             <div class="PokemonList_Card" 
-              *ngFor="let pokemon of vm.pokemonList">
+              *ngFor="let pokemon of vm.pokemonList"
+              (click)="openPokemonDetails(pokemon)">
               <gt-motive-app-pokemon-card [pokemon]="pokemon"></gt-motive-app-pokemon-card>
             </div>
           </div>
