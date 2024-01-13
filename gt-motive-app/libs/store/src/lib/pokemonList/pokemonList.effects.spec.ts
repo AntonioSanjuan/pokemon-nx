@@ -5,12 +5,13 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Observable, firstValueFrom, of, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http'
 import { PokemonListEffects } from './pokemonList.effects';
-import { BasePokemonStateMock } from '@gt-motive-app/test';
 import { PokemonListService } from './pokemonList.service';
 import { getFilteredPokemonListRequest, getNextPokemonListPageRequest, getNextPokemonListPageRequestError, getNextPokemonListPageRequestSuccess, getPokemonListRequest, getPokemonListRequestError, getPokemonListRequestSuccess, updatePokemonListQueryFilters, updatePokemonTypeFilter } from './pokemonList.actions';
 import { selectPokemonQuery } from './pokemonList.selectors';
 import { PokemonQuery, PokemonQueryFilters, PokemonResponseDto, PokemonType, PokemonsResponseDto } from '@gt-motive-app/libs/models';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { ApiService } from '@gt-motive-app/services/api';
+import { BasePokemonStateMock } from '@gt-motive-app/test';
 describe('PokemonListEffects', () => {
   let actions: Observable<Action>;
   let effects: PokemonListEffects;
@@ -25,6 +26,7 @@ describe('PokemonListEffects', () => {
       providers: [
         PokemonListEffects,
         PokemonListService,
+        ApiService,
         provideMockActions(() => actions),
         provideMockStore({
           initialState: BasePokemonStateMock

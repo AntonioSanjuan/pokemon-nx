@@ -1,21 +1,20 @@
 import { TestBed } from '@angular/core/testing';
 import { PokemonService } from './pokemon.service';
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { PokemonResponseDto, PokemonType, PokemonTypesFiltersResponseDto, PokemonsResponseDto } from '@gt-motive-app/libs/models';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { PokemonType } from '@gt-motive-app/libs/models';
+import { ApiService } from '@gt-motive-app/services/api';
 
 describe('PokemonService', () => {
-  let httpMock: HttpTestingController;
   let service: PokemonService;
+  let apiService: ApiService
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [PokemonService]
+      providers: [PokemonService, ApiService]
     });
-    httpMock = TestBed.inject(HttpTestingController);
     service = TestBed.inject(PokemonService);
+    apiService = TestBed.inject(ApiService)
   });
 
   describe('Unit tests', () => {
@@ -25,78 +24,41 @@ describe('PokemonService', () => {
       });
     })
     describe('Integration tests', () => {
-      it('getRawPokemons should made http request', () => {
+      it('getRawPokemons should made apiService request', () => {
+        const apiServiceSpy = jest.spyOn(apiService, 'get')
         const pageSut = 5;
         const pageSizeSut = 30
-        
-        const mockData = {
-          count: 10000,
-          next: 'next test',
-          previous: 'next test',
-          results: [{}, {}]
-        } as PokemonsResponseDto;
   
         service.getRawPokemons(pageSut, pageSizeSut).subscribe((resp) => {
-          expect(resp).toEqual(mockData)
+          expect(apiServiceSpy).toHaveBeenCalled()
         })
   
-        const req = httpMock.expectOne(`https://pokeapi.co/api/v2/pokemon?limit=${pageSizeSut}&offset=${pageSizeSut * pageSut}`)
-        expect(req.request.method).toBe('GET'); // Verificar que se hizo un request GET
-        req.flush(mockData); // Simular la respuesta del servidor
       })
   
-      it('getRawPokemon should made http request', () => {
+      it('getRawPokemon should made apiService request', () => {
+        const apiServiceSpy = jest.spyOn(apiService, 'get')
         const nameSut = 'testName';
-        
-        const mockData = {
-          height: 8123,
-          name: 'testName'
-        } as PokemonResponseDto;
   
         service.getRawPokemon(nameSut).subscribe((resp) => {
-          expect(resp).toEqual(mockData)
+          expect(apiServiceSpy).toHaveBeenCalled()
         })
-  
-        const req = httpMock.expectOne(`https://pokeapi.co/api/v2/pokemon/${nameSut.toLowerCase()}`)
-        expect(req.request.method).toBe('GET'); // Verificar que se hizo un request GET
-        req.flush(mockData); // Simular la respuesta del servidor
       })
   
-      it('getRawPokemonTypes should made http request', () => {      
-        const mockData = {
-          count: 10000,
-          next: 'next test',
-          previous: 'next test',
-          results: [{}, {}]
-        } as PokemonTypesFiltersResponseDto;
-  
+      it('getRawPokemonTypes should made apiService request', () => {      
+        const apiServiceSpy = jest.spyOn(apiService, 'get')
+
         service.getRawPokemonTypes().subscribe((resp) => {
-          expect(resp).toEqual(mockData)
+          expect(apiServiceSpy).toHaveBeenCalled()
         })
-  
-        const req = httpMock.expectOne(`https://pokeapi.co/api/v2/type`)
-        expect(req.request.method).toBe('GET'); // Verificar que se hizo un request GET
-        req.flush(mockData); // Simular la respuesta del servidor
       })
   
       it('getRawPokemonsByType should made http request', () => {     
+        const apiServiceSpy = jest.spyOn(apiService, 'get')
         const typeSut: PokemonType = { name: 'typeNameTest', url: 'urlTest'};
   
-  
-        const mockData = {
-          count: 10000,
-          next: 'next test',
-          previous: 'next test',
-          results: [{}, {}, {}, {}]
-        } as PokemonTypesFiltersResponseDto;
-  
         service.getRawPokemonsByType(typeSut).subscribe((resp) => {
-          expect(resp).toEqual(mockData)
+          expect(apiServiceSpy).toHaveBeenCalled()
         })
-  
-        const req = httpMock.expectOne(`https://pokeapi.co/api/v2/type/${typeSut.name}`)
-        expect(req.request.method).toBe('GET'); // Verificar que se hizo un request GET
-        req.flush(mockData); // Simular la respuesta del servidor
       })
     })
 

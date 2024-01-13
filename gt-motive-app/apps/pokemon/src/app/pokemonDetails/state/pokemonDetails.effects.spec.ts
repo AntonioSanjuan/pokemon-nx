@@ -10,6 +10,7 @@ import { getPokemonByNameRequest, getPokemonByNameRequestError, getPokemonByName
 import { PokemonDetailsService } from './pokemonDetails.service';
 import { PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ApiService } from '@gt-motive-app/services/api';
 
 describe('PokemonDetailsEffects', () => {
   let actions: Observable<Action>;
@@ -23,6 +24,7 @@ describe('PokemonDetailsEffects', () => {
         HttpClientTestingModule
       ],
       providers: [
+        ApiService,
         PokemonDetailsEffects,
         PokemonDetailsService,
         provideMockActions(() => actions),

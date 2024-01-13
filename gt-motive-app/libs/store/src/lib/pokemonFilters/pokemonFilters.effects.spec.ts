@@ -7,9 +7,10 @@ import { HttpErrorResponse } from '@angular/common/http'
 import { PokemonFiltersEffects } from './pokemonFilters.effects';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PokemonFiltersService } from './pokemonFilters.service';
-import { BasePokemonStateMock } from '@gt-motive-app/test';
 import { PokemonType, PokemonTypesFiltersResponseDto } from '@gt-motive-app/libs/models';
 import { getpokemonTypesFiltersRequest, getpokemonTypesFiltersRequestError, getpokemonTypesFiltersRequestSuccess } from './pokemonFilters.actions';
+import { ApiService } from '@gt-motive-app/services/api';
+import { BasePokemonStateMock } from '@gt-motive-app/test';
 
 describe('PokemonFiltersEffects', () => {
   let actions: Observable<Action>;
@@ -23,6 +24,7 @@ describe('PokemonFiltersEffects', () => {
         HttpClientTestingModule
       ],
       providers: [
+        ApiService,
         PokemonFiltersEffects,
         PokemonFiltersService,
         provideMockActions(() => actions),

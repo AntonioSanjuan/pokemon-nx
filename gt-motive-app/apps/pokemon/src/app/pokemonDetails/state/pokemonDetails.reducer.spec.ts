@@ -3,9 +3,6 @@ import { getPokemonByNameRequestSuccess } from "./pokemonDetails.actions"
 import { initialPokemonDetailsState, pokemonDetailsReducer } from "./pokemonDetails.reducer"
 
 describe('pokemonDetailsReducer', () => {
-    beforeEach(() => {
-
-    })
     describe('getPokemonByNameRequestSuccess action', () => {
         const pokemonSut = { name: 'nameTest' } as PokemonResponseDto;
         it('should handle getPokemonByNameRequestSuccess action', () => {
