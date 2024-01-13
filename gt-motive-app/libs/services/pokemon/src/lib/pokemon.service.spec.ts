@@ -1,21 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 import { PokemonService } from './pokemon.service';
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { PokemonResponseDto, PokemonType, PokemonTypesFiltersResponseDto, PokemonsResponseDto } from '@gt-motive-app/libs/models';
+import { ApiService } from '@gt-motive-app/services/api';
 
 describe('PokemonService', () => {
   let httpMock: HttpTestingController;
   let service: PokemonService;
+  let apiService: ApiService
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [PokemonService]
+      providers: [PokemonService, ApiService]
     });
     httpMock = TestBed.inject(HttpTestingController);
     service = TestBed.inject(PokemonService);
+    apiService = TestBed.inject(ApiService)
   });
 
   describe('Unit tests', () => {

@@ -19,6 +19,7 @@ import { LibsServicesAuthModule } from '@gt-motive-app/libs/services/auth';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
 import { CommonModule } from '@angular/common';
 import { LibsServicesMessageModule } from '@gt-motive-app/services/message';
+import { LibsServicesApiModule } from '@gt-motive-app/services/api'
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { LibsServicesMessageModule } from '@gt-motive-app/services/message';
     BrowserAnimationsModule,
     LibsServicesCultureModule,
     LibsServicesAuthModule,
+    LibsServicesApiModule,
     LibsServicesMessageModule,
     CoreModule,
     TranslateModule,
