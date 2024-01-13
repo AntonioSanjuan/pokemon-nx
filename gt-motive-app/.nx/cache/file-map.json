@@ -695,7 +695,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.effects.ts",
-          "hash": "50922422120708815",
+          "hash": "12377040734471328964",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/effects",
@@ -1005,7 +1005,7 @@
         },
         {
           "file": "libs/services/pokemon/api.service.ts",
-          "hash": "10844399492231895177",
+          "hash": "13913662199744170999",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
@@ -1034,7 +1034,7 @@
         },
         {
           "file": "libs/services/pokemon/src/lib/pokemon.service.spec.ts",
-          "hash": "9441785951793353114",
+          "hash": "13283018854990046143",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
@@ -1996,7 +1996,7 @@
         },
         {
           "file": "libs/test/src/lib/pokemonStateMock/pokemonStateMock.mock.ts",
-          "hash": "11955599607504843358",
+          "hash": "4868136831708863812",
           "deps": [
             "store"
           ]

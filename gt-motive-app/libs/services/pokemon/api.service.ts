@@ -10,7 +10,7 @@ export class ApiService {
     return this.httpClient.get<T>(url)
   }
 
-  public post<T>(url: string, body: any): Observable<T> {
+  public post<T>(url: string, body: unknown): Observable<T> {
     return this.httpClient.post<T>(url, body)
   }
 
@@ -18,7 +18,7 @@ export class ApiService {
     return this.httpClient.delete<T>(url)
   }
 
-  public put<T>(url: string, body: any): Observable<T> {
+  public put<T>(url: string, body: unknown): Observable<T> {
     return this.httpClient.put<T>(url, body)
   }
 }

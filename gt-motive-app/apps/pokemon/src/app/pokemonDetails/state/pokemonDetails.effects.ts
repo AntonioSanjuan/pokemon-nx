@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { getPokemonByNameRequest, getPokemonByNameRequestError, getPokemonByNameRequestSuccess } from './pokemonDetails.actions';
-import { map, catchError, of, mergeMap, tap } from 'rxjs'
+import { map, catchError, of, mergeMap } from 'rxjs'
 import { PokemonDetailsService } from './pokemonDetails.service';
 import { AppRoutes, PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { Router } from '@angular/router';
