@@ -19,6 +19,18 @@
             mat-card-image 
             src={{vm.pokemonDetails?.sprites?.front_default}} 
             alt="Photo of a Shiba Inu">
+
+            <div class="PokemonDetails_StatsContainer">
+              <div class="PokemonDetails_StatsHeader">
+                <h4>Puntos de base</h4>
+              </div>
+              
+              <div class="PokemonDetails_StatsBody">
+                <div class="PokemonDetails_Stat" *ngFor="let stat of vm.pokemonDetails?.stats">
+                  <area [style.height.px]="stat.base_stat">
+                </div>
+              </div>
+            </div>
           </div>
           <div class="PokemonDetails_InfoContainer"></div>
         </div>
