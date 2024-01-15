@@ -27,6 +27,7 @@
               
               <div class="PokemonDetails_StatsBody">
                 <div class="PokemonDetails_Stat" *ngFor="let stat of vm.pokemonDetails?.stats">
+                  <label>{{stat.stat.name}}</label>
                   <area [style.height.px]="stat.base_stat">
                 </div>
               </div>
