@@ -4,8 +4,8 @@ import { Store } from '@ngrx/store';
 import { LetDirective } from '@ngrx/component';
 import { PokemonIdDirective, UiModule } from '@gt-motive-app/ui';
 import { selectPokemonDetails } from './state/pokemonDetails.selectors';
-import { PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { PokemonDetailsHeaderComponent } from './pokemonDetailsHeader/pokemon-details-header.component';
+import { PokemonTypePillComponent } from '@gt-motive-app/components';
 
 @Component({
   selector: 'gt-motive-app-pokemon-details',
@@ -14,7 +14,8 @@ import { PokemonDetailsHeaderComponent } from './pokemonDetailsHeader/pokemon-de
     LetDirective,
     PokemonIdDirective,
     UiModule,
-    PokemonDetailsHeaderComponent
+    PokemonDetailsHeaderComponent,
+    PokemonTypePillComponent
   ],
   templateUrl: './pokemon-details.component.html',
   styleUrls: ['./pokemon-details.component.scss'],

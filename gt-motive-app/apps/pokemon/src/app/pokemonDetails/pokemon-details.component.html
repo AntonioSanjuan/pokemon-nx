@@ -33,7 +33,20 @@
               </div>
             </div>
           </div>
-          <div class="PokemonDetails_InfoContainer"></div>
+          <div class="PokemonDetails_InfoContainer">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            </p>
+            <div class="PokemonDetails_TypeContainer">
+              <h3>Tipos:</h3>
+              <div class="PokemonDetails_Types">
+                <gt-motive-app-pokemon-type-pill
+                  *ngFor="let type of vm.pokemonDetails?.types"
+                  [pokemonType]="type.type" 
+              ></gt-motive-app-pokemon-type-pill>
+              </div>
+            </div>
+          </div>
         </div>
       </mat-card-content>
     </mat-card>

@@ -36,7 +36,9 @@
 
                 h2 {
                     margin-top: 0!important;
-
+                }
+                h2:last-of-type {
+                    color: #616161
                 }
             }
             .PokemonDetails_BodyContainer {
@@ -62,54 +64,74 @@
                         background-color: #F2F2F2 ;
                         border-radius: 5px;
                     }
+                    .PokemonDetails_StatsContainer {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+    
+                        background-color: #a4a4a4;
+                        border-radius: 5px;
+    
+                        .PokemonDetails_StatsHeader {
+                            padding: 10px;
+    
+                            h4 { margin: 0; }
+                        }
+    
+                        .PokemonDetails_StatsBody {  
+                            display: flex;
+                            flex-direction: row;
+                            gap: 5px;
+                            padding: 5px;
+    
+                            .PokemonDetails_Stat {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-end;
+                                position: relative;
+    
+                                background-color: #ffff;
+                                border-radius: 5px;
+                                height: 100px;
+                                width: 100%;
+                                overflow: hidden;
+                                border: 1px solid;
+    
+                                label { 
+                                    position: absolute;   
+                                    transform: rotate(-90deg);
+    
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    height: 100%;
+                                    width: 100%;
+                                }
+                                area { 
+                                    width: 100%; 
+                                    background-color: #30a7d7;
+                                }
+                            }
+                        }
+                    }
                 }
 
-                .PokemonDetails_StatsContainer {
-                    width: 100%;
+                .PokemonDetails_InfoContainer {
                     display: flex;
                     flex-direction: column;
 
-                    background-color: #a4a4a4;
-                    border-radius: 5px;
-
-                    .PokemonDetails_StatsHeader {
-                        padding: 10px;
-
-                        h4 { margin: 0; }
+                    p {
+                        color: #212121;
+                        font-size: 112.5%;
                     }
 
-                    .PokemonDetails_StatsBody {  
-                        display: flex;
-                        flex-direction: row;
-                        gap: 5px;
-                        padding: 5px;
-
-                        .PokemonDetails_Stat {
+                    .PokemonDetails_TypeContainer {
+                        .PokemonDetails_Types {
                             display: flex;
-                            flex-direction: column;
-                            justify-content: flex-end;
-                            position: relative;
+                            gap: 10px;
 
-                            background-color: #ffff;
-                            border-radius: 5px;
-                            height: 100px;
-                            width: 100%;
-                            overflow: hidden;
-                            border: 1px solid;
-
-                            label { 
-                                position: absolute;   
-                                transform: rotate(-90deg);
-
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                height: 100%;
-                                width: 100%;
-                            }
-                            area { 
-                                width: 100%; 
-                                background-color: #30a7d7;
+                            gt-motive-app-pokemon-type-pill {
+                                width: calc((100% - 20px) / 3);
                             }
                         }
                     }
@@ -120,3 +142,15 @@
 
 }
 
+
+@media (min-width: 461px) and (max-width: 960px) {
+    .PokemonDetails_MainContainer {
+        mat-card {
+            mat-card-content {
+                .PokemonDetails_BodyContainer {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
