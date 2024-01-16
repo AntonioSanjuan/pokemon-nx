@@ -37,6 +37,9 @@
             <p>
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
             </p>
+
+            <gt-motive-app-pokemon-details-info [pokemon]="vm.pokemonDetails"></gt-motive-app-pokemon-details-info>
+
             <div class="PokemonDetails_TypeContainer">
               <h3>Tipos:</h3>
               <div class="PokemonDetails_Types">
@@ -44,6 +47,13 @@
                   *ngFor="let type of vm.pokemonDetails?.types"
                   [pokemonType]="type.type" 
               ></gt-motive-app-pokemon-type-pill>
+              </div>
+            </div>
+
+            <div class="PokemonDetails_MovesContainer">
+              <h3>Movimientos:</h3>
+              <div class="PokemonDetails_Moves">
+                <button *ngFor="let type of vm.pokemonDetails?.moves" mat-raised-button color="primary">{{type.move.name}}</button>
               </div>
             </div>
           </div>

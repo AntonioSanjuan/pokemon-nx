@@ -50,15 +50,15 @@
 
                 .PokemonDetails_ImageContainer,
                 .PokemonDetails_InfoContainer {
-                    width: 100%;
-                }
-
-                .PokemonDetails_ImageContainer {
                     display: flex;
                     flex-direction: column;
 
+                    width: 100%;
                     gap: 20px;
-                    
+                }
+
+                .PokemonDetails_ImageContainer {
+
                     img {
                         width: 100%;
                         background-color: #F2F2F2 ;
@@ -82,7 +82,7 @@
                             display: flex;
                             flex-direction: row;
                             gap: 5px;
-                            padding: 5px;
+                            padding: 10px;
     
                             .PokemonDetails_Stat {
                                 display: flex;
@@ -117,20 +117,25 @@
                 }
 
                 .PokemonDetails_InfoContainer {
-                    display: flex;
-                    flex-direction: column;
-
                     p {
                         color: #212121;
                         font-size: 112.5%;
+                        margin-bottom: 0;
                     }
 
-                    .PokemonDetails_TypeContainer {
-                        .PokemonDetails_Types {
+                    .PokemonDetails_TypeContainer,
+                    .PokemonDetails_MovesContainer {
+                        h3 {
+                            margin-top: 0;
+                        }
+                        .PokemonDetails_Types,
+                        .PokemonDetails_Moves {
                             display: flex;
                             gap: 10px;
+                            flex-wrap: wrap;
 
-                            gt-motive-app-pokemon-type-pill {
+                            gt-motive-app-pokemon-type-pill,
+                            button {
                                 width: calc((100% - 20px) / 3);
                             }
                         }

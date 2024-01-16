@@ -650,11 +650,11 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.html",
-          "hash": "14287707829103473742"
+          "hash": "2041011011775639783"
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.scss",
-          "hash": "4536312100953376183"
+          "hash": "10457022156168168908"
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.spec.ts",
@@ -668,7 +668,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/pokemon-details.component.ts",
-          "hash": "854869775584294990",
+          "hash": "3282681762945705742",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
@@ -966,6 +966,32 @@
           "hash": "7369099702485768251",
           "deps": [
             "npm:@nx/angular"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo/pokemon-details-info.component.html",
+          "hash": "2793696704818122279"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo/pokemon-details-info.component.scss",
+          "hash": "10977671839836674013"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo/pokemon-details-info.component.spec.ts",
+          "hash": "13849584787585718232",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo/pokemon-details-info.component.ts",
+          "hash": "8763207337605951652",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "ui",
+            "npm:@ngx-translate/core",
+            "libs/models"
           ]
         }
       ],
