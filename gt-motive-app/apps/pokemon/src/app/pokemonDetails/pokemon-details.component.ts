@@ -7,6 +7,7 @@ import { selectPokemonDetails } from './state/pokemonDetails.selectors';
 import { PokemonDetailsHeaderComponent } from './pokemonDetailsHeader/pokemon-details-header.component';
 import { PokemonTypePillComponent } from '@gt-motive-app/components';
 import { PokemonDetailsInfoComponent } from './pokemonDetailsInfo/pokemon-details-info.component';
+import { PokemonDetailsStatsComponent } from './pokemonDetailsStats/pokemon-details-stats.component';
 
 @Component({
   selector: 'gt-motive-app-pokemon-details',
@@ -17,7 +18,8 @@ import { PokemonDetailsInfoComponent } from './pokemonDetailsInfo/pokemon-detail
     UiModule,
     PokemonDetailsHeaderComponent,
     PokemonTypePillComponent,
-    PokemonDetailsInfoComponent
+    PokemonDetailsInfoComponent,
+    PokemonDetailsStatsComponent
   ],
   templateUrl: './pokemon-details.component.html',
   styleUrls: ['./pokemon-details.component.scss'],

@@ -1,13 +1,13 @@
 {
   "nodes": {
-    "services-pokemon": {
-      "name": "services-pokemon",
+    "services-message": {
+      "name": "services-message",
       "type": "lib",
       "data": {
-        "name": "services-pokemon",
-        "root": "libs/services/pokemon",
+        "name": "services-message",
+        "root": "libs/services/message",
         "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/services/pokemon/src",
+        "sourceRoot": "libs/services/message/src",
         "prefix": "gt-motive-app",
         "tags": [],
         "projectType": "library",
@@ -23,7 +23,7 @@
               "{workspaceRoot}/coverage/{projectRoot}"
             ],
             "options": {
-              "jestConfig": "libs/services/pokemon/jest.config.ts",
+              "jestConfig": "libs/services/message/jest.config.ts",
               "passWithNoTests": true
             },
             "configurations": {
@@ -46,8 +46,8 @@
             ],
             "options": {
               "lintFilePatterns": [
-                "libs/services/pokemon/**/*.ts",
-                "libs/services/pokemon/**/*.html"
+                "libs/services/message/**/*.ts",
+                "libs/services/message/**/*.html"
               ]
             },
             "configurations": {}
@@ -112,14 +112,14 @@
         "implicitDependencies": []
       }
     },
-    "services-message": {
-      "name": "services-message",
+    "services-pokemon": {
+      "name": "services-pokemon",
       "type": "lib",
       "data": {
-        "name": "services-message",
-        "root": "libs/services/message",
+        "name": "services-pokemon",
+        "root": "libs/services/pokemon",
         "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/services/message/src",
+        "sourceRoot": "libs/services/pokemon/src",
         "prefix": "gt-motive-app",
         "tags": [],
         "projectType": "library",
@@ -135,7 +135,7 @@
               "{workspaceRoot}/coverage/{projectRoot}"
             ],
             "options": {
-              "jestConfig": "libs/services/message/jest.config.ts",
+              "jestConfig": "libs/services/pokemon/jest.config.ts",
               "passWithNoTests": true
             },
             "configurations": {
@@ -158,8 +158,8 @@
             ],
             "options": {
               "lintFilePatterns": [
-                "libs/services/message/**/*.ts",
-                "libs/services/message/**/*.html"
+                "libs/services/pokemon/**/*.ts",
+                "libs/services/pokemon/**/*.html"
               ]
             },
             "configurations": {}
@@ -14192,75 +14192,6 @@
     }
   },
   "dependencies": {
-    "services-pokemon": [
-      {
-        "source": "services-pokemon",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "libs/models",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "services-api",
-        "type": "static"
-      },
-      {
-        "source": "services-pokemon",
-        "target": "npm:jest-preset-angular",
-        "type": "static"
-      }
-    ],
-    "libs/services/culture": [
-      {
-        "source": "libs/services/culture",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:@ngrx/store",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:@ngx-translate/core",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "store",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:jest-preset-angular",
-        "type": "static"
-      }
-    ],
     "services-message": [
       {
         "source": "services-message",
@@ -14309,6 +14240,75 @@
       },
       {
         "source": "services-message",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "libs/services/culture": [
+      {
+        "source": "libs/services/culture",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:@ngx-translate/core",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "store",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "services-pokemon": [
+      {
+        "source": "services-pokemon",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
+        "target": "libs/models",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
+        "target": "services-api",
+        "type": "static"
+      },
+      {
+        "source": "services-pokemon",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }

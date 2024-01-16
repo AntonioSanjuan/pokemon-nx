@@ -1,0 +1,58 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+} 
+
+.PokemonDetails_MainContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #a4a4a4;
+    border-radius: 5px;
+
+    .PokemonDetails_StatsHeader {
+        padding: 10px;
+
+        h4 { margin: 0; }
+    }
+
+    .PokemonDetails_StatsBody {  
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        padding: 10px;
+
+        .PokemonDetails_Stat {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+
+            background-color: #ffff;
+            border-radius: 5px;
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid;
+
+            label { 
+                position: absolute;   
+                transform: rotate(-90deg);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+            }
+            area { 
+                width: 100%; 
+                background-color: #30a7d7;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,12 @@
+<div class="PokemonDetails_MainContainer">
+    <div class="PokemonDetails_StatsHeader">
+      <h4>Puntos de base</h4>
+    </div>
+    
+    <div class="PokemonDetails_StatsBody">
+      <div class="PokemonDetails_Stat" *ngFor="let stat of pokemon?.stats">
+        <label>{{stat.stat.name}}</label>
+        <area [style.height.px]="stat.base_stat">
+      </div>
+    </div>
+  </div>

@@ -993,6 +993,32 @@
             "npm:@ngx-translate/core",
             "libs/models"
           ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo copy/pokemon-details-info.component.scss",
+          "hash": "10977671839836674013"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo copy/pokemon-details-info.component.html",
+          "hash": "2793696704818122279"
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo copy/pokemon-details-info.component.spec.ts",
+          "hash": "13849584787585718232",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo copy/pokemon-details-info.component.ts",
+          "hash": "8763207337605951652",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "ui",
+            "npm:@ngx-translate/core",
+            "libs/models"
+          ]
         }
       ],
       "services-pokemon": [
