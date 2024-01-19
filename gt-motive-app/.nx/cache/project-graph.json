@@ -1,61 +1,5 @@
 {
   "nodes": {
-    "services-message": {
-      "name": "services-message",
-      "type": "lib",
-      "data": {
-        "name": "services-message",
-        "root": "libs/services/message",
-        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/services/message/src",
-        "prefix": "gt-motive-app",
-        "tags": [],
-        "projectType": "library",
-        "targets": {
-          "test": {
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}/jest.preset.js"
-            ],
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "libs/services/message/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "configurations": {
-              "ci": {
-                "ci": true,
-                "codeCoverage": true
-              }
-            }
-          },
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore",
-              "{workspaceRoot}/eslint.config.js"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/services/message/**/*.ts",
-                "libs/services/message/**/*.html"
-              ]
-            },
-            "configurations": {}
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
     "libs/services/culture": {
       "name": "libs/services/culture",
       "type": "lib",
@@ -160,6 +104,62 @@
               "lintFilePatterns": [
                 "libs/services/pokemon/**/*.ts",
                 "libs/services/pokemon/**/*.html"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "services-message": {
+      "name": "services-message",
+      "type": "lib",
+      "data": {
+        "name": "services-message",
+        "root": "libs/services/message",
+        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/services/message/src",
+        "prefix": "gt-motive-app",
+        "tags": [],
+        "projectType": "library",
+        "targets": {
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/services/message/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/services/message/**/*.ts",
+                "libs/services/message/**/*.html"
               ]
             },
             "configurations": {}
@@ -714,6 +714,62 @@
         "implicitDependencies": []
       }
     },
+    "store": {
+      "name": "store",
+      "type": "lib",
+      "data": {
+        "name": "store",
+        "root": "libs/store",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/store/src",
+        "prefix": "gt-motive-app",
+        "tags": [],
+        "projectType": "library",
+        "targets": {
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/store/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/store/**/*.ts",
+                "libs/store/**/*.html"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
     "shell": {
       "name": "shell",
       "type": "app",
@@ -857,62 +913,6 @@
                 "codeCoverage": true
               }
             }
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
-    "store": {
-      "name": "store",
-      "type": "lib",
-      "data": {
-        "name": "store",
-        "root": "libs/store",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/store/src",
-        "prefix": "gt-motive-app",
-        "tags": [],
-        "projectType": "library",
-        "targets": {
-          "test": {
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}/jest.preset.js"
-            ],
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "libs/store/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "configurations": {
-              "ci": {
-                "ci": true,
-                "codeCoverage": true
-              }
-            }
-          },
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore",
-              "{workspaceRoot}/eslint.config.js"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/store/**/*.ts",
-                "libs/store/**/*.html"
-              ]
-            },
-            "configurations": {}
           }
         },
         "implicitDependencies": []
@@ -14192,58 +14192,6 @@
     }
   },
   "dependencies": {
-    "services-message": [
-      {
-        "source": "services-message",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "ui",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "npm:@ngrx/store",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "libs/models",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "npm:@angular/router",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "npm:@angular/material",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "npm:@angular/platform-browser",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "services-message",
-        "target": "npm:jest-preset-angular",
-        "type": "static"
-      }
-    ],
     "libs/services/culture": [
       {
         "source": "libs/services/culture",
@@ -14309,6 +14257,58 @@
       },
       {
         "source": "services-pokemon",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "services-message": [
+      {
+        "source": "services-message",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
+        "target": "ui",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
+        "target": "libs/models",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
+        "target": "npm:@angular/material",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "services-message",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }
@@ -14595,6 +14595,68 @@
         "type": "static"
       }
     ],
+    "store": [
+      {
+        "source": "store",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:@ngrx/effects",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "services-message",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "libs/models",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "services-api",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "test",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "services-pokemon",
+        "type": "static"
+      },
+      {
+        "source": "store",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
     "shell": [
       {
         "source": "shell",
@@ -14714,68 +14776,6 @@
       {
         "source": "shell",
         "target": "npm:@nx/angular",
-        "type": "static"
-      }
-    ],
-    "store": [
-      {
-        "source": "store",
-        "target": "npm:@ngrx/store",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:@ngrx/effects",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "services-message",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "libs/models",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:@angular/platform-browser",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "services-api",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "test",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "services-pokemon",
-        "type": "static"
-      },
-      {
-        "source": "store",
-        "target": "npm:jest-preset-angular",
         "type": "static"
       }
     ],

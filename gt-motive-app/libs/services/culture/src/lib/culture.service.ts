@@ -10,11 +10,7 @@ export class CultureService {
     private translateService: TranslateService = inject(TranslateService)
     private store: Store = inject(Store)
 
-    private readonly acceptedLanguages: string[] = [
-        'CA-ES', 'CS-CZ', 'DA-DK', 'DE-DE', 'DE-AT', 'DE-CH', 'EL-GR', 'EN-GB', 'EN-IE', 'EN-IN', 'EN-ZA',
-        'ES-ES', 'ES-CO', 'ES-MX', 'FI-FI', 'FR-FR', 'FR-CH', 'FR-TN', 'IT-IT', 'KO-KR', 'NL-NL',
-        'NL-BE', 'NN-NO', 'PT-PT', 'RO-RO', 'SK-SK', 'SV-SE', 'TR-TR', 'PL-PL', 'HU-HU'
-      ];
+    private readonly acceptedLanguages: string[] = [ 'EN-GB', 'ES-ES' ];
       
     public changeLanguage(lang: string) {
         const cultureLang = this.getLangCode(lang);
@@ -23,6 +19,7 @@ export class CultureService {
 
     public setLanguage(): void {
         this.translateService.setDefaultLang(this.defaultLangCode);
+        this.translateService.addLangs(this.acceptedLanguages)
         const browserLang: string | undefined = this.translateService.getBrowserCultureLang();
         this.changeLanguage(browserLang || this.defaultLangCode)
     }

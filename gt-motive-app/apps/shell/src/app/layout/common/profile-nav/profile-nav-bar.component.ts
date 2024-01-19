@@ -37,5 +37,6 @@ export class ProfileNavBarComponent {
 
   public changeLanguage(lang: string) {
     this.cultureService.changeLanguage(lang)
+
   }
 }

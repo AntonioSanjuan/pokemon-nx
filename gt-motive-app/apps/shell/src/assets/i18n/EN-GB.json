@@ -1,0 +1,14 @@
+{
+    "shell": {
+        "menuTop": {
+            "login": "login EN!",
+            "logout": "Log Out"
+        },
+        "loadingSpinner": {
+            "title": "Loading..."
+        }
+    },
+    "libs": {
+        
+    }
+}

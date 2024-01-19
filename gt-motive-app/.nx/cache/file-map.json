@@ -277,7 +277,7 @@
         },
         {
           "file": "libs/services/culture/src/lib/culture.service.ts",
-          "hash": "2533070534690869473",
+          "hash": "16929039741974678102",
           "deps": [
             "npm:@angular/core",
             "npm:@ngx-translate/core",
@@ -719,7 +719,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.scss",
-          "hash": "8793679767677246867"
+          "hash": "17363004308760262070"
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.spec.ts",
@@ -737,7 +737,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.ts",
-          "hash": "18232700406123784476",
+          "hash": "18071451960189854971",
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core",
@@ -881,7 +881,11 @@
           "hash": "3248842059571339774"
         },
         {
-          "file": "apps/shell/src/assets/images/flags/EN-EN.png",
+          "file": "apps/shell/src/assets/i18n/EN-GB.json",
+          "hash": "15142316056112980510"
+        },
+        {
+          "file": "apps/shell/src/assets/images/flags/EN-GB.png",
           "hash": "14978012198033837930"
         }
       ],
