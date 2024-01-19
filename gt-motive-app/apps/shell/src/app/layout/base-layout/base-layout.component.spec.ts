@@ -6,6 +6,8 @@ import { userStateMock } from '@gt-motive-app/test';
 import { provideMockStore } from '@ngrx/store/testing';
 import { Store } from '@ngrx/store';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { CultureService } from '@gt-motive-app/libs/services/culture';
 
 describe('BaseLayoutComponent', () => {
   let component: BaseLayoutComponent;
@@ -16,6 +18,7 @@ describe('BaseLayoutComponent', () => {
     await TestBed.configureTestingModule({
       providers: [
         AuthService,
+        CultureService,
         provideMockStore({
           initialState: userStateMock
         }),
@@ -23,6 +26,9 @@ describe('BaseLayoutComponent', () => {
       imports: [
         RouterOutlet,
         RouterTestingModule,
+        TranslateModule.forRoot({
+          loader: { provide: TranslateLoader, useClass: TranslateFakeLoader}
+        }),
         BaseLayoutComponent
       ],
     }).compileComponents();

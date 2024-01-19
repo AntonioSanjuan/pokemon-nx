@@ -603,13 +603,15 @@
         },
         {
           "file": "apps/shell/src/app/layout/base-layout/base-layout.component.spec.ts",
-          "hash": "10645544793057461495",
+          "hash": "10215531362318975960",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router",
             "libs/services/auth",
             "test",
-            "npm:@ngrx/store"
+            "npm:@ngrx/store",
+            "npm:@ngx-translate/core",
+            "libs/services/culture"
           ]
         },
         {
@@ -721,16 +723,16 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.spec.ts",
-          "hash": "829129938928868186",
+          "hash": "16874293236868591443",
           "deps": [
             "npm:@angular/core",
-            "npm:@angular/router",
             "npm:@ngx-translate/core",
             "libs/services/auth",
             "npm:@ngrx/store",
             "npm:@ngrx/effects",
             "npm:rxjs",
-            "test"
+            "test",
+            "libs/services/culture"
           ]
         },
         {

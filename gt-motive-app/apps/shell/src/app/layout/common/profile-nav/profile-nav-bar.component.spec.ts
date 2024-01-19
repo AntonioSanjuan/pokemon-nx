@@ -1,8 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
-import { appRoutes } from '../../../app.routes';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ProfileNavBarComponent } from './profile-nav-bar.component';
 import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { provideMockStore } from '@ngrx/store/testing';
@@ -10,22 +7,28 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 import { Action, Store } from '@ngrx/store';
 import { userStateMock } from '@gt-motive-app/test';
+import { CultureService } from '@gt-motive-app/libs/services/culture';
 
 describe('ProfileNavBarComponent', () => {
   let component: ProfileNavBarComponent;
   let fixture: ComponentFixture<ProfileNavBarComponent>;
   let store: Store;
   let authService: AuthService;
+  let translateService: TranslateService;
+  let cultureService: CultureService;
   let actions: Observable<Action>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         ProfileNavBarComponent,
-        TranslateModule.forRoot(),
+        TranslateModule.forRoot({
+          loader: { provide: TranslateLoader, useClass: TranslateFakeLoader}
+      })
       ],
       providers: [
         AuthService,
+        CultureService,
         provideMockActions(() => actions),
         provideMockStore({
           initialState: userStateMock
@@ -37,6 +40,8 @@ describe('ProfileNavBarComponent', () => {
     component = fixture.componentInstance;
     store = TestBed.inject(Store)
     authService = TestBed.inject(AuthService)
+    cultureService = TestBed.inject(CultureService)
+    translateService = TestBed.inject(TranslateService)
     fixture.detectChanges();
   });
 
