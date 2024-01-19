@@ -277,7 +277,7 @@
         },
         {
           "file": "libs/services/culture/src/lib/culture.service.ts",
-          "hash": "9242762333262106481",
+          "hash": "2533070534690869473",
           "deps": [
             "npm:@angular/core",
             "npm:@ngx-translate/core",
@@ -723,7 +723,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.spec.ts",
-          "hash": "16874293236868591443",
+          "hash": "1635579472433519192",
           "deps": [
             "npm:@angular/core",
             "npm:@ngx-translate/core",

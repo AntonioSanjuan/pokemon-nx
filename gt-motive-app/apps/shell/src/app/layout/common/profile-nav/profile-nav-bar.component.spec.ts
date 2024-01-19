@@ -24,7 +24,7 @@ describe('ProfileNavBarComponent', () => {
         ProfileNavBarComponent,
         TranslateModule.forRoot({
           loader: { provide: TranslateLoader, useClass: TranslateFakeLoader}
-      })
+        })
       ],
       providers: [
         AuthService,
