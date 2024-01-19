@@ -16,11 +16,15 @@ export class CultureService {
         'NL-BE', 'NN-NO', 'PT-PT', 'RO-RO', 'SK-SK', 'SV-SE', 'TR-TR', 'PL-PL', 'HU-HU'
       ];
       
+    public changeLanguage(lang: string) {
+        const cultureLang = this.getLangCode(lang);
+        this.setCulture(cultureLang);
+    }
+
     public setLanguage(): void {
         this.translateService.setDefaultLang(this.defaultLangCode);
         const browserLang: string | undefined = this.translateService.getBrowserCultureLang();
-        const cultureLang = this.getLangCode(browserLang || this.defaultLangCode);
-        this.setCulture(cultureLang);
+        this.changeLanguage(browserLang as string)
     }
 
     private getLangCode(cultureCode: string): string {

@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '@gt-motive-app/libs/services/auth';
+import { CultureService } from '@gt-motive-app/libs/services/culture';
 import { getIsUserLogged } from '@gt-motive-app/store';
 import { UiModule } from '@gt-motive-app/ui';
 import { LetDirective } from '@ngrx/component';
 import { Store } from '@ngrx/store';
-import { TranslateModule } from '@ngx-translate/core'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'gt-motive-app-profile-nav-bar',
@@ -23,11 +24,18 @@ import { TranslateModule } from '@ngx-translate/core'
 })
 export class ProfileNavBarComponent {
   private authService: AuthService = inject(AuthService)
+  public translateService: TranslateService = inject(TranslateService)
+  private cultureService: CultureService = inject(CultureService);
+
   private store: Store = inject(Store);
 
   public isUserLogged$ = this.store.select(getIsUserLogged)
 
   public logOut() {
     this.authService.logOut();
+  }
+
+  public changeLanguage(lang: string) {
+    this.cultureService.changeLanguage(lang)
   }
 }
