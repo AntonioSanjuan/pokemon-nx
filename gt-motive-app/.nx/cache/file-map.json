@@ -497,10 +497,9 @@
         },
         {
           "file": "apps/shell/src/app/app.component.ts",
-          "hash": "16757797214380518345",
+          "hash": "5798464655683644413",
           "deps": [
             "npm:@angular/core",
-            "libs/services/auth",
             "libs/services/culture"
           ]
         },
@@ -719,7 +718,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.scss",
-          "hash": "17363004308760262070"
+          "hash": "7916123000445434195"
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.spec.ts",

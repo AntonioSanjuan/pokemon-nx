@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { inject } from "@angular/core"
-import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { CultureService } from "@gt-motive-app/libs/services/culture"
 
 @Component({

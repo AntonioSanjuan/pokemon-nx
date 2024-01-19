@@ -18,6 +18,11 @@
     // box-shadow: none !important;
     border: 1px solid !important;
     border-radius: 15px !important;
+
+    img {
+        border: 1px solid black !important;
+        border-radius: 50% !important;
+    }
 }
 
 ::ng-deep .cdk-overlay-pane {
@@ -54,11 +59,6 @@
             }
             mat-option {
                 border-radius: 10px;
-
-                img {
-                    border: 1px solid black;
-                    border-radius: 50%;
-                }
             }
         }
     }
