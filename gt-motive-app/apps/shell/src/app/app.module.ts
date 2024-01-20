@@ -32,7 +32,6 @@ import { LibsServicesApiModule } from '@gt-motive-app/services/api'
     LibsServicesApiModule,
     LibsServicesMessageModule,
     CoreModule,
-    TranslateModule,
     BaseLayoutComponent,
     LoadingSpinnerComponent,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),

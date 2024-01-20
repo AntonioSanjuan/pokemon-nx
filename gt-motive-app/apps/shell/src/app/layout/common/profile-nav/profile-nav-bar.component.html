@@ -9,8 +9,8 @@
             [(value)]="translateService.currentLang" 
             class="lang" 
             #langSelect 
-            (change)="changeLanguage(langSelect.value)"
-            placeholder="Idioma">
+            (selectionChange)="changeLanguage(langSelect.value)"
+            placeholder="{{ 'shell.layout.profileNav.language.placeholder' | translate }}">
             <mat-select-trigger>
                 <img 
                 mat-card-image 

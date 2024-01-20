@@ -4,12 +4,11 @@ import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromPokemon from './+state/pokemon.reducer';
 import { StoreModule } from '@ngrx/store';
-import { POKEMONLIST_FEATURE_KEY, POKEMON_FEATURE_KEY, PokemonFiltersEffects, PokemonFiltersService, PokemonListEffects, PokemonListService, pokemonListReducer } from '@gt-motive-app/store';
+import { POKEMON_FEATURE_KEY, PokemonFiltersEffects, PokemonFiltersService, PokemonListEffects, PokemonListService, pokemonListReducer } from '@gt-motive-app/store';
 import { PokemonDetailsEffects } from './pokemonDetails/state/pokemonDetails.effects';
 import { PokemonDetailsService } from './pokemonDetails/state/pokemonDetails.service';
 import { PokemonDetailsResolver } from './pokemonDetails/shared/service/pokemonDetails.resolver';
 import { PokemonListResolver } from './pokemonList/shared/service/pokemonList.resolver';
-import { PokemonService } from '@gt-motive-app/services/pokemon';
 
 export const appRoutes: Route[] = [
   {

@@ -1,8 +1,25 @@
 {
     "shell": {
-        "menuTop": {
-            "login": "login EN!",
-            "logout": "Log Out"
+        "layout": {
+            "menuTop": {
+                "content": "Top menu works"
+            },
+            "menuBottom": {
+                "content": "Bottom menu works"
+            },
+            "profileNav": {
+                "language": {
+                    "placeholder": "Language"
+                }
+            },
+            "menuNav": {
+                "home": "Home",
+                "pokedex": "Pokedex",
+                "news": "News"
+            }
+        },
+        "home": {
+            "content": "It works!"
         },
         "loadingSpinner": {
             "title": "Loading..."
