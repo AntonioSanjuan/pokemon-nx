@@ -1,61 +1,5 @@
 {
   "nodes": {
-    "libs/services/culture": {
-      "name": "libs/services/culture",
-      "type": "lib",
-      "data": {
-        "name": "libs/services/culture",
-        "root": "libs/services/culture",
-        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/services/culture/src",
-        "prefix": "gt-motive-app",
-        "tags": [],
-        "projectType": "library",
-        "targets": {
-          "test": {
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}/jest.preset.js"
-            ],
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "libs/services/culture/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "configurations": {
-              "ci": {
-                "ci": true,
-                "codeCoverage": true
-              }
-            }
-          },
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore",
-              "{workspaceRoot}/eslint.config.js"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/services/culture/**/*.ts",
-                "libs/services/culture/**/*.html"
-              ]
-            },
-            "configurations": {}
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
     "services-message": {
       "name": "services-message",
       "type": "lib",
@@ -104,6 +48,62 @@
               "lintFilePatterns": [
                 "libs/services/message/**/*.ts",
                 "libs/services/message/**/*.html"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "libs/services/culture": {
+      "name": "libs/services/culture",
+      "type": "lib",
+      "data": {
+        "name": "libs/services/culture",
+        "root": "libs/services/culture",
+        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/services/culture/src",
+        "prefix": "gt-motive-app",
+        "tags": [],
+        "projectType": "library",
+        "targets": {
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/services/culture/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/services/culture/**/*.ts",
+                "libs/services/culture/**/*.html"
               ]
             },
             "configurations": {}
@@ -714,6 +714,62 @@
         "implicitDependencies": []
       }
     },
+    "store": {
+      "name": "store",
+      "type": "lib",
+      "data": {
+        "name": "store",
+        "root": "libs/store",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/store/src",
+        "prefix": "gt-motive-app",
+        "tags": [],
+        "projectType": "library",
+        "targets": {
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/store/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore",
+              "{workspaceRoot}/eslint.config.js"
+            ],
+            "executor": "@nx/linter:eslint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/store/**/*.ts",
+                "libs/store/**/*.html"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
     "shell": {
       "name": "shell",
       "type": "app",
@@ -857,62 +913,6 @@
                 "codeCoverage": true
               }
             }
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
-    "store": {
-      "name": "store",
-      "type": "lib",
-      "data": {
-        "name": "store",
-        "root": "libs/store",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/store/src",
-        "prefix": "gt-motive-app",
-        "tags": [],
-        "projectType": "library",
-        "targets": {
-          "test": {
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}/jest.preset.js"
-            ],
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "libs/store/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "configurations": {
-              "ci": {
-                "ci": true,
-                "codeCoverage": true
-              }
-            }
-          },
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore",
-              "{workspaceRoot}/eslint.config.js"
-            ],
-            "executor": "@nx/linter:eslint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/store/**/*.ts",
-                "libs/store/**/*.html"
-              ]
-            },
-            "configurations": {}
           }
         },
         "implicitDependencies": []
@@ -14192,43 +14192,6 @@
     }
   },
   "dependencies": {
-    "libs/services/culture": [
-      {
-        "source": "libs/services/culture",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:@ngrx/store",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:@ngx-translate/core",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "store",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "libs/services/culture",
-        "target": "npm:jest-preset-angular",
-        "type": "static"
-      }
-    ],
     "services-message": [
       {
         "source": "services-message",
@@ -14277,6 +14240,43 @@
       },
       {
         "source": "services-message",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "libs/services/culture": [
+      {
+        "source": "libs/services/culture",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:@ngx-translate/core",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "store",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "libs/services/culture",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }
@@ -14437,6 +14437,11 @@
       },
       {
         "source": "pokemon",
+        "target": "npm:@ngx-translate/core",
+        "type": "static"
+      },
+      {
+        "source": "pokemon",
         "target": "npm:rxjs",
         "type": "static"
       },
@@ -14458,11 +14463,6 @@
       {
         "source": "pokemon",
         "target": "components",
-        "type": "static"
-      },
-      {
-        "source": "pokemon",
-        "target": "npm:@ngx-translate/core",
         "type": "static"
       },
       {
@@ -14595,128 +14595,6 @@
         "type": "static"
       }
     ],
-    "shell": [
-      {
-        "source": "shell",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "libs/services/culture",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@angular/platform-browser",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@angular/router",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@ngrx/store",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@ngrx/effects",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@ngrx/router-store",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@ngrx/store-devtools",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "store",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@ngx-translate/core",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "libs/services/auth",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "services-message",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "services-api",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@nrwl/angular",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:rxjs",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "test",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "libs/models",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@ngx-translate/http-loader",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "ui",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@ngrx/component",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@angular/platform-browser-dynamic",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:jest-preset-angular",
-        "type": "static"
-      },
-      {
-        "source": "shell",
-        "target": "npm:@nx/angular",
-        "type": "static"
-      }
-    ],
     "store": [
       {
         "source": "store",
@@ -14776,6 +14654,128 @@
       {
         "source": "store",
         "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "shell": [
+      {
+        "source": "shell",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "libs/services/culture",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@angular/platform-browser",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@ngrx/effects",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@ngrx/router-store",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@ngrx/store-devtools",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "store",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "libs/services/auth",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "services-message",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "services-api",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@nrwl/angular",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "test",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "libs/models",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@ngx-translate/core",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@ngx-translate/http-loader",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "ui",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@ngrx/component",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@angular/platform-browser-dynamic",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@nx/angular",
         "type": "static"
       }
     ],

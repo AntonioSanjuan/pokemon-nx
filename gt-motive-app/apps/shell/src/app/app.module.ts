@@ -12,7 +12,6 @@ import { reducers, rootInitialState } from './store/reducers';
 import { CoreModule } from './core/core.module';
 import { AuthenticateGuard } from './core/auth-guard.service';
 import { UiEffects, RequestEffects, UserEffects, ErrorMessageEffects } from '@gt-motive-app/store';
-import { TranslateModule } from '@ngx-translate/core';
 import { LibsServicesCultureModule } from '@gt-motive-app/libs/services/culture';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { LibsServicesAuthModule } from '@gt-motive-app/libs/services/auth';

@@ -966,7 +966,7 @@
         },
         {
           "file": "apps/shell/src/app/app.module.ts",
-          "hash": "6627630140349702117",
+          "hash": "5565128348174448358",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/platform-browser",
@@ -976,7 +976,6 @@
             "npm:@ngrx/router-store",
             "npm:@ngrx/store-devtools",
             "store",
-            "npm:@ngx-translate/core",
             "libs/services/culture",
             "libs/services/auth",
             "npm:@angular/common",
@@ -986,12 +985,10 @@
         },
         {
           "file": "apps/shell/src/app/app.routes.ts",
-          "hash": "12978638587890739985",
+          "hash": "7213093932239737571",
           "deps": [
             "npm:@angular/router",
-            "npm:@nrwl/angular",
-            "npm:@angular/core",
-            "npm:@ngx-translate/core"
+            "npm:@nrwl/angular"
           ]
         },
         {
@@ -1198,11 +1195,10 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.ts",
-          "hash": "8233493348872733730",
+          "hash": "12815207692477377775",
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core",
-            "npm:@angular/platform-browser",
             "npm:@angular/router",
             "libs/services/auth",
             "libs/services/culture",
@@ -1265,7 +1261,7 @@
         },
         {
           "file": "apps/shell/src/assets/i18n/EN-GB.json",
-          "hash": "650497997089473919"
+          "hash": "810027779673072425"
         },
         {
           "file": "apps/shell/src/assets/i18n/ES-ES.json",
@@ -1478,13 +1474,14 @@
         },
         {
           "file": "apps/pokemon/src/app/app.routes.ts",
-          "hash": "13146359519469632387",
+          "hash": "6096294889070756909",
           "deps": [
             "npm:@angular/router",
             "npm:@angular/core",
             "npm:@ngrx/effects",
             "npm:@ngrx/store",
-            "store"
+            "store",
+            "npm:@ngx-translate/core"
           ]
         },
         {
@@ -1698,7 +1695,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonList/pokemon-list.component.ts",
-          "hash": "12779586138873727424",
+          "hash": "676555846475303853",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
