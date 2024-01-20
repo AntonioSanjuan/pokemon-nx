@@ -3,6 +3,8 @@ import { loadRemoteModule } from '@nrwl/angular/mf';
 import { HomeComponent } from './home/home.component';
 import { AuthenticateGuard } from './core/auth-guard.service';
 import { BaseLayoutComponent } from './layout/base-layout/base-layout.component';
+import { importProvidersFrom } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 export const appRoutes: Route[] = [
   {
@@ -31,6 +33,13 @@ export const appRoutes: Route[] = [
   },
   {
     path: '',
+    // providers: [
+    //   importProvidersFrom(
+    //     TranslateModule.forChild({
+    //       extend: true
+    //     })
+    //   )
+    // ],
     component: BaseLayoutComponent,
     children: [
       {

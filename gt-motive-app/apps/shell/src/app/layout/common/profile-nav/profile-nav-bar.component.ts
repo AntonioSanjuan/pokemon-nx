@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { CultureService } from '@gt-motive-app/libs/services/culture';
@@ -36,7 +38,7 @@ export class ProfileNavBarComponent {
   }
 
   public changeLanguage(lang: string) {
+    console.log("lang", lang)
     this.cultureService.changeLanguage(lang)
-
   }
 }

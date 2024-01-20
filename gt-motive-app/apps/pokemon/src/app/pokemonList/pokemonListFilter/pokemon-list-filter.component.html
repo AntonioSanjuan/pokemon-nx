@@ -3,20 +3,20 @@
 
     <div class="PokemonFilter_NameFilterContainer">
         <mat-form-field>
-            <mat-label>Search by name/id</mat-label>
+            <mat-label>{{'pokemon.list.filter.searchByNamePlaceholder' | translate}}</mat-label>
             <input matInput type="text" [(ngModel)]="filterByText">
         </mat-form-field>
         <button mat-mini-fab color="warn" aria-label="Search pokemon by name/id"  [disabled]="!filterByText" (click)="searchPokemon()">
             <mat-icon>search</mat-icon>
         </button>
         <div class="PokemonFilter_NameFilterContainer_Banner">
-            <p>Busca un Pokémon por su nombre o usando su número de la Pokédex Nacional.</p>
+            <p>{{'pokemon.list.filter.banner' | translate}}</p>
         </div>
     </div>
     <div class="PokemonFilter_TypeFilterContainer" [@collapse]="collapsed">
         <div class="PokemonFilter_TypeFilter">
             <div class="PokemonFilter_TypeFilterHeader">
-                <h2>Filtra por tipo</h2>
+                <h2>{{'pokemon.list.filter.searchByTypePlaceholder' | translate}}</h2>
             </div>
             <div class="PokemonFilter_TypeFilterContent">
                 <div class="PokemonFilter_TypeFilters"  
@@ -31,7 +31,7 @@
     <div class="PokemonFilter_TypeFilterActionsContainer">
         
         <div class="PokemonFilter_TypeFiltersActive" *ngIf="vm.pokemonQuery.filters.byType">
-            <h2>Filtrando por...</h2>
+            <h2>{{'pokemon.list.filter.filteredBy' | translate}}</h2>
             <div class="PokemonFilter_TypeFiltersCurrent" (click)="clearPokemonTypeFilter(vm.pokemonQuery.filters.byType)">
                 <gt-motive-app-pokemon-type-pill [pokemonType]="vm.pokemonQuery.filters.byType"></gt-motive-app-pokemon-type-pill>
                 <mat-icon>close</mat-icon>
@@ -42,7 +42,7 @@
             (click)="toggle()"
             mat-mini-fab 
             color="primary" 
-            aria-label="Open pokemon list filter">
+            attr.aria-label="{{'pokemon.list.filter.openFilter' | translate }}">
                 <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
     </div>

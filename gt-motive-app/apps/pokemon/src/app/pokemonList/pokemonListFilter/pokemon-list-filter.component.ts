@@ -7,6 +7,7 @@ import { selectPokemonQuery, selectPokemonTypesFiltersState, updatePokemonTypeFi
 import { PokemonType } from '@gt-motive-app/libs/models';
 import { PokemonTypePillComponent } from '@gt-motive-app/components';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'gt-motive-app-pokemon-list-filter',
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
     CommonModule,
     LetDirective,
     PokemonTypePillComponent,
+    TranslateModule,
     UiModule
   ],
   templateUrl: './pokemon-list-filter.component.html',

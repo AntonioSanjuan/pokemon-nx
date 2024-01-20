@@ -14,4 +14,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       this.cultureService.setLanguage()
   }
+
+  // change() {
+  //   this.cultureService.changeLanguage('EN-GB')
+  // }
 }

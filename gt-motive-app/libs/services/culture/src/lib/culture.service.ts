@@ -32,10 +32,6 @@ export class CultureService {
     private setCulture(cultureName: string) {
         this.translateService.use(this.getLangCode(cultureName)).pipe(first())
         .subscribe(() => {
-            //why???
-            // this.translateService.reloadLang(this.getLangCode(cultureName))
-// this.translateService.getTranslation(this.getLangCode(cultureName))
-            console.log(this.translateService.currentLang)
             this.store.dispatch(loadedApp({ initialized: AppInit.UI }))
         });
     }

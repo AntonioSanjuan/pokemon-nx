@@ -6,10 +6,9 @@
 
         <!-- <mat-form-field> -->
             <mat-select 
-            [(value)]="translateService.currentLang" 
+            [value]="translateService.currentLang" 
             class="lang" 
-            #langSelect 
-            (selectionChange)="changeLanguage(langSelect.value)"
+            (selectionChange)="changeLanguage($event.value)"
             placeholder="{{ 'shell.layout.profileNav.language.placeholder' | translate }}">
             <mat-select-trigger>
                 <img 
@@ -21,14 +20,17 @@
                 alt="{{translateService.currentLang}} flag">
               </mat-select-trigger>
                 <mat-option 
-                    *ngFor="let lang of translateService.getLangs()" 
+                *ngFor="let lang of translateService.getLangs()" 
                     [value]="lang">
-                        <img 
-                            mat-card-image 
-                            [src]="'../../../../assets/images/flags/' + lang + '.png'" 
-                            height="32px"
-                            width="32px"
-                            alt="{{lang}} flag">
+                    <!-- <button
+                        (click)="changeLanguage(lang)"> -->
+                            <img 
+                                mat-card-image 
+                                [src]="'../../../../assets/images/flags/' + lang + '.png'" 
+                                height="32px"
+                                width="32px"
+                                alt="{{lang}} flag">
+                    <!-- </button> -->
                 </mat-option>
             </mat-select>
         <!-- </mat-form-field> -->

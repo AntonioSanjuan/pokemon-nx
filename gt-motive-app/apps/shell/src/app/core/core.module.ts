@@ -10,13 +10,15 @@ export const HttpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(h
     imports: [
         BrowserModule,
         HttpClientModule,
+        TranslateModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             },
-            isolate: true
+            extend: true,
+            isolate: false
         })
     ]
 })

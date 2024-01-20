@@ -25,6 +25,21 @@
             "title": "Cargando..."
         }
     },
+    "pokemon": {
+        "errors": {
+            "pokemonNotFound": "Pokemon {{pokemonName}} no existe"
+        },
+        "list": {
+            "filter": {
+                "openFilter": "Abrir/Cerrar filtros",
+                "searchByNamePlaceholder": "Filtra por nombre/id",
+                "searchByTypePlaceholder": "Filtra por tipo",
+                "banner": "Busca un Pokémon por su nombre o usando su número de la Pokédex Nacional.",
+                "filteredBy": "Filtrando por..."
+            }
+        },
+        "details": {}
+    },
     "libs": {
         
     }
