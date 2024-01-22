@@ -1,4 +1,5 @@
 {
   "account": "http:localhost:4201",
-  "pokemon": "http://localhost:4202"
+  "pokemon": "http://localhost:4202",
+  "comparison": "http://localhost:4203"
 }

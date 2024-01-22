@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:all": "nx serve shell --open --devRemotes=account,pokemon --verbose",
+    "start:all": "nx serve shell --open --devRemotes=account,pokemon,comparison --verbose",
     "start:shell": "nx serve shell --open",
     "start:account": "nx serve account --open",
     "start:pokemon": "nx serve pokemon --open",
+    "start:comparison": "nx serve comparison --open",
     "test:all": "nx run-many --all --target=test"
   },
   "private": true,

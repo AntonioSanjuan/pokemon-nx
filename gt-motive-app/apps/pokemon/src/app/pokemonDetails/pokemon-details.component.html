@@ -23,6 +23,10 @@
             <gt-motive-app-pokemon-details-stats [pokemon]="vm.pokemonDetails"></gt-motive-app-pokemon-details-stats>
           </div>
           <div class="PokemonDetails_InfoContainer">
+            <button
+              mat-flat-button color="primary" [routerLink]="appRoutes.Comparison">
+              {{'pokemon.details.content.compare' | translate}}
+            </button>
             <p>
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
             </p>

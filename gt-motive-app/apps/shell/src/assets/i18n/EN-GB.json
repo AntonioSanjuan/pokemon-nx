@@ -43,6 +43,7 @@
                 "goBack": "Go Back"
             },
             "content": {
+                "compare": "Compare",
                 "photoAlt": "Photo of {{pokemonName}}",
                 "headers": {
                     "types": "Types",

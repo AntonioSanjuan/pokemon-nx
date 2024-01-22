@@ -8,6 +8,8 @@ import { PokemonDetailsHeaderComponent } from './pokemonDetailsHeader/pokemon-de
 import { PokemonTypePillComponent } from '@gt-motive-app/components';
 import { PokemonDetailsInfoComponent } from './pokemonDetailsInfo/pokemon-details-info.component';
 import { PokemonDetailsStatsComponent } from './pokemonDetailsStats/pokemon-details-stats.component';
+import { AppRoutes } from '@gt-motive-app/libs/models';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'gt-motive-app-pokemon-details',
@@ -16,6 +18,7 @@ import { PokemonDetailsStatsComponent } from './pokemonDetailsStats/pokemon-deta
     LetDirective,
     PokemonIdDirective,
     UiModule,
+    RouterModule,
     PokemonDetailsHeaderComponent,
     PokemonTypePillComponent,
     PokemonDetailsInfoComponent,
@@ -27,5 +30,6 @@ import { PokemonDetailsStatsComponent } from './pokemonDetailsStats/pokemon-deta
 })
 export class PokemonDetailsComponent {
   private store = inject(Store)
-  public pokemonDetails$ = this.store.select(selectPokemonDetails)
+  public pokemonDetails$ = this.store.select(selectPokemonDetails);
+  public appRoutes = AppRoutes;
 }

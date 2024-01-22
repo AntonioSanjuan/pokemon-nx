@@ -30,6 +30,18 @@ export const appRoutes: Route[] = [
     canActivate: [],
   },
   {
+    path: 'comparison',
+    component: BaseLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          loadRemoteModule('comparison', './routes').then((m) => m.appRoutes),
+      },
+    ],
+    canActivate: [AuthenticateGuard],
+  },
+  {
     path: '',
     component: BaseLayoutComponent,
     children: [
