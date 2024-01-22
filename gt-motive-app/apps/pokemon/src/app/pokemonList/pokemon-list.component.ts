@@ -45,7 +45,7 @@ export class PokemonListComponent {
   }
 
   public openPokemonDetails(pokemon: PokemonResponseDto): void {
-    this.router.navigate([`/pokemon/${pokemon.name}`])
+    this.router.navigate([`/pokedex/${pokemon.name}`])
 
   }
 }

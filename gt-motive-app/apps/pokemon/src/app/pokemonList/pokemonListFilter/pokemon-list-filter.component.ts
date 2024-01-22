@@ -51,6 +51,6 @@ export class PokemonListFilterComponent {
   }
   
   public searchPokemon(): void {
-    this.router.navigate([`/pokemon/${this.filterByText}`])
+    this.router.navigate([`/pokedex/${this.filterByText}`])
   }
 }

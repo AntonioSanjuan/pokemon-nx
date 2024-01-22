@@ -869,12 +869,12 @@
           ]
         },
         {
-          "file": "apps/shell/src/assets/images/flags/ES-ES.png",
-          "hash": "3248842059571339774"
-        },
-        {
           "file": "apps/shell/src/assets/i18n/EN-GB.json",
           "hash": "12367611614782834406"
+        },
+        {
+          "file": "apps/shell/src/assets/images/flags/ES-ES.png",
+          "hash": "3248842059571339774"
         },
         {
           "file": "apps/shell/src/assets/images/flags/EN-GB.png",

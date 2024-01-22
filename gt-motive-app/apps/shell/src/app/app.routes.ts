@@ -6,7 +6,7 @@ import { BaseLayoutComponent } from './layout/base-layout/base-layout.component'
 
 export const appRoutes: Route[] = [
   {
-    path: 'pokemon',
+    path: 'pokedex',
     component: BaseLayoutComponent,
     children: [
       {

@@ -4,5 +4,5 @@ export enum AppRoutes {
     //account
     Login = '/account/login',
     //pokemon
-    PokemonList = '/pokemon/list'
+    PokemonList = '/pokedex/list'
 }

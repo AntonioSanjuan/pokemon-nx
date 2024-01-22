@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromPokemon from './+state/pokemon.reducer';
 import { StoreModule } from '@ngrx/store';
-import { POKEMON_FEATURE_KEY, PokemonFiltersEffects, PokemonFiltersService, PokemonListEffects, PokemonListService } from '@gt-motive-app/store';
+import { POKEDEX_FEATURE_KEY, PokemonFiltersEffects, PokemonFiltersService, PokemonListEffects, PokemonListService } from '@gt-motive-app/store';
 import { PokemonDetailsEffects } from './pokemonDetails/state/pokemonDetails.effects';
 import { PokemonDetailsService } from './pokemonDetails/state/pokemonDetails.service';
 import { PokemonDetailsResolver } from './pokemonDetails/shared/service/pokemonDetails.resolver';
@@ -18,7 +18,7 @@ export const appRoutes: Route[] = [
     providers: [
       importProvidersFrom(
         TranslateModule.forChild(),
-        StoreModule.forFeature(POKEMON_FEATURE_KEY, fromPokemon.pokemonReducer),
+        StoreModule.forFeature(POKEDEX_FEATURE_KEY, fromPokemon.pokemonReducer),
       )
     ],
     children: [
