@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '@gt-motive-app/libs/services/auth';
 import { CultureService } from '@gt-motive-app/libs/services/culture';
@@ -14,6 +14,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core'
   templateUrl: './profile-nav-bar.component.html',
   styleUrls: ['./profile-nav-bar.component.scss', './../menu.scss'],
   standalone: true,
+  encapsulation: ViewEncapsulation.None,  // *** This line disables the view encapsulation
   imports: [
     TranslateModule,
     LetDirective,

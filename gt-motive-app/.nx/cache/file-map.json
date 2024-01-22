@@ -707,11 +707,11 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.html",
-          "hash": "6246966605745781513"
+          "hash": "7977591414152961305"
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.scss",
-          "hash": "11395049143535681475"
+          "hash": "8206935341867051547"
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.spec.ts",
@@ -729,7 +729,7 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/profile-nav/profile-nav-bar.component.ts",
-          "hash": "12815207692477377775",
+          "hash": "8582366382265910089",
           "deps": [
             "npm:@angular/common",
             "npm:@angular/core",
@@ -794,20 +794,8 @@
           "hash": "6657977068930799787"
         },
         {
-          "file": "apps/shell/src/assets/i18n/EN-GB.json",
-          "hash": "12367611614782834406"
-        },
-        {
           "file": "apps/shell/src/assets/i18n/ES-ES.json",
           "hash": "12568245323054225270"
-        },
-        {
-          "file": "apps/shell/src/assets/images/flags/EN-GB.png",
-          "hash": "14978012198033837930"
-        },
-        {
-          "file": "apps/shell/src/assets/images/flags/ES-ES.png",
-          "hash": "3248842059571339774"
         },
         {
           "file": "apps/shell/src/assets/module-federation.manifest.json",
@@ -879,6 +867,18 @@
           "deps": [
             "npm:@nx/angular"
           ]
+        },
+        {
+          "file": "apps/shell/src/assets/images/flags/ES-ES.png",
+          "hash": "3248842059571339774"
+        },
+        {
+          "file": "apps/shell/src/assets/i18n/EN-GB.json",
+          "hash": "12367611614782834406"
+        },
+        {
+          "file": "apps/shell/src/assets/images/flags/EN-GB.png",
+          "hash": "14978012198033837930"
         }
       ],
       "test": [
