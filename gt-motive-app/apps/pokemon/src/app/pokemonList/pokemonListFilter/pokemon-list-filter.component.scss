@@ -108,3 +108,20 @@
     
     }
 }
+
+@media (max-width: 960px) {
+    .PokemonFilter_MainContainer {
+        .PokemonFilter_NameFilterContainer {
+            min-height: 130px;
+            mat-form-field {
+                margin: 0px 10px;
+            }
+            > button {
+                margin: 0px 10px;
+            }
+            .PokemonFilter_NameFilterContainer_Banner {
+                display: none;
+            }
+        }
+    }
+}

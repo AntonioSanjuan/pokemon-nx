@@ -98,10 +98,18 @@
 }
 
 
-@media (min-width: 461px) and (max-width: 960px) {
+@media (max-width: 960px) {
     .PokemonDetails_MainContainer {
         mat-card {
             mat-card-content {
+                .PokemonDetails_HeaderContainer {
+                    flex-direction: column;
+
+                    h2 {
+                        margin: 0;
+                        font-size: 100%;
+                    }
+                }
                 .PokemonDetails_BodyContainer {
                     flex-direction: column;
                 }
