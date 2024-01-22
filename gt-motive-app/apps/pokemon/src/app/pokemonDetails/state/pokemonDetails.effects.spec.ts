@@ -11,6 +11,7 @@ import { PokemonDetailsService } from './pokemonDetails.service';
 import { PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ApiService } from '@gt-motive-app/services/api';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 describe('PokemonDetailsEffects', () => {
   let actions: Observable<Action>;
@@ -21,7 +22,10 @@ describe('PokemonDetailsEffects', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        TranslateModule.forRoot({
+          loader: { provide: TranslateLoader, useClass: TranslateFakeLoader}
+        }),
       ],
       providers: [
         ApiService,

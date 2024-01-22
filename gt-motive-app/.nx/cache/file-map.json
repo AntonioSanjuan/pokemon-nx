@@ -572,9 +572,10 @@
         },
         {
           "file": "apps/shell/src/app/home/home.component.spec.ts",
-          "hash": "15910578157697453436",
+          "hash": "14461072256436210274",
           "deps": [
-            "npm:@angular/core"
+            "npm:@angular/core",
+            "npm:@ngx-translate/core"
           ]
         },
         {
@@ -625,9 +626,10 @@
         },
         {
           "file": "apps/shell/src/app/layout/common/menu-bottom/menu-bottom.component.spec.ts",
-          "hash": "627623295890591238",
+          "hash": "1022046137259183035",
           "deps": [
-            "npm:@angular/core"
+            "npm:@angular/core",
+            "npm:@ngx-translate/core"
           ]
         },
         {
@@ -1915,10 +1917,11 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsHeader/pokemon-details-header.component.spec.ts",
-          "hash": "12502766317018838579",
+          "hash": "7004907785024394694",
           "deps": [
             "npm:@angular/core",
-            "npm:@angular/router"
+            "npm:@angular/router",
+            "npm:@ngx-translate/core"
           ]
         },
         {
@@ -1943,9 +1946,10 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsInfo/pokemon-details-info.component.spec.ts",
-          "hash": "13849584787585718232",
+          "hash": "3864225186869262783",
           "deps": [
-            "npm:@angular/core"
+            "npm:@angular/core",
+            "npm:@ngx-translate/core"
           ]
         },
         {
@@ -1969,9 +1973,10 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/pokemonDetailsStats/pokemon-details-stats.component.spec.ts",
-          "hash": "16365137563002735882",
+          "hash": "16523238324173140337",
           "deps": [
-            "npm:@angular/core"
+            "npm:@angular/core",
+            "npm:@ngx-translate/core"
           ]
         },
         {
@@ -2006,7 +2011,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.effects.spec.ts",
-          "hash": "5736160007075548317",
+          "hash": "4174710848820035771",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/effects",
@@ -2014,7 +2019,8 @@
             "npm:rxjs",
             "npm:@angular/common",
             "libs/models",
-            "services-api"
+            "services-api",
+            "npm:@ngx-translate/core"
           ]
         },
         {

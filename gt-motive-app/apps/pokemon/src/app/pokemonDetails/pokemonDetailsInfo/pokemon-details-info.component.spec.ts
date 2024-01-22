@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PokemonDetailsInfoComponent } from './pokemon-details-info.component';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 describe('PokemonDetailsInfoComponent', () => {
   let component: PokemonDetailsInfoComponent;
@@ -9,6 +10,9 @@ describe('PokemonDetailsInfoComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         PokemonDetailsInfoComponent,
+        TranslateModule.forRoot({
+          loader: { provide: TranslateLoader, useClass: TranslateFakeLoader}
+        }),
       ],
     }).compileComponents();
 

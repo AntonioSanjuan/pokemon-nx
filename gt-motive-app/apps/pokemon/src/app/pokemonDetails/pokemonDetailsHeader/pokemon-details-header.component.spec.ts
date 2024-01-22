@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PokemonDetailsHeaderComponent } from './pokemon-details-header.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 describe('PokemonDetailsHeaderComponent', () => {
   let component: PokemonDetailsHeaderComponent;
@@ -10,6 +11,9 @@ describe('PokemonDetailsHeaderComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         PokemonDetailsHeaderComponent,
+        TranslateModule.forRoot({
+          loader: { provide: TranslateLoader, useClass: TranslateFakeLoader}
+        }),
         RouterTestingModule.withRoutes([]),
       ],
     }).compileComponents();
