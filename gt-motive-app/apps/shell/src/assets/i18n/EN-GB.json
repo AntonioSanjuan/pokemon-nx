@@ -38,7 +38,32 @@
                 "filteredBy": "Filtered by..."
             }
         },
-        "details": {}
+        "details": {
+            "header": {
+                "goBack": "Go Back"
+            },
+            "content": {
+                "photoAlt": "Photo of {{pokemonName}}",
+                "headers": {
+                    "types": "Types",
+                    "movements": "Movements"
+                },
+                "info": {
+                    "headers": {
+                        "height": "Height",
+                        "weight": "Weight",
+                        "sex": "Sex",
+                        "category": "Category",
+                        "ability": "Ability"
+                    }
+                },
+                "stats": {
+                    "headers": {
+                        "base": "Base Stats"
+                    }
+                }
+            }
+        }
     },
     "libs": {
         

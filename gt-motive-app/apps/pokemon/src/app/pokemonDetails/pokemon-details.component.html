@@ -18,7 +18,7 @@
             <img 
             mat-card-image 
             src={{vm.pokemonDetails?.sprites?.front_default}} 
-            alt="Photo of a Shiba Inu">
+            alt="{{'pokemon.details.content.photoAlt' | translate: { pokemonName: vm.pokemonDetails?.name } }}">
 
             <gt-motive-app-pokemon-details-stats [pokemon]="vm.pokemonDetails"></gt-motive-app-pokemon-details-stats>
           </div>
@@ -30,7 +30,7 @@
             <gt-motive-app-pokemon-details-info [pokemon]="vm.pokemonDetails"></gt-motive-app-pokemon-details-info>
 
             <div class="PokemonDetails_TypeContainer">
-              <h3>Tipos:</h3>
+              <h3>{{'pokemon.details.content.headers.types' | translate}}:</h3>
               <div class="PokemonDetails_Types">
                 <gt-motive-app-pokemon-type-pill
                   *ngFor="let type of vm.pokemonDetails?.types"
@@ -40,7 +40,7 @@
             </div>
 
             <div class="PokemonDetails_MovesContainer">
-              <h3>Movimientos:</h3>
+              <h3>{{'pokemon.details.content.headers.movements' | translate}}:</h3>
               <div class="PokemonDetails_Moves">
                 <button *ngFor="let type of vm.pokemonDetails?.moves" mat-raised-button color="primary">{{type.move.name}}</button>
               </div>

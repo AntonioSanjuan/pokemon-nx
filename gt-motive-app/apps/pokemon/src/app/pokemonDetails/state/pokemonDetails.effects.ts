@@ -6,9 +6,11 @@ import { PokemonDetailsService } from './pokemonDetails.service';
 import { AppRoutes, PokemonResponseDto } from '@gt-motive-app/libs/models';
 import { Router } from '@angular/router';
 import { showError } from '@gt-motive-app/store';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class PokemonDetailsEffects {
     private pokemonDetailsService: PokemonDetailsService = inject(PokemonDetailsService)
+    private translateService: TranslateService = inject(TranslateService)
     private actions$: Actions = inject(Actions);
     private router: Router = inject(Router)
 
@@ -27,7 +29,11 @@ export class PokemonDetailsEffects {
     getPokemonByNameRequestError$ = createEffect(() => this.actions$.pipe(
         ofType(getPokemonByNameRequestError),
         map(({ pokemonName }) => {
-            return showError({errorMessage: `Pokemon '${pokemonName.toUpperCase()}' not found`})
+            return showError({errorMessage: `${this.translateService.instant('pokemon.errors.pokemonNotFound', 
+            {
+                pokemonName: pokemonName.toUpperCase(),
+            }
+            )}`})
         })
     ))
 }
