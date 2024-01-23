@@ -23,7 +23,5 @@ import { getComparisonPokemonsRequest, getPokemonComparison } from "@gt-motive-a
             filter((pokemons: PokemonResponseDto[]) => !!pokemons)
             )
         }
-
-        return of(undefined);
     }
   }
