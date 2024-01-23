@@ -5,5 +5,6 @@ export * from './lib/pokedex'
 export * from './lib/error-messages'
 export * from './lib/pokemonList'
 export * from './lib/pokemonFilters'
+export * from './lib/pokemonComparison'
 
 export * from './lib/store.module';

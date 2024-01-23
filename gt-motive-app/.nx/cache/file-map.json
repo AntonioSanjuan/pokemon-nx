@@ -292,11 +292,11 @@
         },
         {
           "file": "libs/store/src/lib/pokedex/pokedex.reducer.ts",
-          "hash": "17275576277521362040"
+          "hash": "2829641819645333177"
         },
         {
           "file": "libs/store/src/lib/pokedex/pokedex.selectors.ts",
-          "hash": "12018226474088149809",
+          "hash": "5481132419842287503",
           "deps": [
             "npm:@ngrx/store"
           ]
@@ -355,7 +355,7 @@
         },
         {
           "file": "libs/store/src/lib/pokemonFilters/pokemonFilters.selectors.ts",
-          "hash": "4422001434720516289",
+          "hash": "1286429555730993134",
           "deps": [
             "npm:@ngrx/store"
           ]
@@ -424,7 +424,7 @@
         },
         {
           "file": "libs/store/src/lib/pokemonList/pokemonList.selectors.ts",
-          "hash": "9002745584549573153",
+          "hash": "14075608994214021413",
           "deps": [
             "npm:@ngrx/store"
           ]
@@ -897,6 +897,82 @@
           "hash": "4094756251328830844",
           "deps": [
             "npm:@nx/angular"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/+state/pokemon.selectors.ts",
+          "hash": "16543761085147465666",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/+state/models/pokemonState.model.ts",
+          "hash": "5920824380329062578",
+          "deps": [
+            "libs/models"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/+state/pokemon.reducer.ts",
+          "hash": "12367773191363299578",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/+state/models/comparisonState.initialState.ts",
+          "hash": "5000447975569788825",
+          "deps": [
+            "store"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/comparison/store/login.selectors.ts",
+          "hash": "15499979009022389638",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/comparison/store/login.reducer.ts",
+          "hash": "2417343408988970436",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/comparison/store/login.actions.ts",
+          "hash": "14249515760230070415",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/comparison/store/login.effects.spec.ts",
+          "hash": "12108598558678551056",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
+            "npm:rxjs",
+            "npm:@angular/common",
+            "libs/services/auth"
+          ]
+        },
+        {
+          "file": "apps/comparison/src/app/comparison/store/login.reducer.spec.ts",
+          "hash": "14227288041937590606"
+        },
+        {
+          "file": "apps/comparison/src/app/comparison/store/login.effects.ts",
+          "hash": "12482561568114793080",
+          "deps": [
+            "libs/services/auth",
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:rxjs",
+            "libs/models"
           ]
         }
       ],
@@ -2038,21 +2114,21 @@
         },
         {
           "file": "apps/pokemon/src/app/+state/models/pokemonState.initialState.ts",
-          "hash": "1919407431114115528",
+          "hash": "14061317195367440595",
           "deps": [
             "store"
           ]
         },
         {
           "file": "apps/pokemon/src/app/+state/models/pokemonState.model.ts",
-          "hash": "9542069473747875565",
+          "hash": "18402582997669455830",
           "deps": [
             "store"
           ]
         },
         {
           "file": "apps/pokemon/src/app/+state/pokemon.reducer.ts",
-          "hash": "1571823868043002612",
+          "hash": "17347354731507146604",
           "deps": [
             "npm:@ngrx/store",
             "store"
@@ -2060,7 +2136,7 @@
         },
         {
           "file": "apps/pokemon/src/app/+state/pokemon.selectors.ts",
-          "hash": "491742217446121932",
+          "hash": "2964976971506574231",
           "deps": [
             "npm:@ngrx/store",
             "store"
@@ -2264,7 +2340,7 @@
         },
         {
           "file": "apps/pokemon/src/app/pokemonDetails/state/pokemonDetails.selectors.ts",
-          "hash": "1210327370430004563",
+          "hash": "13721730052220698344",
           "deps": [
             "npm:@ngrx/store"
           ]

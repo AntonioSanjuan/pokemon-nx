@@ -7,19 +7,19 @@ import { ApiService } from '@gt-motive-app/services/api';
 export class PokemonService {
   private apiService: ApiService = inject(ApiService)
 
-  public getRawPokemons(page: number, pageSize: number): Observable<PokemonsResponseDto> {
+  protected getRawPokemons(page: number, pageSize: number): Observable<PokemonsResponseDto> {
     return this.apiService.get<PokemonsResponseDto>(`https://pokeapi.co/api/v2/pokemon?limit=${pageSize}&offset=${pageSize * page}`)
   }
 
-  public getRawPokemon(name: string): Observable<PokemonResponseDto> {
+  protected getRawPokemon(name: string): Observable<PokemonResponseDto> {
     return this.apiService.get<PokemonResponseDto>(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`)
   }
 
-  public getRawPokemonTypes(): Observable<PokemonTypesFiltersResponseDto> {
+  protected getRawPokemonTypes(): Observable<PokemonTypesFiltersResponseDto> {
     return this.apiService.get<PokemonTypesFiltersResponseDto>(`https://pokeapi.co/api/v2/type`)
   }
 
-  public getRawPokemonsByType(type: PokemonType): Observable<PokemonsByTypeResponseDto> {
+  protected getRawPokemonsByType(type: PokemonType): Observable<PokemonsByTypeResponseDto> {
     return this.apiService.get<PokemonsByTypeResponseDto>(`https://pokeapi.co/api/v2/type/${type.name}`)
   }
 }

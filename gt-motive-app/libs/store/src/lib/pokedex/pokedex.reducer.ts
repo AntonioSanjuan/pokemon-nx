@@ -6,7 +6,7 @@ export const pokedexInitialState = {
   [POKEMONLIST_FEATURE_KEY]: initialPokemonListState,
 }
 
-export interface PokedexState {
+export interface BasePokedexState {
     [POKEMONLIST_FEATURE_KEY]: PokemonListState
     [POKEMONFILTERS_FEATURE_KEY]: PokemonFiltersState
   }
