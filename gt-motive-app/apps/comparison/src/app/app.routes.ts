@@ -3,8 +3,8 @@ import { StoreModule } from '@ngrx/store';
 import { importProvidersFrom } from '@angular/core';
 import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects'
-import * as fromComparison from './+state/comparison.reducer';
-import { PokemonComparisonEffects } from '@gt-motive-app/store';
+import { POKEMONCOMPARISON_FEATURE_KEY, PokemonComparisonEffects, PokemonComparitionService, pokemonComparisonReducer } from '@gt-motive-app/store';
+import { ComparisonResolver } from './comparison/shared/service/comparison.resolver';
 
 export const appRoutes: Route[] = [
   {
@@ -12,13 +12,15 @@ export const appRoutes: Route[] = [
     component: AppComponent,
     providers: [
       importProvidersFrom(
-        StoreModule.forFeature(fromComparison.COMPARISON_FEATURE_KEY, fromComparison.comparisonReducer),
+        StoreModule.forFeature(POKEMONCOMPARISON_FEATURE_KEY, pokemonComparisonReducer),
       )
     ],
     children: [
       {
         path: '',
+        resolve: { data: ComparisonResolver },
         providers: [
+          PokemonComparitionService,
           importProvidersFrom(
             EffectsModule.forFeature([PokemonComparisonEffects])
           )
